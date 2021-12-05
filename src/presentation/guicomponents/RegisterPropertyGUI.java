@@ -13,6 +13,8 @@ import javax.swing.*;
  * @version 1.0
  */
 public class RegisterPropertyGUI extends JPanel {
+    private Frontend view;
+
     public RegisterPropertyGUI(Frontend view) {
 
     }
