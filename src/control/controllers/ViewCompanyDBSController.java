@@ -9,6 +9,6 @@ package control.controllers;
  * @author Ibrahim Asad
  * @version 1.0
  */
-public class ViewCompanyDBSController {
+public class ViewCompanyDBSController implements Controller {
     
 }
