@@ -9,6 +9,6 @@ package control.controllers;
  * @author Ibrahim Asad
  * @version 1.0
  */
-public class RegisterPropertyController {
+public class RegisterPropertyController implements Controller {
     
 }

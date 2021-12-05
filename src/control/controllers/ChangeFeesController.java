@@ -1,5 +1,7 @@
 package control.controllers;
 
+import control.controllers.*;
+
 /**
  * Class ChangeFeesController
  * @since December 4th, 2021
@@ -9,6 +11,6 @@ package control.controllers;
  * @author Ibrahim Asad
  * @version 1.0
  */
-public class ChangeFeesController {
+public class ChangeFeesController implements Controller {
     
 }

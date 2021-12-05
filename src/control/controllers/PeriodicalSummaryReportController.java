@@ -9,6 +9,6 @@ package control.controllers;
  * @author Ibrahim Asad
  * @version 1.0
  */
-public class PeriodicalSummaryReportController {
+public class PeriodicalSummaryReportController implements Controller {
     
 }
