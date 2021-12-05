@@ -13,6 +13,8 @@ import javax.swing.*;
  * @version 1.0
  */
 public class PropertyViewGUI extends JPanel {
+    private Frontend view;
+
     public PropertyViewGUI(Frontend view) {
 
     }

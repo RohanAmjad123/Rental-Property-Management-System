@@ -13,6 +13,8 @@ import javax.swing.*;
  * @version 1.0
  */
 public class PayFeeFormGUI extends JPanel {
+    private Frontend view;
+
     public PayFeeFormGUI(Frontend view) {
 
     }

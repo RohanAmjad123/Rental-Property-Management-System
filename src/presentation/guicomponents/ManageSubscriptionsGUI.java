@@ -13,6 +13,8 @@ import javax.swing.*;
  * @version 1.0
  */
 public class ManageSubscriptionsGUI extends JPanel {
+    private Frontend view;
+
     public ManageSubscriptionsGUI(Frontend view) {
 
     }
