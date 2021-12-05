@@ -4,6 +4,7 @@ import javax.swing.*;
 
 /**
  * Class PayFeeFormGUI
+ * 
  * @since December 4th, 2021
  * @author Azlan Amjad
  * @author Rohan Amjad
@@ -12,5 +13,7 @@ import javax.swing.*;
  * @version 1.0
  */
 public class PayFeeFormGUI extends JPanel {
-    
+    public PayFeeFormGUI(Frontend view) {
+
+    }
 }

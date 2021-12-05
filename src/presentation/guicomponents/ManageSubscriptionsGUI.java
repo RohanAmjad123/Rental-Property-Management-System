@@ -4,6 +4,7 @@ import javax.swing.*;
 
 /**
  * Class ManageSubscriptionsGUI
+ * 
  * @since December 4th, 2021
  * @author Azlan Amjad
  * @author Rohan Amjad
@@ -12,5 +13,7 @@ import javax.swing.*;
  * @version 1.0
  */
 public class ManageSubscriptionsGUI extends JPanel {
-    
+    public ManageSubscriptionsGUI(Frontend view) {
+
+    }
 }
