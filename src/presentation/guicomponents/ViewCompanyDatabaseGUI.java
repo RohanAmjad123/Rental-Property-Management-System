@@ -1,6 +1,7 @@
 package presentation.guicomponents;
 
 import javax.swing.*;
+import control.controllers.Controller;
 
 /**
  * Class ViewCompanyDatabaseGUI
@@ -13,9 +14,14 @@ import javax.swing.*;
  * @version 1.0
  */
 public class ViewCompanyDatabaseGUI extends JPanel {
+    private Controller viewDatabaseListener;
     private Frontend view;
 
     public ViewCompanyDatabaseGUI(Frontend view) {
+
+    }
+
+    public void setViewDatabaseListener(Controller viewDatabaseListener) {
 
     }
 }
