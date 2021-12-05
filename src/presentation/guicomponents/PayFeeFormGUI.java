@@ -1,6 +1,7 @@
 package presentation.guicomponents;
 
 import javax.swing.*;
+import control.controllers.Controller;
 
 /**
  * Class PayFeeFormGUI
@@ -13,9 +14,14 @@ import javax.swing.*;
  * @version 1.0
  */
 public class PayFeeFormGUI extends JPanel {
+    private Controller propertyListener;
     private Frontend view;
 
     public PayFeeFormGUI(Frontend view) {
+
+    }
+
+    public void setPropertyListener(Controller propertyListener) {
 
     }
 }

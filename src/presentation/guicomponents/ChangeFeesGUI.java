@@ -1,6 +1,7 @@
 package presentation.guicomponents;
 
 import javax.swing.*;
+import control.controllers.Controller;
 
 /**
  * Class ChangeFeesGUI
@@ -13,9 +14,14 @@ import javax.swing.*;
  * @version 1.0
  */
 public class ChangeFeesGUI extends JPanel {
+    private Controller changeFeesListener;
     private Frontend view;
 
     public ChangeFeesGUI(Frontend view) {
+
+    }
+
+    public void setChangeFeesListener(Controller changeFeesListener) {
 
     }
 }

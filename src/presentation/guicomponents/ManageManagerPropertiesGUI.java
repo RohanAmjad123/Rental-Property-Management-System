@@ -1,6 +1,7 @@
 package presentation.guicomponents;
 
 import javax.swing.*;
+import control.controllers.Controller;
 
 /**
  * Class ManageManagerPropertiesGUI
@@ -13,9 +14,14 @@ import javax.swing.*;
  * @version 1.0
  */
 public class ManageManagerPropertiesGUI extends JPanel {
+    private Controller propertyListener;
     private Frontend view;
 
     public ManageManagerPropertiesGUI(Frontend view) {
+
+    }
+
+    public void setPropertyListener(Controller propertyListener) {
 
     }
 }

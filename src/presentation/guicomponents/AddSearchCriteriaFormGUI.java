@@ -1,6 +1,7 @@
 package presentation.guicomponents;
 
 import javax.swing.*;
+import control.controllers.Controller;
 
 /**
  * Class AddSearchCriteriaFormGUI
@@ -13,9 +14,14 @@ import javax.swing.*;
  * @version 1.0
  */
 public class AddSearchCriteriaFormGUI extends JPanel {
+    private Controller subscriptionsListener;
     private Frontend view;
 
     public AddSearchCriteriaFormGUI(Frontend view) {
+
+    }
+
+    public void setSubscriptionsListener(Controller subscriptionsListener) {
 
     }
 }

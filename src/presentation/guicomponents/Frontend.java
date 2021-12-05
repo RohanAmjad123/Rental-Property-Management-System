@@ -28,7 +28,8 @@ public class Frontend extends JFrame {
     private PropertyViewGUI propertyView;
 
     /**
-     * class Frontend constructor, used by class Backend to construct its view object.
+     * class Frontend constructor, used by class Backend to construct its view
+     * object.
      */
     public Frontend() {
         // construct parent class JFrame

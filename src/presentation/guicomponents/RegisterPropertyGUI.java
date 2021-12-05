@@ -1,6 +1,7 @@
 package presentation.guicomponents;
 
 import javax.swing.*;
+import control.controllers.Controller;
 
 /**
  * Class RegisterPropertyGUI
@@ -13,9 +14,15 @@ import javax.swing.*;
  * @version 1.0
  */
 public class RegisterPropertyGUI extends JPanel {
+    private Controller registerPropertyListener;
     private Frontend view;
 
     public RegisterPropertyGUI(Frontend view) {
 
     }
+
+    public void setRegisterPropertyListener(Controller registerPropertyListener) {
+
+    }
+
 }
