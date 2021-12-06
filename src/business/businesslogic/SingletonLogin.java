@@ -20,7 +20,7 @@ public class Singleton{
 	currentUser = a;
 	}
 	
-	public Singleton getInstance(){
+	public static Singleton getInstance(){
 		if(onlyInstance==null){
 		onlyInstance = new Singleton();
 		}
