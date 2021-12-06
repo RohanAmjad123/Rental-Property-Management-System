@@ -6,16 +6,14 @@ public class User {
 	private String password;
 	private String firstName;	
 	private String lastName;
-	private int userID;
 	private String userType;
 	
 		
-	public User(String e, String p, String f, String l, int uID, String uT){	
+	public User(String e, String p, String f, String l, String uT){	
 		email = e;
 		password = p;
 		firstName = f;
 		lastName = l; 
-		userID = uID;
 		userType = uT;
 	}
 	
@@ -24,7 +22,6 @@ public class User {
 		password = "";
 		firstName = "";
 		lastName = ""; 
-		userID = 0;
 		userType = "";
 	}
 	
@@ -61,14 +58,6 @@ public class User {
 	
 	public String getLastName(){
 		return lastName;
-	}
-	
-	public void setUserID(int userID){
-		this.userID = userID;
-	}
-	
-	public int getUserID(){
-		return userID;
 	}
 	
 	public void setUserType(String userType){

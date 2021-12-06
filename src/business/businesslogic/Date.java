@@ -11,6 +11,12 @@ public class Date {
 		month = m;
 		year = y;
 	}
+
+	public Date() {
+		day = 0;
+		month = 0;
+		year = 0;
+	}
 	
 	public void setYear(int year){
 		this.year = year;

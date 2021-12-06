@@ -3,7 +3,7 @@ package business.businesslogic;
 public class SearchCriteria{
 		
 	private String propertyType;
-	
+	private String renterID;
 	private int bedrooms;
 	private int bathrooms;
 	private int maxRent;
@@ -11,7 +11,8 @@ public class SearchCriteria{
 	private String cityQuadrant;
 	private String furnished;
 
-	public SearchCriteria(String propertyType, int bedrooms, int bathrooms, int maxRent, String cityQuadrant, String furnished) {
+	public SearchCriteria(String renterID, String propertyType, int bedrooms, int bathrooms, int maxRent, String cityQuadrant, String furnished) {
+		this.renterID = renterID;
 		this.propertyType = propertyType;
 		this.bedrooms = bedrooms;
 		this.bathrooms = bathrooms;
@@ -49,7 +50,7 @@ public class SearchCriteria{
 	}
 		
 	public void setMaxRent(int maxRent){
-		maxRent = maxRent;
+		this.maxRent = maxRent;
 	}	
 	
 	public String getCityQuadrant(){
@@ -60,7 +61,6 @@ public class SearchCriteria{
 		this.cityQuadrant = cityQuadrant;
 	}
 	
-	
 	public String getFurnished() {
 		return furnished;
 	}
@@ -69,6 +69,12 @@ public class SearchCriteria{
 		this.furnished = furnished;
 	}
 	
+	public String getRenterID() {
+		return this.renterID;
+	}
 	
+	public void setRenterID(String id) {
+		this.renterID = id;
+	}
 	
 }

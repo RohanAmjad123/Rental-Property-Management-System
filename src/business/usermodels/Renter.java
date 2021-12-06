@@ -7,8 +7,8 @@ public class Renter extends User {
 
 	private ArrayList <SearchCriteria> subscriptions;
 
-	public Renter(String email, String password, String firstName, String lastName, int userID){
-		super(email, password, firstName, lastName, userID, "renter");
+	public Renter(String email, String password, String firstName, String lastName){
+		super(email, password, firstName, lastName, "renter");
 		subscriptions = new ArrayList<SearchCriteria>();
 	}	
 

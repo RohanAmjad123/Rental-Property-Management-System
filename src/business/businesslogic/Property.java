@@ -2,8 +2,7 @@ package business.businesslogic;
 
 public class Property {
 
-	private int landlordID;
-	private int propertyID;
+	private String landlordID;
 	private String title;
 	private String description;
 	private String propertyType;
@@ -20,10 +19,9 @@ public class Property {
 	private Date feeExpiry;
 	private int feeAmount;
 
-	public Property(int landlordID, int propertyID, String title, String description, String propertyType, int rent, int bedrooms, int bathrooms, int squareFeet,
-					String furnished, String state, Address address, Date listingDate, Date feeExpiry, int feeAmount) {
+	public Property(String landlordID, String title, String description, String propertyType, int rent, int bedrooms, int bathrooms, int squareFeet,
+					String furnished, String state, Address address, Date listingDate) {
 		this.landlordID = landlordID;
-		this.propertyID = propertyID;
 		this.title = title;
 		this.description = description;
 		this.propertyType = propertyType;
@@ -35,8 +33,8 @@ public class Property {
 		this.state = state;
 		this.address = address;
 		this.listingDate = listingDate;
-		this.feeExpiry = feeExpiry;
-		this.feeAmount = feeAmount;
+		this.feeExpiry = new Date();
+		this.feeAmount = 0;
 	}
 
 	public String getTitle() {
@@ -79,6 +77,14 @@ public class Property {
 		this.bedrooms = bedrooms;
 	}
 
+	public int getBathrooms() {
+		return this.bathrooms;
+	}
+
+	public void setBathrooms(int bathrooms) {
+		this.bathrooms = bathrooms;
+	}
+
 	public int getSquareFeet() {
 		return squareFeet;
 	}
@@ -95,8 +101,12 @@ public class Property {
 		this.furnished = furnished;
 	}
 
-	public int getLandlordID() {
+	public String getLandlordID() {
 		return landlordID;
+	}
+
+	public void setLandlordID(String id) {
+		this.landlordID = id;
 	}
 
 	public String getState() {

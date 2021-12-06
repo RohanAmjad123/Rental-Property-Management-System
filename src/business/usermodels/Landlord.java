@@ -7,8 +7,8 @@ public class Landlord extends User {
 
 	private ArrayList<Property> properties;
 
-	public Landlord(String email, String password, String firstName, String lastName, int userID){
-		super(email, password, firstName, lastName, userID, "landlord");
+	public Landlord(String email, String password, String firstName, String lastName){
+		super(email, password, firstName, lastName, "landlord");
 		properties = new ArrayList<Property>();
 	}
 
