@@ -28,8 +28,8 @@ public class User {
 		userType = "";
 	}
 	
-	public void setEmail(String a){
-		email = a;
+	public void setEmail(String email){
+		this.email = email;
 	}
 	
 	public String getEmail(){
@@ -37,8 +37,8 @@ public class User {
 	}
 		
 	
-	public void setPassword(String a){
-		password = a;
+	public void setPassword(String password){
+		this.password = password;
 	}
 	
 	public String getPassword(){
@@ -46,33 +46,33 @@ public class User {
 	}
 	
 	
-	public void setFirstname(String a){
-		firstName = a;
+	public void setFirstName(String firstName){
+		this.firstName = firstName;
 	}
 	
-	public String getFirstname(){
+	public String getFirstName(){
 		return firstName;
 	}
 	
 		
-	public void setLastname(String a){
-		lastName = a;
+	public void setLastName(String lastName){
+		this.lastName = lastName;
 	}
 	
-	public String getLastname(){
+	public String getLastName(){
 		return lastName;
 	}
 	
-	public void setUserID(int a){
-		userID = a;
+	public void setUserID(int userID){
+		this.userID = userID;
 	}
 	
 	public int getUserID(){
 		return userID;
 	}
 	
-	public void setUserType(String a){
-		userType = a;
+	public void setUserType(String userType){
+		this.userType = userType;
 	}
 	
 	public String getUserType(){

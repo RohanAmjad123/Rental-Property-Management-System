@@ -112,4 +112,36 @@ public class CompanyDatabase {
         return true;
     }
 
+    public User login(String email, String password, String userType) {
+        String sqlCheck = "SELECT * FROM users WHERE email=(?) AND password=(?) AND user_type=(?)";
+        User u = new User();
+
+        try {
+            PreparedStatement checkStmt = dbConnect.prepareStatement(sqlCheck);
+            checkStmt.setString(1, email);
+            checkStmt.setString(2, password);
+            checkStmt.setString(3, userType);
+            ResultSet rs = checkStmt.executeQuery();
+
+            if (!rs.isBeforeFirst()) {
+                throw new SQLException("User not found!");
+            }
+            rs.next();
+
+            u.setEmail(rs.getString("email"));
+            u.setPassword(rs.getString("password"));
+            u.setFirstName(rs.getString("first_name")); 
+            u.setLastName(rs.getString("last_name")); 
+            u.setUserID(rs.getInt("user_id")); 
+            u.setUserType(rs.getString("user_type"));
+
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return u;
+    }
+
+    
 }
