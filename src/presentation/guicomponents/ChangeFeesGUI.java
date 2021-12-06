@@ -18,7 +18,8 @@ public class ChangeFeesGUI extends JPanel {
     private Frontend view;
 
     public ChangeFeesGUI(Frontend view) {
-
+        // assign view reference
+        this.view = view;
     }
 
     public void setChangeFeesListener(Controller changeFeesListener) {

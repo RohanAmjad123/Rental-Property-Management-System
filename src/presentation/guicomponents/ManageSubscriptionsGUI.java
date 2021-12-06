@@ -18,7 +18,8 @@ public class ManageSubscriptionsGUI extends JPanel {
     private Frontend view;
 
     public ManageSubscriptionsGUI(Frontend view) {
-
+        // assign view reference
+        this.view = view;
     }
 
     public void setSubscriptionsListener(Controller subscriptionsListener) {

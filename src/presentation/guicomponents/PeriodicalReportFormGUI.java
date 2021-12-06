@@ -18,7 +18,8 @@ public class PeriodicalReportFormGUI extends JPanel {
     private Frontend view;
 
     public PeriodicalReportFormGUI(Frontend view) {
-
+        // assign view reference
+        this.view = view;
     }
 
     public void setReportFormListener(Controller reportFormListener) {

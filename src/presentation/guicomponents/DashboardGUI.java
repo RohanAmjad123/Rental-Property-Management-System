@@ -18,7 +18,8 @@ public class DashboardGUI extends JPanel {
     private Frontend view;
 
     public DashboardGUI(Frontend view) {
-
+        // assign view reference
+        this.view = view;
     }
 
     public void setDashboardListener(Controller dashboardListener) {

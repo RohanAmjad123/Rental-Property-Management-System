@@ -18,7 +18,8 @@ public class PayFeeFormGUI extends JPanel {
     private Frontend view;
 
     public PayFeeFormGUI(Frontend view) {
-
+        // assign view reference
+        this.view = view;
     }
 
     public void setPropertyListener(Controller propertyListener) {
