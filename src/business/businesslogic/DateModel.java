@@ -1,21 +1,21 @@
 package business.businesslogic;
 
-public class Date {
+public class DateModel {
 	
 	private String day;
 	private String month;
 	private String year;	
 		
-	public Date(String d, String m, String y){
-		day = d;
-		month = m;
-		year = y;
+	public DateModel(String year, String month, String day){
+		this.year = year;
+		this.month = month;
+		this.day = day;
 	}
 
-	public Date() {
-		day = 0;
-		month = 0;
-		year = 0;
+	public DateModel() {
+		day = "";
+		month = "";
+		year = "";
 	}
 	
 	public void setYear(String year){
@@ -44,8 +44,9 @@ public class Date {
 		return day;
 	}
 	
-	
-	
-	
+	public String getDateFormatted() {
+		String date = year + "-" + month + "-" + day;
+		return date;
+	}
 	
 }

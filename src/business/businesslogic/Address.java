@@ -19,6 +19,15 @@ public class Address {
 		country = cou;
 	}
 
+	public Address() {
+		streetName = "";
+		postalCode = "";
+		cityQuadrant = "";
+		city = ""; 
+		stateProvince = "";
+		country = "";
+	}
+
 	public void setStreetName(String a){
 		streetName = a;
 	}
