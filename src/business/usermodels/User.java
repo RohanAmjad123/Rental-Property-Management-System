@@ -6,17 +6,15 @@ public class User {
 	private String password;
 	private String firstName;	
 	private String lastName;
-	private int userID;
 	private String userType;
 	
 		
-	public User(String e, String p, String f, String l, int uID, String uT){	
-		email = e;
-		password = p;
-		firstName = f;
-		lastName = l; 
-		userID = uID;
-		userType = uT;
+	public User(String email, String password, String firstName, String lastName, String userType){	
+		this.email = email;
+		this.password = password;
+		this.firstName = firstName;
+		this.lastName = lastName; 
+		this.userType = userType;
 	}
 	
 	public User(){	
@@ -24,12 +22,11 @@ public class User {
 		password = "";
 		firstName = "";
 		lastName = ""; 
-		userID = 0;
 		userType = "";
 	}
 	
-	public void setEmail(String a){
-		email = a;
+	public void setEmail(String email){
+		this.email = email;
 	}
 	
 	public String getEmail(){
@@ -37,8 +34,8 @@ public class User {
 	}
 		
 	
-	public void setPassword(String a){
-		password = a;
+	public void setPassword(String password){
+		this.password = password;
 	}
 	
 	public String getPassword(){
@@ -46,33 +43,25 @@ public class User {
 	}
 	
 	
-	public void setFirstname(String a){
-		firstName = a;
+	public void setFirstName(String firstName){
+		this.firstName = firstName;
 	}
 	
-	public String getFirstname(){
+	public String getFirstName(){
 		return firstName;
 	}
 	
 		
-	public void setLastname(String a){
-		lastName = a;
+	public void setLastName(String lastName){
+		this.lastName = lastName;
 	}
 	
-	public String getLastname(){
+	public String getLastName(){
 		return lastName;
 	}
 	
-	public void setUserID(int a){
-		userID = a;
-	}
-	
-	public int getUserID(){
-		return userID;
-	}
-	
-	public void setUserType(String a){
-		userType = a;
+	public void setUserType(String userType){
+		this.userType = userType;
 	}
 	
 	public String getUserType(){

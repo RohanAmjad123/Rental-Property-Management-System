@@ -3,12 +3,17 @@ package business.businesslogic;
 public class Fee {
 	
 	private int feePeriod;
-	private int feeAmound;
+	private int feeAmount;
 	
 	
 	public Fee(int fp, int fa){
 		feePeriod = fp;
-		feeAmound = fa;
+		feeAmount = fa;
+	}
+
+	public Fee() {
+		feePeriod = 0;
+		feeAmount = 0;
 	}
 	
 	public void setFeePeriod(int feePeriod){
@@ -21,11 +26,11 @@ public class Fee {
 		
 	
 	public void setFeeAmound(int feeAmount){
-		this.feeAmound = feeAmount;
+		this.feeAmount = feeAmount;
 	}
 	
-	public int getFeeAmound(){
-		return feeAmound;
+	public int getFeeAmount(){
+		return feeAmount;
 	}
 	
 
