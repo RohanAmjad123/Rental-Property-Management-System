@@ -418,12 +418,100 @@ public class CompanyDatabase {
         return f;
     }
 
-    public void subscribe(SearchCriteria s) {}
+    public boolean subscribe(SearchCriteria criteria) {
+        String sql = "INSERT INTO subscriptions VALUES (?, ?, ?, ?, ?, ?, ?)";
 
-    public void unsubscribe(String renterID) {}
+        try {
+            PreparedStatement stmt = dbConnect.prepareStatement(sql);
+            stmt.setString(1, criteria.getRenterID());
+            stmt.setString(2, criteria.getPropertyType());
+            stmt.setInt(3, criteria.getBedrooms());
+            stmt.setInt(4, criteria.getBathrooms());
+            stmt.setInt(5, criteria.getMaxRent());
+            stmt.setString(6, criteria.getCityQuadrant());
+            stmt.setString(7, criteria.getFurnished());
 
-    public SearchCriteria getSubscription(String renterID) {}
+            int affectedRows = stmt.executeUpdate();
+            if (affectedRows == 0) {
+                throw new SQLException("Unable to subscribe to criteria!");
+            }
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
 
-    public void updateSearchCriteria(SearchCriteria criteria) {}
+    public boolean unsubscribe(String renterID) {
+        String sql = "DELETE FROM subscriptions WHERE renter_id=(?)";
+        
+        try {
+            PreparedStatement stmt = dbConnect.prepareStatement(sql);
+            stmt.setString(1, renterID);
+            
+            int affectedRows = stmt.executeUpdate();
+            if (affectedRows == 0) {
+                throw new SQLException("Unable to unsubscribe from criteria!");
+            }
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
+
+    public SearchCriteria getSubscription(String renterID) {
+        String sql = "SELECT * FROM subscriptions WHERE renter_id=(?)";
+        SearchCriteria s = new SearchCriteria();
+
+        try {
+            PreparedStatement stmt = dbConnect.prepareStatement(sql);
+            stmt.setString(1, renterID);
+
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                s.setRenterID(rs.getString("renter_id"));
+                s.setPropertyType(rs.getString("property_type"));
+                s.setBedrooms(rs.getInt("bedrooms"));
+                s.setBathrooms(rs.getInt("bathrooms"));
+                s.setMaxRent(rs.getInt("max_rent"));
+                s.setCityQuadrant(rs.getString("city_quadrant"));
+                s.setFurnished(rs.getString("furnished"));
+            }
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+            return s;
+        }
+        return s;
+    }
+
+    public boolean updateSearchCriteria(SearchCriteria criteria) {
+        String sql = "UPDATE subscriptions SET property_type=(?), bedrooms=(?), bathrooms=(?), max_rent=(?), city_quadrant=(?), furnished=(?) WHERE renter_id=(?)";
+        
+        try {
+            PreparedStatement stmt = dbConnect.prepareStatement(sql);
+            stmt.setString(1, criteria.getPropertyType());
+            stmt.setInt(2, criteria.getBedrooms());
+            stmt.setInt(3, criteria.getBathrooms());
+            stmt.setInt(4, criteria.getMaxRent());
+            stmt.setString(5, criteria.getCityQuadrant());
+            stmt.setString(6, criteria.getFurnished());
+
+
+            int affectedRows = stmt.executeUpdate();
+            if (affectedRows == 0) {
+                throw new SQLException("Failed to update subscription!");
+            }
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
 
 }

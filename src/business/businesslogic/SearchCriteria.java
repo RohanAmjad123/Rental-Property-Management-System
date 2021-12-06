@@ -21,6 +21,16 @@ public class SearchCriteria{
 		this. furnished = furnished;
 	}
 
+	public SearchCriteria() {
+		this.renterID = "";
+		this.propertyType = "";
+		this.bedrooms = 0;
+		this.bathrooms = 0;
+		this.maxRent = 0;
+		this.cityQuadrant = "";
+		this. furnished = "";
+	}
+	
 	public String getPropertyType(){
 		return propertyType;	
 	}
