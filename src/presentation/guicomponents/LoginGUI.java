@@ -52,14 +52,14 @@ public class LoginGUI extends JPanel {
     public LoginGUI(Frontend view) {
         // assign view reference
         this.view = view;
-        errorPage();
+        userChoice();
     }
 
     public void setLoginListener(Controller loginListener) {
 
     }
 
-    private void userChoice() {
+    public void userChoice() {
         removeAll();
 
         rentSlowerLabel = new javax.swing.JLabel();
@@ -165,7 +165,7 @@ public class LoginGUI extends JPanel {
         repaint();
     }
 
-    private void userLogin() {
+    public void userLogin() {
         removeAll();
 
         rentSlowerLabel = new javax.swing.JLabel();
@@ -254,7 +254,7 @@ public class LoginGUI extends JPanel {
         repaint();
     }
 
-    private void successPage() {
+    public void successPage() {
         removeAll();
 
         rentSlowerLabel = new javax.swing.JLabel();
@@ -299,7 +299,7 @@ public class LoginGUI extends JPanel {
         repaint();
     }
 
-    private void errorPage() {
+    public void errorPage() {
         removeAll();
 
         rentSlowerLabel = new javax.swing.JLabel();

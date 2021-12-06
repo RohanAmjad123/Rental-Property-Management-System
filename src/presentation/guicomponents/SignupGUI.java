@@ -73,7 +73,7 @@ public class SignupGUI extends JPanel {
 
     }
 
-    private void userChoice() {
+    public void userChoice() {
         removeAll();
 
         rentSlowerLabel = new javax.swing.JLabel();
@@ -179,7 +179,7 @@ public class SignupGUI extends JPanel {
         repaint();
     }
 
-    private void renterSignup() {
+    public void renterSignup() {
         removeAll();
 
         rentSlowerLabel = new javax.swing.JLabel();
@@ -304,7 +304,7 @@ public class SignupGUI extends JPanel {
         repaint();
     }
 
-    private void landlordSignup() {
+    public void landlordSignup() {
         removeAll();
 
         rentSlowerLabel = new javax.swing.JLabel();
@@ -429,7 +429,7 @@ public class SignupGUI extends JPanel {
         repaint();
     }
 
-    private void managerSignup() {
+    public void managerSignup() {
         removeAll();
 
         rentSlowerLabel = new javax.swing.JLabel();
@@ -567,7 +567,7 @@ public class SignupGUI extends JPanel {
         repaint();
     }
 
-    private void successPage() {
+    public void successPage() {
         removeAll();
 
         rentSlowerLabel = new javax.swing.JLabel();
@@ -612,7 +612,7 @@ public class SignupGUI extends JPanel {
         repaint();
     }
 
-    private void errorPage() {
+    public void errorPage() {
         removeAll();
 
         rentSlowerLabel = new javax.swing.JLabel();
