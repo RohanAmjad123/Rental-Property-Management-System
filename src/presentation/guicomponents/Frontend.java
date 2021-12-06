@@ -50,7 +50,8 @@ public class Frontend extends JFrame {
         dashboard = new DashboardGUI(this);
         propertyView = new PropertyViewGUI(this);
 
-        // set DashboardGUI on JFrame
-        this.add(dashboard);
+        // set SignupGUI on JFrame
+        this.add(signup);
+        this.pack();
     }
 }
