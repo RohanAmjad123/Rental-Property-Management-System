@@ -24,7 +24,7 @@ public class Backend {
      */
     Backend() {
         view = new Frontend();
-        model = new CompanyDatabase();
+        model = new CompanyDatabase("", "", "", "");
 
         SignupController signupController = new SignupController(view, model);
         LoginController loginController = new LoginController(view, model);
