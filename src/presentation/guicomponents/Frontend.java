@@ -51,7 +51,7 @@ public class Frontend extends JFrame {
         propertyView = new PropertyViewGUI(this);
 
         // set SignupGUI on JFrame
-        this.add(signup);
+        this.add(login);
         this.pack();
     }
 }
