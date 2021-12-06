@@ -1,6 +1,7 @@
+package business.usermodels;
 
 public class User {
-	
+
 	private String email;
 	private String password;
 	private String firstName;	
@@ -18,12 +19,12 @@ public class User {
 		userType = uT;
 	}
 	
-		public User(){	
+	public User(){	
 		email = "";
 		password = "";
 		firstName = "";
 		lastName = ""; 
-		userID = "";
+		userID = 0;
 		userType = "";
 	}
 	
@@ -63,11 +64,11 @@ public class User {
 	}
 	
 	public void setUserID(int a){
-	userID = a;
+		userID = a;
 	}
 	
 	public int getUserID(){
-	return userID;
+		return userID;
 	}
 	
 	public void setUserType(String a){

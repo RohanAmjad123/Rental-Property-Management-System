@@ -1,31 +1,29 @@
+package business.businesslogic;
 
+import business.usermodels.*;
 
-public class Singleton{
+public class SingletonLogin {
 	
-	
-	private Singleton onlyInstance = null;
+	private SingletonLogin onlyInstance = null;
 	private User currentUser;
 	
-	private Singleton(){
+	private SingletonLogin (){
 		currentUser = new User();
-		
 	}
 	
-	private Singleton(Singleton o, User c){ 
-			currentUser = c;
-			onlyInstance = o;
+	public void setCurrentUser(User user){
+		currentUser = user;
+	}
+
+	public User getCurrentUser() {
+		return currentUser;
 	}
 	
-	public void setCurrentUser(User a){
-	currentUser = a;
-	}
-	
-	public Singleton getInstance(){
-		if(onlyInstance==null){
-		onlyInstance = new Singleton();
+	public SingletonLogin getInstance(){
+		if(onlyInstance == null){
+			onlyInstance = new SingletonLogin();
 		}
-		
-	return onlyInstance;
+		return onlyInstance;
 	}
 	
 	

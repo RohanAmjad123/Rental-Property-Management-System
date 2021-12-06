@@ -1,26 +1,27 @@
+package business.usermodels;
+
+import business.businesslogic.*;
+import java.util.*;
 
 public class Renter extends User {
 
-private ArrayList <SearchCriteria> subscription;
+	private ArrayList <SearchCriteria> subscriptions;
 
-public Renter(){
-	subscription = new ArrayList<SearchCriteria> ();
-}
+	public Renter(String email, String password, String firstName, String lastName, int userID){
+		super(email, password, firstName, lastName, userID, "renter");
+		subscriptions = new ArrayList<SearchCriteria>();
+	}	
 
+	public ArrayList <SearchCriteria> getSubscriptions(){
+		return subscriptions;
+	}
 
-public ArrayList <SearchCriteria> getSubscriptions(){
-return subscription;
-}
-
-public void addSubscription(SearchCriteria sub){
+	public void addSubscription(SearchCriteria sub){	
+		subscriptions.add(sub);
+	}
 	
-	subscription.add(sub);
-}
-
-public void deleteSubscription(SearchCriteria sub){
-	
-	subscription.remove(sub);
-}
-
+	public void deleteSubscription(SearchCriteria sub){
+		subscriptions.remove(sub);
+	}
 
 }
