@@ -1,6 +1,7 @@
 package presentation.guicomponents;
 
 import javax.swing.*;
+import control.controllers.Controller;
 
 /**
  * Class DashboardGUI
@@ -13,7 +14,15 @@ import javax.swing.*;
  * @version 1.0
  */
 public class DashboardGUI extends JPanel {
+    private Controller dashboardListener;
+    private Frontend view;
+
     public DashboardGUI(Frontend view) {
+        // assign view reference
+        this.view = view;
+    }
+
+    public void setDashboardListener(Controller dashboardListener) {
 
     }
 }

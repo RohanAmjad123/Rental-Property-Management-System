@@ -28,7 +28,8 @@ public class Frontend extends JFrame {
     private PropertyViewGUI propertyView;
 
     /**
-     * class Frontend constructor, used by class Backend to construct its view object.
+     * class Frontend constructor, used by class Backend to construct its view
+     * object.
      */
     public Frontend() {
         // construct parent class JFrame
@@ -49,7 +50,8 @@ public class Frontend extends JFrame {
         dashboard = new DashboardGUI(this);
         propertyView = new PropertyViewGUI(this);
 
-        // set DashboardGUI on JFrame
-        this.add(dashboard);
+        // set SignupGUI on JFrame
+        this.add(registerProperty);
+        this.pack();
     }
 }

@@ -1,6 +1,7 @@
 package presentation.guicomponents;
 
 import javax.swing.*;
+import control.controllers.Controller;
 
 /**
  * Class PropertyViewGUI
@@ -13,7 +14,15 @@ import javax.swing.*;
  * @version 1.0
  */
 public class PropertyViewGUI extends JPanel {
+    private Controller propertyListener;
+    private Frontend view;
+
     public PropertyViewGUI(Frontend view) {
+        // assign view reference
+        this.view = view;
+    }
+
+    public void setPropertyListener(Controller propertyListener) {
 
     }
 }
