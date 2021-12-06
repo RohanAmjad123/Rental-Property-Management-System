@@ -2,11 +2,11 @@ package business.businesslogic;
 
 public class Date {
 	
-	private int day;
-	private int month;
-	private int year;	
+	private String day;
+	private String month;
+	private String year;	
 		
-	public Date(int d, int m, int y){
+	public Date(String d, String m, String y){
 		day = d;
 		month = m;
 		year = y;
@@ -18,29 +18,29 @@ public class Date {
 		year = 0;
 	}
 	
-	public void setYear(int year){
+	public void setYear(String year){
 		this.year = year;
 	}
 	
-	public int getYear(){
+	public String getYear(){
 		return year;
 	}
 		
 	
-	public void setMonth(int month){
+	public void setMonth(String month){
 		this.month = month;
 	}
 	
-	public int getMonth(){
+	public String getMonth(){
 		return month;
 	}
 	
 	
-	public void setDay(int day){
+	public void setDay(String day){
 		this.day = day;
 	}
 	
-	public int getDay(){
+	public String getDay(){
 		return day;
 	}
 	
