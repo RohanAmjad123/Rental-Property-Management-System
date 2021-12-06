@@ -18,7 +18,8 @@ public class RegisterPropertyGUI extends JPanel {
     private Frontend view;
 
     public RegisterPropertyGUI(Frontend view) {
-
+        // assign view reference
+        this.view = view;
     }
 
     public void setRegisterPropertyListener(Controller registerPropertyListener) {

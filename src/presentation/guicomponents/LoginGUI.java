@@ -18,7 +18,8 @@ public class LoginGUI extends JPanel {
     private Frontend view;
 
     public LoginGUI(Frontend view) {
-
+        // assign view reference
+        this.view = view;
     }
 
     public void setLoginListener(Controller loginListener) {

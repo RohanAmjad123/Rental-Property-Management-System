@@ -18,7 +18,8 @@ public class SignupGUI extends JPanel {
     private Frontend view;
 
     public SignupGUI(Frontend view) {
-
+        // assign view reference
+        this.view = view;
     }
 
     public void setSignupListener(Controller signupListener) {

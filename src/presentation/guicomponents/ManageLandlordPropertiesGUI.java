@@ -18,7 +18,8 @@ public class ManageLandlordPropertiesGUI extends JPanel {
     private Frontend view;
 
     public ManageLandlordPropertiesGUI(Frontend view) {
-
+        // assign view reference
+        this.view = view;
     }
 
     public void setPropertyListener(Controller propertyListener) {
