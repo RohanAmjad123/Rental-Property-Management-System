@@ -99,7 +99,7 @@ public class RegisterPropertyGUI extends JPanel {
         registerPropertyButton.setText("Register Property");
         registerPropertyButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                successPage();
+                errorPage();
             }
         });
         add(registerPropertyButton);
@@ -398,7 +398,7 @@ public class RegisterPropertyGUI extends JPanel {
         tryAgainButton.setText("Try Again");
         tryAgainButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-
+                registrationForm();
             }
         });
         add(tryAgainButton);

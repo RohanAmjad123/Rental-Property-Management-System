@@ -1,6 +1,7 @@
 package presentation.guicomponents;
 
 import javax.swing.*;
+
 import control.controllers.Controller;
 
 /**
@@ -70,7 +71,7 @@ public class SignupGUI extends JPanel {
     }
 
     public void setSignupListener(Controller signupListener) {
-
+        
     }
 
     public void userChoice() {

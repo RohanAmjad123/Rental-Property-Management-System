@@ -39,7 +39,9 @@ public class Frontend extends JFrame {
         signup = new SignupGUI(this);
         login = new LoginGUI(this);
         registerProperty = new RegisterPropertyGUI(this);
+
         manageSubscriptions = new ManageSubscriptionsGUI(this);
+        
         addSearchCriteriaForm = new AddSearchCriteriaFormGUI(this);
         manageLandlordProperties = new ManageLandlordPropertiesGUI(this);
         payFeeForm = new PayFeeFormGUI(this);
@@ -51,11 +53,12 @@ public class Frontend extends JFrame {
         propertyView = new PropertyViewGUI(this);
 
         // set SignupGUI on JFrame
-        this.add(registerProperty);
+        this.add(manageSubscriptions);
+        this.pack();
     }
 
     // getter methods
-    
+
     public SignupGUI getSignup() {
         return signup;
     }
