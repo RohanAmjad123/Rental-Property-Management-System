@@ -18,49 +18,49 @@ public class SignupGUI extends JPanel {
     private Frontend view;
 
     // Variables declaration - do not modify
-    private javax.swing.JLabel copyrightLabel;
-    private javax.swing.JButton dashboardButton;
-    private javax.swing.JButton landlordButton;
-    private javax.swing.JLabel landlordLabel;
-    private javax.swing.JButton managerButton;
-    private javax.swing.JLabel managerLabel;
-    private javax.swing.JLabel rentSlowerLabel;
-    private javax.swing.JButton renterButton;
-    private javax.swing.JLabel renterLabel;
-    private javax.swing.JLabel userChoiceLabel;
+    private javax.swing.JLabel copyrightLabel = new javax.swing.JLabel();
+    private javax.swing.JButton dashboardButton = new javax.swing.JButton();
+    private javax.swing.JButton landlordButton = new javax.swing.JButton();
+    private javax.swing.JLabel landlordLabel = new javax.swing.JLabel();
+    private javax.swing.JButton managerButton = new javax.swing.JButton();
+    private javax.swing.JLabel managerLabel = new javax.swing.JLabel();
+    private javax.swing.JLabel rentSlowerLabel = new javax.swing.JLabel();
+    private javax.swing.JButton renterButton = new javax.swing.JButton();
+    private javax.swing.JLabel renterLabel = new javax.swing.JLabel();
+    private javax.swing.JLabel userChoiceLabel = new javax.swing.JLabel();
     // End of variables declaration
 
     // Variables declaration - do not modify
-    private javax.swing.JLabel emailLabel;
-    private javax.swing.JTextField emailText;
-    private javax.swing.JLabel firstNameLabel;
-    private javax.swing.JTextField firstNameText;
-    private javax.swing.JLabel lastNameLabel;
-    private javax.swing.JTextField lastNameText;
-    private javax.swing.JLabel passwordLabel;
-    private javax.swing.JPasswordField passwordText;
-    private javax.swing.JLabel renterSignupLabel;
-    private javax.swing.JButton signupButton;
+    private javax.swing.JLabel emailLabel = new javax.swing.JLabel();
+    private javax.swing.JTextField emailText = new javax.swing.JTextField();
+    private javax.swing.JLabel firstNameLabel = new javax.swing.JLabel();
+    private javax.swing.JTextField firstNameText = new javax.swing.JTextField();
+    private javax.swing.JLabel lastNameLabel = new javax.swing.JLabel();
+    private javax.swing.JTextField lastNameText = new javax.swing.JTextField();
+    private javax.swing.JLabel passwordLabel = new javax.swing.JLabel();
+    private javax.swing.JPasswordField passwordText = new javax.swing.JPasswordField();
+    private javax.swing.JLabel renterSignupLabel = new javax.swing.JLabel();
+    private javax.swing.JButton signupButton = new javax.swing.JButton();
     // End of variables declaration
 
     // Variables declaration - do not modify
-    private javax.swing.JLabel managerKeyLabel;
-    private javax.swing.JPasswordField managerKeyText;
-    private javax.swing.JLabel managerSignupLabel;
+    private javax.swing.JLabel managerKeyLabel = new javax.swing.JLabel();
+    private javax.swing.JPasswordField managerKeyText = new javax.swing.JPasswordField();
+    private javax.swing.JLabel managerSignupLabel = new javax.swing.JLabel();
     // End of variables declaration
 
     // Variables declaration - do not modify
-    private javax.swing.JLabel landordSignupLabel;
+    private javax.swing.JLabel landordSignupLabel = new javax.swing.JLabel();
     // End of variables declaration
 
     // Variables declaration - do not modify
-    private javax.swing.JButton finishButton;
-    private javax.swing.JLabel signupSuccessfulLabel;
+    private javax.swing.JButton finishButton = new javax.swing.JButton();
+    private javax.swing.JLabel signupSuccessfulLabel = new javax.swing.JLabel();
     // End of variables declaration
 
     // Variables declaration - do not modify
-    private javax.swing.JLabel signupUnsuccessfulLabel;
-    private javax.swing.JButton tryAgainButton;
+    private javax.swing.JLabel signupUnsuccessfulLabel = new javax.swing.JLabel();
+    private javax.swing.JButton tryAgainButton = new javax.swing.JButton();
     // End of variables declaration
 
     public SignupGUI(Frontend view) {
@@ -75,17 +75,6 @@ public class SignupGUI extends JPanel {
 
     public void userChoice() {
         removeAll();
-
-        rentSlowerLabel = new javax.swing.JLabel();
-        managerLabel = new javax.swing.JLabel();
-        userChoiceLabel = new javax.swing.JLabel();
-        renterLabel = new javax.swing.JLabel();
-        landlordLabel = new javax.swing.JLabel();
-        landlordButton = new javax.swing.JButton();
-        dashboardButton = new javax.swing.JButton();
-        copyrightLabel = new javax.swing.JLabel();
-        renterButton = new javax.swing.JButton();
-        managerButton = new javax.swing.JButton();
 
         setBackground(java.awt.Color.darkGray);
         setPreferredSize(new java.awt.Dimension(436, 491));
@@ -128,7 +117,7 @@ public class SignupGUI extends JPanel {
         landlordButton.setActionCommand("Manager");
         landlordButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-
+                landlordSignup();
             }
         });
         add(landlordButton);
@@ -157,7 +146,7 @@ public class SignupGUI extends JPanel {
         renterButton.setText("Renter");
         renterButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-
+                renterSignup();
             }
         });
         add(renterButton);
@@ -169,7 +158,7 @@ public class SignupGUI extends JPanel {
         managerButton.setText("Manager");
         managerButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-
+                managerSignup();
             }
         });
         add(managerButton);
@@ -181,20 +170,6 @@ public class SignupGUI extends JPanel {
 
     public void renterSignup() {
         removeAll();
-
-        rentSlowerLabel = new javax.swing.JLabel();
-        passwordLabel = new javax.swing.JLabel();
-        renterSignupLabel = new javax.swing.JLabel();
-        firstNameLabel = new javax.swing.JLabel();
-        lastNameLabel = new javax.swing.JLabel();
-        signupButton = new javax.swing.JButton();
-        copyrightLabel = new javax.swing.JLabel();
-        emailLabel = new javax.swing.JLabel();
-        emailText = new javax.swing.JTextField();
-        firstNameText = new javax.swing.JTextField();
-        lastNameText = new javax.swing.JTextField();
-        passwordText = new javax.swing.JPasswordField();
-        dashboardButton = new javax.swing.JButton();
 
         setBackground(java.awt.Color.darkGray);
         setPreferredSize(new java.awt.Dimension(436, 491));
@@ -294,7 +269,7 @@ public class SignupGUI extends JPanel {
         dashboardButton.setText("X");
         dashboardButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-
+                userChoice();
             }
         });
         add(dashboardButton);
@@ -306,20 +281,6 @@ public class SignupGUI extends JPanel {
 
     public void landlordSignup() {
         removeAll();
-
-        rentSlowerLabel = new javax.swing.JLabel();
-        passwordLabel = new javax.swing.JLabel();
-        landordSignupLabel = new javax.swing.JLabel();
-        firstNameLabel = new javax.swing.JLabel();
-        lastNameLabel = new javax.swing.JLabel();
-        signupButton = new javax.swing.JButton();
-        copyrightLabel = new javax.swing.JLabel();
-        emailLabel = new javax.swing.JLabel();
-        emailText = new javax.swing.JTextField();
-        firstNameText = new javax.swing.JTextField();
-        lastNameText = new javax.swing.JTextField();
-        passwordText = new javax.swing.JPasswordField();
-        dashboardButton = new javax.swing.JButton();
 
         setBackground(java.awt.Color.darkGray);
         setPreferredSize(new java.awt.Dimension(436, 491));
@@ -419,7 +380,7 @@ public class SignupGUI extends JPanel {
         dashboardButton.setText("X");
         dashboardButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-
+                userChoice();
             }
         });
         add(dashboardButton);
@@ -431,22 +392,6 @@ public class SignupGUI extends JPanel {
 
     public void managerSignup() {
         removeAll();
-
-        rentSlowerLabel = new javax.swing.JLabel();
-        managerKeyLabel = new javax.swing.JLabel();
-        managerSignupLabel = new javax.swing.JLabel();
-        firstNameLabel = new javax.swing.JLabel();
-        lastNameLabel = new javax.swing.JLabel();
-        signupButton = new javax.swing.JButton();
-        copyrightLabel = new javax.swing.JLabel();
-        emailLabel = new javax.swing.JLabel();
-        emailText = new javax.swing.JTextField();
-        firstNameText = new javax.swing.JTextField();
-        lastNameText = new javax.swing.JTextField();
-        managerKeyText = new javax.swing.JPasswordField();
-        dashboardButton = new javax.swing.JButton();
-        passwordLabel = new javax.swing.JLabel();
-        passwordText = new javax.swing.JPasswordField();
 
         setBackground(java.awt.Color.darkGray);
         setPreferredSize(new java.awt.Dimension(436, 491));
@@ -546,7 +491,7 @@ public class SignupGUI extends JPanel {
         dashboardButton.setText("X");
         dashboardButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-
+                userChoice();
             }
         });
         add(dashboardButton);
@@ -569,11 +514,6 @@ public class SignupGUI extends JPanel {
 
     public void successPage() {
         removeAll();
-
-        rentSlowerLabel = new javax.swing.JLabel();
-        signupSuccessfulLabel = new javax.swing.JLabel();
-        finishButton = new javax.swing.JButton();
-        copyrightLabel = new javax.swing.JLabel();
 
         setBackground(java.awt.Color.darkGray);
         setPreferredSize(new java.awt.Dimension(436, 491));
@@ -614,11 +554,6 @@ public class SignupGUI extends JPanel {
 
     public void errorPage() {
         removeAll();
-
-        rentSlowerLabel = new javax.swing.JLabel();
-        signupUnsuccessfulLabel = new javax.swing.JLabel();
-        tryAgainButton = new javax.swing.JButton();
-        copyrightLabel = new javax.swing.JLabel();
 
         setBackground(java.awt.Color.darkGray);
         setPreferredSize(new java.awt.Dimension(436, 491));
