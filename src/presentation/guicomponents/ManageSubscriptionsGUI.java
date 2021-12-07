@@ -1,7 +1,6 @@
 package presentation.guicomponents;
 
 import javax.swing.*;
-import control.controllers.Controller;
 
 /**
  * Class ManageSubscriptionsGUI
@@ -14,7 +13,6 @@ import control.controllers.Controller;
  * @version 1.0
  */
 public class ManageSubscriptionsGUI extends JPanel {
-    private Controller subscriptionsListener;
     private Frontend view;
 
     public ManageSubscriptionsGUI(Frontend view) {
@@ -22,7 +20,5 @@ public class ManageSubscriptionsGUI extends JPanel {
         this.view = view;
     }
 
-    public void setSubscriptionsListener(Controller subscriptionsListener) {
-
-    }
+    
 }

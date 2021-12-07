@@ -1,7 +1,6 @@
 package presentation.guicomponents;
 
 import javax.swing.*;
-import control.controllers.Controller;
 
 /**
  * Class LoginGUI
@@ -14,7 +13,6 @@ import control.controllers.Controller;
  * @version 1.0
  */
 public class LoginGUI extends JPanel {
-    private Controller loginListener;
     private Frontend view;
 
     // Variables declaration - do not modify
@@ -53,10 +51,6 @@ public class LoginGUI extends JPanel {
         // assign view reference
         this.view = view;
         userChoice();;
-    }
-
-    public void setLoginListener(Controller loginListener) {
-
     }
 
     public void userChoice() {
@@ -101,11 +95,11 @@ public class LoginGUI extends JPanel {
         landlordButton.setForeground(new java.awt.Color(0, 0, 0));
         landlordButton.setText("Landlord");
         landlordButton.setActionCommand("Manager");
-        landlordButton.addActionListener(new java.awt.event.ActionListener() {
+        /*landlordButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                userLogin();
+
             }
-        });
+        });*/
         add(landlordButton);
         landlordButton.setBounds(150, 280, 140, 50);
 
@@ -113,11 +107,11 @@ public class LoginGUI extends JPanel {
         dashboardButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         dashboardButton.setForeground(new java.awt.Color(0, 0, 0));
         dashboardButton.setText("X");
-        dashboardButton.addActionListener(new java.awt.event.ActionListener() {
+        /*dashboardButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
 
             }
-        });
+        });*/
         add(dashboardButton);
         dashboardButton.setBounds(370, 20, 50, 40);
 
@@ -130,11 +124,11 @@ public class LoginGUI extends JPanel {
         renterButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         renterButton.setForeground(new java.awt.Color(0, 0, 0));
         renterButton.setText("Renter");
-        renterButton.addActionListener(new java.awt.event.ActionListener() {
+        /*renterButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                userLogin();
+
             }
-        });
+        });*/
         add(renterButton);
         renterButton.setBounds(150, 190, 140, 50);
 
@@ -142,11 +136,11 @@ public class LoginGUI extends JPanel {
         managerButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         managerButton.setForeground(new java.awt.Color(0, 0, 0));
         managerButton.setText("Manager");
-        managerButton.addActionListener(new java.awt.event.ActionListener() {
+        /*managerButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                userLogin();
+
             }
-        });
+        });*/
         add(managerButton);
         managerButton.setBounds(150, 370, 140, 50);
 
@@ -178,11 +172,11 @@ public class LoginGUI extends JPanel {
         loginButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         loginButton.setForeground(new java.awt.Color(0, 0, 0));
         loginButton.setText("Login");
-        loginButton.addActionListener(new java.awt.event.ActionListener() {
+        /*loginButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
 
             }
-        });
+        });*/
         add(loginButton);
         loginButton.setBounds(280, 420, 120, 40);
 
@@ -199,11 +193,11 @@ public class LoginGUI extends JPanel {
 
         emailText.setBackground(java.awt.Color.black);
         emailText.setForeground(new java.awt.Color(255, 255, 255));
-        emailText.addActionListener(new java.awt.event.ActionListener() {
+        /*emailText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
 
             }
-        });
+        });*/
         add(emailText);
         emailText.setBounds(60, 190, 270, 18);
 
@@ -211,11 +205,11 @@ public class LoginGUI extends JPanel {
         dashboardButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         dashboardButton.setForeground(new java.awt.Color(0, 0, 0));
         dashboardButton.setText("X");
-        dashboardButton.addActionListener(new java.awt.event.ActionListener() {
+        /*dashboardButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                userChoice();
+
             }
-        });
+        });*/
         add(dashboardButton);
         dashboardButton.setBounds(370, 20, 50, 40);
 
@@ -258,11 +252,11 @@ public class LoginGUI extends JPanel {
         finishButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         finishButton.setForeground(new java.awt.Color(0, 0, 0));
         finishButton.setText("Finish");
-        finishButton.addActionListener(new java.awt.event.ActionListener() {
+        /*finishButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
 
             }
-        });
+        });*/
         add(finishButton);
         finishButton.setBounds(160, 240, 120, 40);
 
@@ -299,11 +293,11 @@ public class LoginGUI extends JPanel {
         tryAgainButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         tryAgainButton.setForeground(new java.awt.Color(0, 0, 0));
         tryAgainButton.setText("Try Again");
-        tryAgainButton.addActionListener(new java.awt.event.ActionListener() {
+        /*tryAgainButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
 
             }
-        });
+        });*/
         add(tryAgainButton);
         tryAgainButton.setBounds(160, 240, 120, 40);
 
@@ -315,5 +309,87 @@ public class LoginGUI extends JPanel {
         revalidate();
         repaint();
         view.pack();
+    }
+
+    // getter methods
+
+    public javax.swing.JLabel getCopyrightLabel() {
+        return copyrightLabel;
+    }
+
+    public javax.swing.JButton getDashboardButton() {
+        return dashboardButton;
+    }
+
+    public javax.swing.JButton getLandlordButton() {
+        return landlordButton;
+    }
+
+    public javax.swing.JLabel getLandlordLabel() {
+        return landlordLabel;
+    }
+
+    public javax.swing.JButton getManagerButton() {
+        return managerButton;
+    }
+
+    public javax.swing.JLabel getManagerLabel() {
+        return managerLabel;
+    }
+
+    public javax.swing.JLabel getRentSlowerLabel() {
+        return rentSlowerLabel;
+    }
+
+    public javax.swing.JButton getRenterButton() {
+        return renterButton;
+    }
+
+    public javax.swing.JLabel getRenterLabel() {
+        return renterLabel;
+    }
+
+    public javax.swing.JLabel getUserChoiceLabel() {
+        return userChoiceLabel;
+    }
+
+    public javax.swing.JLabel getEmailLabel() {
+        return emailLabel;
+    }
+
+    public javax.swing.JTextField getEmailText() {
+        return emailText;
+    }
+
+    public javax.swing.JButton getLoginButton() {
+        return loginButton;
+    }
+
+    public javax.swing.JLabel getPasswordLabel() {
+        return passwordLabel;
+    }
+
+    public javax.swing.JPasswordField getPasswordText() {
+        return passwordText;
+    }
+
+    public javax.swing.JLabel getUserLoginLabel() {
+        return userLoginLabel;
+    }
+
+    public javax.swing.JButton getFinishButton() {
+        return finishButton;
+    }
+
+    public javax.swing.JLabel getLoginSuccessfulLabel() {
+        return loginSuccessfulLabel;
+    }
+
+    public javax.swing.JLabel getLoginUnsuccessfulLabel() {
+        return loginUnsuccessfulLabel;
+    }
+
+    public javax.swing.JButton getTryAgainButton() {
+        return tryAgainButton;
     }
 }

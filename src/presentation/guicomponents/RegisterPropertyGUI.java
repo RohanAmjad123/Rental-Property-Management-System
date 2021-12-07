@@ -1,7 +1,6 @@
 package presentation.guicomponents;
 
 import javax.swing.*;
-import control.controllers.Controller;
 
 /**
  * Class RegisterPropertyGUI
@@ -14,7 +13,6 @@ import control.controllers.Controller;
  * @version 1.0
  */
 public class RegisterPropertyGUI extends JPanel {
-    private Controller registerPropertyListener;
     private Frontend view;
 
     // Variables declaration - do not modify
@@ -70,10 +68,6 @@ public class RegisterPropertyGUI extends JPanel {
         registrationForm();
     }
 
-    public void setRegisterPropertyListener(Controller registerPropertyListener) {
-
-    }
-
     public void registrationForm() {
         removeAll();
 
@@ -97,11 +91,11 @@ public class RegisterPropertyGUI extends JPanel {
         registerPropertyButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         registerPropertyButton.setForeground(new java.awt.Color(0, 0, 0));
         registerPropertyButton.setText("Register Property");
-        registerPropertyButton.addActionListener(new java.awt.event.ActionListener() {
+        /*registerPropertyButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                errorPage();
+
             }
-        });
+        });*/
         add(registerPropertyButton);
         registerPropertyButton.setBounds(250, 680, 200, 40);
 
@@ -118,11 +112,11 @@ public class RegisterPropertyGUI extends JPanel {
 
         postalCodeText.setBackground(java.awt.Color.black);
         postalCodeText.setForeground(new java.awt.Color(255, 255, 255));
-        postalCodeText.addActionListener(new java.awt.event.ActionListener() {
+        /*postalCodeText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
 
             }
-        });
+        });*/
         add(postalCodeText);
         postalCodeText.setBounds(310, 550, 130, 18);
 
@@ -130,11 +124,11 @@ public class RegisterPropertyGUI extends JPanel {
         dashboardButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         dashboardButton.setForeground(new java.awt.Color(0, 0, 0));
         dashboardButton.setText("X");
-        dashboardButton.addActionListener(new java.awt.event.ActionListener() {
+        /*dashboardButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
 
             }
-        });
+        });*/
         add(dashboardButton);
         dashboardButton.setBounds(410, 20, 50, 40);
 
@@ -229,11 +223,11 @@ public class RegisterPropertyGUI extends JPanel {
         propertyTypeComboBox.setForeground(java.awt.Color.black);
         propertyTypeComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(
                 new String[] { "Apartment", "Basement", "Condo", "Attached", "Detached", "Room", "Garage" }));
-        propertyTypeComboBox.addActionListener(new java.awt.event.ActionListener() {
+        /*propertyTypeComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
 
             }
-        });
+        });*/
         add(propertyTypeComboBox);
         propertyTypeComboBox.setBounds(50, 370, 120, 20);
 
@@ -253,71 +247,71 @@ public class RegisterPropertyGUI extends JPanel {
 
         titleText.setBackground(java.awt.Color.black);
         titleText.setForeground(new java.awt.Color(255, 255, 255));
-        titleText.addActionListener(new java.awt.event.ActionListener() {
+        /*titleText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
 
             }
-        });
+        });*/
         add(titleText);
         titleText.setBounds(60, 180, 270, 18);
 
         rentText.setBackground(java.awt.Color.black);
         rentText.setForeground(new java.awt.Color(255, 255, 255));
-        rentText.addActionListener(new java.awt.event.ActionListener() {
+        /*rentText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
 
             }
-        });
+        });*/
         add(rentText);
         rentText.setBounds(290, 450, 110, 18);
 
         squareFeetText.setBackground(java.awt.Color.black);
         squareFeetText.setForeground(new java.awt.Color(255, 255, 255));
-        squareFeetText.addActionListener(new java.awt.event.ActionListener() {
+        /*squareFeetText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
 
             }
-        });
+        });*/
         add(squareFeetText);
         squareFeetText.setBounds(150, 450, 110, 18);
 
         streetNameText.setBackground(java.awt.Color.black);
         streetNameText.setForeground(new java.awt.Color(255, 255, 255));
-        streetNameText.addActionListener(new java.awt.event.ActionListener() {
+        /*streetNameText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
 
             }
-        });
+        });*/
         add(streetNameText);
         streetNameText.setBounds(40, 550, 130, 18);
 
         cityText.setBackground(java.awt.Color.black);
         cityText.setForeground(new java.awt.Color(255, 255, 255));
-        cityText.addActionListener(new java.awt.event.ActionListener() {
+        /*cityText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
 
             }
-        });
+        });*/
         add(cityText);
         cityText.setBounds(40, 620, 130, 18);
 
         provinceStateText.setBackground(java.awt.Color.black);
         provinceStateText.setForeground(new java.awt.Color(255, 255, 255));
-        provinceStateText.addActionListener(new java.awt.event.ActionListener() {
+        /*provinceStateText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
 
             }
-        });
+        });*/
         add(provinceStateText);
         provinceStateText.setBounds(180, 620, 130, 18);
 
         countryText.setBackground(java.awt.Color.black);
         countryText.setForeground(new java.awt.Color(255, 255, 255));
-        countryText.addActionListener(new java.awt.event.ActionListener() {
+        /*countryText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
 
             }
-        });
+        });*/
         add(countryText);
         countryText.setBounds(320, 620, 130, 18);
 
@@ -355,11 +349,11 @@ public class RegisterPropertyGUI extends JPanel {
         finishButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         finishButton.setForeground(new java.awt.Color(0, 0, 0));
         finishButton.setText("Finish");
-        finishButton.addActionListener(new java.awt.event.ActionListener() {
+        /*finishButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
 
             }
-        });
+        });*/
         add(finishButton);
         finishButton.setBounds(160, 240, 120, 40);
 
@@ -396,11 +390,11 @@ public class RegisterPropertyGUI extends JPanel {
         tryAgainButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         tryAgainButton.setForeground(new java.awt.Color(0, 0, 0));
         tryAgainButton.setText("Try Again");
-        tryAgainButton.addActionListener(new java.awt.event.ActionListener() {
+        /*tryAgainButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                registrationForm();
+
             }
-        });
+        });*/
         add(tryAgainButton);
         tryAgainButton.setBounds(160, 240, 120, 40);
 
@@ -412,5 +406,159 @@ public class RegisterPropertyGUI extends JPanel {
         revalidate();
         repaint();
         view.pack();
+    }
+
+    // getter methods
+
+    public javax.swing.JLabel getBathroomLabel() {
+        return bathroomLabel;
+    }
+
+    public javax.swing.JSpinner getBathroomSpinner() {
+        return bathroomSpinner;
+    }
+
+    public javax.swing.JLabel getBedroomLabel() {
+        return bedroomLabel;
+    }
+
+    public javax.swing.JSpinner getBedroomSpinner() {
+        return bedroomSpinner;
+    }
+
+    public javax.swing.JLabel getCityLabel() {
+        return cityLabel;
+    }
+
+    public javax.swing.JComboBox<String> getCityQuadrantComboBox() {
+        return cityQuadrantComboBox;
+    }
+
+    public javax.swing.JLabel getCityQuadrantLabel() {
+        return cityQuadrantLabel;
+    }
+
+    public javax.swing.JTextField getCityText() {
+        return cityText;
+    }
+
+    public javax.swing.JLabel getCopyrightLabel() {
+        return copyrightLabel;
+    }
+
+    public javax.swing.JLabel getCountryLabel() {
+        return countryLabel;
+    }
+
+    public javax.swing.JTextField getCountryText() {
+        return countryText;
+    }
+
+    public javax.swing.JButton getDashboardButton() {
+        return dashboardButton;
+    }
+
+    public javax.swing.JLabel getDescriptionLabel() {
+        return descriptionLabel;
+    }
+
+    public javax.swing.JTextArea getDescriptionText() {
+        return descriptionText;
+    }
+
+    public javax.swing.JComboBox<String> getFurnishedComboBox() {
+        return furnishedComboBox;
+    }
+
+    public javax.swing.JLabel getFurnishedLabel() {
+        return furnishedLabel;
+    }
+
+    public javax.swing.JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public javax.swing.JLabel getPostalCodeLabel() {
+        return postalCodeLabel;
+    }
+
+    public javax.swing.JTextField getPostalCodeText() {
+        return postalCodeText;
+    }
+
+    public javax.swing.JComboBox<String> getPropertyTypeComboBox() {
+        return propertyTypeComboBox;
+    }
+
+    public javax.swing.JLabel getPropertyTypeLabel() {
+        return propertyTypeLabel;
+    }
+
+    public javax.swing.JLabel getProvinceStateLabel() {
+        return provinceStateLabel;
+    }
+
+    public javax.swing.JTextField getProvinceStateText() {
+        return provinceStateText;
+    }
+
+    public javax.swing.JLabel getRegisterLandlordPropertyLabel() {
+        return registerLandlordPropertyLabel;
+    }
+
+    public javax.swing.JButton getRegisterPropertyButton() {
+        return registerPropertyButton;
+    }
+
+    public javax.swing.JLabel getRentLabel() {
+        return rentLabel;
+    }
+
+    public javax.swing.JLabel getRentSlowerLabel() {
+        return rentSlowerLabel;
+    }
+
+    public javax.swing.JTextField getRentText() {
+        return rentText;
+    }
+
+    public javax.swing.JLabel getSquareFeetLabel() {
+        return squareFeetLabel;
+    }
+
+    public javax.swing.JTextField getSquareFeetText() {
+        return squareFeetText;
+    }
+
+    public javax.swing.JLabel getStreetNameLabel() {
+        return streetNameLabel;
+    }
+
+    public javax.swing.JTextField getStreetNameText() {
+        return streetNameText;
+    }
+
+    public javax.swing.JLabel getTitleLabel() {
+        return titleLabel;
+    }
+
+    public javax.swing.JTextField getTitleText() {
+        return titleText;
+    }
+
+    public javax.swing.JButton getFinishButton() {
+        return finishButton;
+    }
+
+    public javax.swing.JLabel getPropertyRegistrationSuccessfulLabel() {
+        return propertyRegistrationSuccessfulLabel;
+    }
+
+    public javax.swing.JLabel getPropertyRegistrationUnsuccessfulLabel() {
+        return propertyRegistrationUnsuccessfulLabel;
+    }
+
+    public javax.swing.JButton getTryAgainButton() {
+        return tryAgainButton;
     }
 }

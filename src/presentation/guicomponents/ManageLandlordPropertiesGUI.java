@@ -14,15 +14,10 @@ import control.controllers.Controller;
  * @version 1.0
  */
 public class ManageLandlordPropertiesGUI extends JPanel {
-    private Controller propertyListener;
     private Frontend view;
 
     public ManageLandlordPropertiesGUI(Frontend view) {
         // assign view reference
         this.view = view;
-    }
-
-    public void setPropertyListener(Controller propertyListener) {
-
     }
 }
