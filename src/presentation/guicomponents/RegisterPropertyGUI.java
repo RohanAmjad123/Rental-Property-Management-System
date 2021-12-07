@@ -408,4 +408,158 @@ public class RegisterPropertyGUI extends JPanel {
         repaint();
         view.pack();
     }
+
+    // getter methods
+    
+    public javax.swing.JLabel getBathroomLabel() {
+        return bathroomLabel;
+    }
+
+    public javax.swing.JSpinner getBathroomSpinner() {
+        return bathroomSpinner;
+    }
+
+    public javax.swing.JLabel getBedroomLabel() {
+        return bedroomLabel;
+    }
+
+    public javax.swing.JSpinner getBedroomSpinner() {
+        return bedroomSpinner;
+    }
+
+    public javax.swing.JLabel getCityLabel() {
+        return cityLabel;
+    }
+
+    public javax.swing.JComboBox<String> getCityQuadrantComboBox() {
+        return cityQuadrantComboBox;
+    }
+
+    public javax.swing.JLabel getCityQuadrantLabel() {
+        return cityQuadrantLabel;
+    }
+
+    public javax.swing.JTextField getCityText() {
+        return cityText;
+    }
+
+    public javax.swing.JLabel getCopyrightLabel() {
+        return copyrightLabel;
+    }
+
+    public javax.swing.JLabel getCountryLabel() {
+        return countryLabel;
+    }
+
+    public javax.swing.JTextField getCountryText() {
+        return countryText;
+    }
+
+    public javax.swing.JButton getDashboardButton() {
+        return dashboardButton;
+    }
+
+    public javax.swing.JLabel getDescriptionLabel() {
+        return descriptionLabel;
+    }
+
+    public javax.swing.JTextArea getDescriptionText() {
+        return descriptionText;
+    }
+
+    public javax.swing.JComboBox<String> getFurnishedComboBox() {
+        return furnishedComboBox;
+    }
+
+    public javax.swing.JLabel getFurnishedLabel() {
+        return furnishedLabel;
+    }
+
+    public javax.swing.JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public javax.swing.JLabel getPostalCodeLabel() {
+        return postalCodeLabel;
+    }
+
+    public javax.swing.JTextField getPostalCodeText() {
+        return postalCodeText;
+    }
+
+    public javax.swing.JComboBox<String> getPropertyTypeComboBox() {
+        return propertyTypeComboBox;
+    }
+
+    public javax.swing.JLabel getPropertyTypeLabel() {
+        return propertyTypeLabel;
+    }
+
+    public javax.swing.JLabel getProvinceStateLabel() {
+        return provinceStateLabel;
+    }
+
+    public javax.swing.JTextField getProvinceStateText() {
+        return provinceStateText;
+    }
+
+    public javax.swing.JLabel getRegisterLandlordPropertyLabel() {
+        return registerLandlordPropertyLabel;
+    }
+
+    public javax.swing.JButton getRegisterPropertyButton() {
+        return registerPropertyButton;
+    }
+
+    public javax.swing.JLabel getRentLabel() {
+        return rentLabel;
+    }
+
+    public javax.swing.JLabel getRentSlowerLabel() {
+        return rentSlowerLabel;
+    }
+
+    public javax.swing.JTextField getRentText() {
+        return rentText;
+    }
+
+    public javax.swing.JLabel getSquareFeetLabel() {
+        return squareFeetLabel;
+    }
+
+    public javax.swing.JTextField getSquareFeetText() {
+        return squareFeetText;
+    }
+
+    public javax.swing.JLabel getStreetNameLabel() {
+        return streetNameLabel;
+    }
+
+    public javax.swing.JTextField getStreetNameText() {
+        return streetNameText;
+    }
+
+    public javax.swing.JLabel getTitleLabel() {
+        return titleLabel;
+    }
+
+    public javax.swing.JTextField getTitleText() {
+        return titleText;
+    }
+
+    public javax.swing.JButton getFinishButton() {
+        return finishButton;
+    }
+
+    public javax.swing.JLabel getPropertyRegistrationSuccessfulLabel() {
+        return propertyRegistrationSuccessfulLabel;
+    }
+
+    public javax.swing.JLabel getPropertyRegistrationUnsuccessfulLabel() {
+        return propertyRegistrationUnsuccessfulLabel;
+    }
+
+    public javax.swing.JButton getTryAgainButton() {
+        return tryAgainButton;
+    }
 }
