@@ -311,4 +311,86 @@ public class LoginGUI extends JPanel {
         repaint();
         view.pack();
     }
+
+    // getter methods
+
+    public javax.swing.JLabel getCopyrightLabel() {
+        return copyrightLabel;
+    }
+
+    public javax.swing.JButton getDashboardButton() {
+        return dashboardButton;
+    }
+
+    public javax.swing.JButton getLandlordButton() {
+        return landlordButton;
+    }
+
+    public javax.swing.JLabel getLandlordLabel() {
+        return landlordLabel;
+    }
+
+    public javax.swing.JButton getManagerButton() {
+        return managerButton;
+    }
+
+    public javax.swing.JLabel getManagerLabel() {
+        return managerLabel;
+    }
+
+    public javax.swing.JLabel getRentSlowerLabel() {
+        return rentSlowerLabel;
+    }
+
+    public javax.swing.JButton getRenterButton() {
+        return renterButton;
+    }
+
+    public javax.swing.JLabel getRenterLabel() {
+        return renterLabel;
+    }
+
+    public javax.swing.JLabel getUserChoiceLabel() {
+        return userChoiceLabel;
+    }
+
+    public javax.swing.JLabel getEmailLabel() {
+        return emailLabel;
+    }
+
+    public javax.swing.JTextField getEmailText() {
+        return emailText;
+    }
+
+    public javax.swing.JButton getLoginButton() {
+        return loginButton;
+    }
+
+    public javax.swing.JLabel getPasswordLabel() {
+        return passwordLabel;
+    }
+
+    public javax.swing.JPasswordField getPasswordText() {
+        return passwordText;
+    }
+
+    public javax.swing.JLabel getUserLoginLabel() {
+        return userLoginLabel;
+    }
+
+    public javax.swing.JButton getFinishButton() {
+        return finishButton;
+    }
+
+    public javax.swing.JLabel getLoginSuccessfulLabel() {
+        return loginSuccessfulLabel;
+    }
+
+    public javax.swing.JLabel getLoginUnsuccessfulLabel() {
+        return loginUnsuccessfulLabel;
+    }
+
+    public javax.swing.JButton getTryAgainButton() {
+        return tryAgainButton;
+    }
 }
