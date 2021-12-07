@@ -593,4 +593,118 @@ public class SignupGUI extends JPanel {
         repaint();
         view.pack();
     }
+
+    // getter methods
+
+    public javax.swing.JLabel getCopyrightLabel() {
+        return copyrightLabel;
+    }
+
+    public javax.swing.JButton getDashboardButton() {
+        return dashboardButton;
+    }
+
+    public javax.swing.JButton getLandlordButton() {
+        return landlordButton;
+    }
+
+    public javax.swing.JLabel getLandlordLabel() {
+        return landlordLabel;
+    }
+
+    public javax.swing.JButton getManagerButton() {
+        return managerButton;
+    }
+
+    public javax.swing.JLabel getManagerLabel() {
+        return managerLabel;
+    }
+
+    public javax.swing.JLabel getRentSlowerLabel() {
+        return rentSlowerLabel;
+    }
+
+    public javax.swing.JButton getRenterButton() {
+        return renterButton;
+    }
+
+    public javax.swing.JLabel getRenterLabel() {
+        return renterLabel;
+    }
+
+    public javax.swing.JLabel getUserChoiceLabel() {
+        return userChoiceLabel;
+    }
+
+    public javax.swing.JLabel getEmailLabel() {
+        return emailLabel;
+    }
+
+    public javax.swing.JTextField getEmailText() {
+        return emailText;
+    }
+
+    public javax.swing.JLabel getFirstNameLabel() {
+        return firstNameLabel;
+    }
+
+    public javax.swing.JTextField getFirstNameText() {
+        return firstNameText;
+    }
+
+    public javax.swing.JLabel getLastNameLabel() {
+        return lastNameLabel;
+    }
+
+    public javax.swing.JTextField getLastNameText() {
+        return lastNameText;
+    }
+
+    public javax.swing.JLabel getPasswordLabel() {
+        return passwordLabel;
+    }
+
+    public javax.swing.JPasswordField getPasswordText() {
+        return passwordText;
+    }
+
+    public javax.swing.JLabel getRenterSignupLabel() {
+        return renterSignupLabel;
+    }
+
+    public javax.swing.JButton getSignupButton() {
+        return signupButton;
+    }
+
+    public javax.swing.JLabel getManagerKeyLabel() {
+        return managerKeyLabel;
+    }
+
+    public javax.swing.JPasswordField getManagerKeyText() {
+        return managerKeyText;
+    }
+
+    public javax.swing.JLabel getManagerSignupLabel() {
+        return managerSignupLabel;
+    }
+
+    public javax.swing.JLabel getLandordSignupLabel() {
+        return landordSignupLabel;
+    }
+
+    public javax.swing.JButton getFinishButton() {
+        return finishButton;
+    }
+
+    public javax.swing.JLabel getSignupSuccessfulLabel() {
+        return signupSuccessfulLabel;
+    }
+
+    public javax.swing.JLabel getSignupUnsuccessfulLabel() {
+        return signupUnsuccessfulLabel;
+    }
+
+    public javax.swing.JButton getTryAgainButton() {
+        return tryAgainButton;
+    }
 }
