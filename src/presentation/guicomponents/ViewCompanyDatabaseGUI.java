@@ -14,15 +14,10 @@ import control.controllers.Controller;
  * @version 1.0
  */
 public class ViewCompanyDatabaseGUI extends JPanel {
-    private Controller viewDatabaseListener;
     private Frontend view;
 
     public ViewCompanyDatabaseGUI(Frontend view) {
         // assign view reference
         this.view = view;
-    }
-
-    public void setViewDatabaseListener(Controller viewDatabaseListener) {
-
     }
 }

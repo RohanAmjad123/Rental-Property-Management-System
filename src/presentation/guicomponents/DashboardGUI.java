@@ -14,15 +14,10 @@ import control.controllers.Controller;
  * @version 1.0
  */
 public class DashboardGUI extends JPanel {
-    private Controller dashboardListener;
     private Frontend view;
 
     public DashboardGUI(Frontend view) {
         // assign view reference
         this.view = view;
-    }
-
-    public void setDashboardListener(Controller dashboardListener) {
-
     }
 }

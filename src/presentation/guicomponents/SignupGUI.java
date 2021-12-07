@@ -15,7 +15,6 @@ import control.controllers.Controller;
  * @version 1.0
  */
 public class SignupGUI extends JPanel {
-    private Controller signupListener;
     private Frontend view;
 
     // Variables declaration - do not modify
@@ -68,10 +67,6 @@ public class SignupGUI extends JPanel {
         // assign view reference
         this.view = view;
         userChoice();
-    }
-
-    public void setSignupListener(Controller signupListener) {
-        
     }
 
     public void userChoice() {

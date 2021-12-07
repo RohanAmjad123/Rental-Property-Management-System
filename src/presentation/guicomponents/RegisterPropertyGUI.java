@@ -14,7 +14,6 @@ import control.controllers.Controller;
  * @version 1.0
  */
 public class RegisterPropertyGUI extends JPanel {
-    private Controller registerPropertyListener;
     private Frontend view;
 
     // Variables declaration - do not modify
@@ -68,10 +67,6 @@ public class RegisterPropertyGUI extends JPanel {
         // assign view reference
         this.view = view;
         registrationForm();
-    }
-
-    public void setRegisterPropertyListener(Controller registerPropertyListener) {
-
     }
 
     public void registrationForm() {
