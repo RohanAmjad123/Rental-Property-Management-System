@@ -2,8 +2,6 @@ package presentation.guicomponents;
 
 import javax.swing.*;
 
-import control.controllers.Controller;
-
 /**
  * Class SignupGUI
  * 

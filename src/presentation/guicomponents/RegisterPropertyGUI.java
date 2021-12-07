@@ -1,7 +1,6 @@
 package presentation.guicomponents;
 
 import javax.swing.*;
-import control.controllers.Controller;
 
 /**
  * Class RegisterPropertyGUI
@@ -410,7 +409,7 @@ public class RegisterPropertyGUI extends JPanel {
     }
 
     // getter methods
-    
+
     public javax.swing.JLabel getBathroomLabel() {
         return bathroomLabel;
     }
