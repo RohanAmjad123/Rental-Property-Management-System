@@ -52,6 +52,5 @@ public class Frontend extends JFrame {
 
         // set SignupGUI on JFrame
         this.add(registerProperty);
-        this.pack();
     }
 }

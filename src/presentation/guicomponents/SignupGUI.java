@@ -166,6 +166,7 @@ public class SignupGUI extends JPanel {
 
         revalidate();
         repaint();
+        view.pack();
     }
 
     public void renterSignup() {
@@ -277,6 +278,7 @@ public class SignupGUI extends JPanel {
 
         revalidate();
         repaint();
+        view.pack();
     }
 
     public void landlordSignup() {
@@ -388,6 +390,7 @@ public class SignupGUI extends JPanel {
 
         revalidate();
         repaint();
+        view.pack();
     }
 
     public void managerSignup() {
@@ -510,6 +513,7 @@ public class SignupGUI extends JPanel {
 
         revalidate();
         repaint();
+        view.pack();
     }
 
     public void successPage() {
@@ -550,6 +554,7 @@ public class SignupGUI extends JPanel {
 
         revalidate();
         repaint();
+        view.pack();
     }
 
     public void errorPage() {
@@ -590,5 +595,6 @@ public class SignupGUI extends JPanel {
 
         revalidate();
         repaint();
+        view.pack();
     }
 }

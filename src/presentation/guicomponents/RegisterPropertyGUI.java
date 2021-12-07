@@ -329,6 +329,7 @@ public class RegisterPropertyGUI extends JPanel {
 
         revalidate();
         repaint();
+        view.pack();
     }
 
     public void successPage() {

@@ -152,6 +152,7 @@ public class LoginGUI extends JPanel {
 
         revalidate();
         repaint();
+        view.pack();
     }
 
     public void userLogin() {
@@ -231,6 +232,7 @@ public class LoginGUI extends JPanel {
 
         revalidate();
         repaint();
+        view.pack();
     }
 
     public void successPage() {
@@ -271,6 +273,7 @@ public class LoginGUI extends JPanel {
 
         revalidate();
         repaint();
+        view.pack();
     }
 
     public void errorPage() {
@@ -311,5 +314,6 @@ public class LoginGUI extends JPanel {
 
         revalidate();
         repaint();
+        view.pack();
     }
 }
