@@ -5,8 +5,6 @@ import business.usermodels.*;
 import java.sql.*;
 import java.util.*;
 
-import apple.laf.JRSUIConstants.State;
-
 /**
  * Class CompanyDatabase
  * 
