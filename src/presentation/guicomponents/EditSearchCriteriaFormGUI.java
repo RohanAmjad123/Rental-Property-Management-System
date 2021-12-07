@@ -12,10 +12,10 @@ import javax.swing.*;
  * @author Ibrahim Asad
  * @version 1.0
  */
-public class AddSearchCriteriaFormGUI extends JPanel {
+public class EditSearchCriteriaFormGUI extends JPanel {
     private Frontend view;
 
-    public AddSearchCriteriaFormGUI(Frontend view) {
+    public EditSearchCriteriaFormGUI(Frontend view) {
         // assign view reference
         this.view = view;
     }

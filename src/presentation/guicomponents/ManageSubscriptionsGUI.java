@@ -33,7 +33,7 @@ public class ManageSubscriptionsGUI extends JPanel {
         // assign view reference
         this.view = view;
         updateSubscriptionView(new SearchCriteria());
-        manageSubscriptionView();
+        manageSubscription();
     }
 
     // update SearchCriteria list model
@@ -43,7 +43,7 @@ public class ManageSubscriptionsGUI extends JPanel {
         this.subscriptionListModel.addElement(subscription);
     }
 
-    public void manageSubscriptionView() {
+    public void manageSubscription() {
         removeAll();
 
         setBackground(java.awt.Color.darkGray);
