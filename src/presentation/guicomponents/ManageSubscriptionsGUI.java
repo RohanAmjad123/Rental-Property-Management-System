@@ -1,7 +1,6 @@
 package presentation.guicomponents;
 
 import javax.swing.*;
-import control.controllers.Controller;
 
 /**
  * Class ManageSubscriptionsGUI
@@ -20,4 +19,6 @@ public class ManageSubscriptionsGUI extends JPanel {
         // assign view reference
         this.view = view;
     }
+
+    
 }
