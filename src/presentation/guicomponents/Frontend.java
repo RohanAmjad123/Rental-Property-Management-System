@@ -17,7 +17,7 @@ public class Frontend extends JFrame {
     private LoginGUI login;
     private RegisterPropertyGUI registerProperty;
     private ManageSubscriptionsGUI manageSubscriptions;
-    private EditSearchCriteriaFormGUI addSearchCriteriaForm;
+    private EditSearchCriteriaFormGUI editSearchCriteriaForm;
     private ManageLandlordPropertiesGUI manageLandlordProperties;
     private PayFeeFormGUI payFeeForm;
     private ManageManagerPropertiesGUI manageManagerProperties;
@@ -39,10 +39,9 @@ public class Frontend extends JFrame {
         signup = new SignupGUI(this);
         login = new LoginGUI(this);
         registerProperty = new RegisterPropertyGUI(this);
-
         manageSubscriptions = new ManageSubscriptionsGUI(this);
+        editSearchCriteriaForm = new EditSearchCriteriaFormGUI(this);
 
-        addSearchCriteriaForm = new EditSearchCriteriaFormGUI(this);
         manageLandlordProperties = new ManageLandlordPropertiesGUI(this);
         payFeeForm = new PayFeeFormGUI(this);
         manageManagerProperties = new ManageManagerPropertiesGUI(this);
@@ -53,7 +52,7 @@ public class Frontend extends JFrame {
         propertyView = new PropertyViewGUI(this);
 
         // set SignupGUI on JFrame
-        this.add(manageSubscriptions);
+        this.add(editSearchCriteriaForm);
         this.pack();
     }
 
@@ -76,7 +75,7 @@ public class Frontend extends JFrame {
     }
 
     public EditSearchCriteriaFormGUI getAddSearchCriteriaForm() {
-        return addSearchCriteriaForm;
+        return editSearchCriteriaForm;
     }
 
     public ManageLandlordPropertiesGUI getManageLandlordProperties() {

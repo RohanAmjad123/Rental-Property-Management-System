@@ -107,4 +107,38 @@ public class ManageSubscriptionsGUI extends JPanel {
         repaint();
         view.pack();
     }
+
+    // getter methods
+    
+    public javax.swing.JLabel getCopyrightLabel() {
+        return copyrightLabel;
+    }
+
+    public javax.swing.JButton getDashboardButton() {
+        return dashboardButton;
+    }
+
+    public javax.swing.JButton getEditButton() {
+        return editButton;
+    }
+
+    public javax.swing.JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public javax.swing.JLabel getManageRenterSubscriptionLabel() {
+        return manageRenterSubscriptionLabel;
+    }
+
+    public javax.swing.JLabel getRentSlowerLabel() {
+        return rentSlowerLabel;
+    }
+
+    public javax.swing.JList<SearchCriteria> getSubscriptionList() {
+        return subscriptionList;
+    }
+
+    public DefaultListModel<SearchCriteria> getSubscriptionListModel() {
+        return subscriptionListModel;
+    }
 }
