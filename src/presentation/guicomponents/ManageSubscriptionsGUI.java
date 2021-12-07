@@ -1,6 +1,7 @@
 package presentation.guicomponents;
 
 import javax.swing.*;
+import business.businesslogic.SearchCriteria;
 
 /**
  * Class ManageSubscriptionsGUI
@@ -22,17 +23,27 @@ public class ManageSubscriptionsGUI extends JPanel {
     private javax.swing.JScrollPane jScrollPane1 = new javax.swing.JScrollPane();
     private javax.swing.JLabel manageRenterSubscriptionLabel = new javax.swing.JLabel();
     private javax.swing.JLabel rentSlowerLabel = new javax.swing.JLabel();
-    private javax.swing.JList<String> subscriptionList = new javax.swing.JList<String>();
+    private javax.swing.JList<SearchCriteria> subscriptionList = new javax.swing.JList<SearchCriteria>();
     // End of variables declaration
+
+    // user subscription
+    private DefaultListModel<SearchCriteria> subscriptionListModel = new DefaultListModel<SearchCriteria>();
 
     public ManageSubscriptionsGUI(Frontend view) {
         // assign view reference
         this.view = view;
+        updateSubscriptionView(new SearchCriteria());
         manageSubscriptionView();
     }
 
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">
-    private void manageSubscriptionView() {
+    // update SearchCriteria list model
+    public void updateSubscriptionView(SearchCriteria subscription) {
+        // update current list model
+        this.subscriptionListModel.clear();
+        this.subscriptionListModel.addElement(subscription);
+    }
+
+    public void manageSubscriptionView() {
         removeAll();
 
         setBackground(java.awt.Color.darkGray);
@@ -58,6 +69,7 @@ public class ManageSubscriptionsGUI extends JPanel {
 
         subscriptionList.setBackground(new java.awt.Color(0, 0, 0));
         subscriptionList.setForeground(new java.awt.Color(255, 255, 255));
+        subscriptionList.setModel(subscriptionListModel);
         jScrollPane1.setViewportView(subscriptionList);
 
         add(jScrollPane1);
