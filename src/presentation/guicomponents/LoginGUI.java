@@ -50,7 +50,8 @@ public class LoginGUI extends JPanel {
     public LoginGUI(Frontend view) {
         // assign view reference
         this.view = view;
-        userChoice();;
+        userChoice();
+        ;
     }
 
     public void userChoice() {
@@ -95,11 +96,13 @@ public class LoginGUI extends JPanel {
         landlordButton.setForeground(new java.awt.Color(0, 0, 0));
         landlordButton.setText("Landlord");
         landlordButton.setActionCommand("Manager");
-        /*landlordButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-
-            }
-        });*/
+        /*
+         * landlordButton.addActionListener(new java.awt.event.ActionListener() {
+         * public void actionPerformed(java.awt.event.ActionEvent evt) {
+         * 
+         * }
+         * });
+         */
         add(landlordButton);
         landlordButton.setBounds(150, 280, 140, 50);
 
@@ -107,11 +110,13 @@ public class LoginGUI extends JPanel {
         dashboardButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         dashboardButton.setForeground(new java.awt.Color(0, 0, 0));
         dashboardButton.setText("X");
-        /*dashboardButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-
-            }
-        });*/
+        /*
+         * dashboardButton.addActionListener(new java.awt.event.ActionListener() {
+         * public void actionPerformed(java.awt.event.ActionEvent evt) {
+         * 
+         * }
+         * });
+         */
         add(dashboardButton);
         dashboardButton.setBounds(370, 20, 50, 40);
 
@@ -124,11 +129,13 @@ public class LoginGUI extends JPanel {
         renterButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         renterButton.setForeground(new java.awt.Color(0, 0, 0));
         renterButton.setText("Renter");
-        /*renterButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-
-            }
-        });*/
+        /*
+         * renterButton.addActionListener(new java.awt.event.ActionListener() {
+         * public void actionPerformed(java.awt.event.ActionEvent evt) {
+         * 
+         * }
+         * });
+         */
         add(renterButton);
         renterButton.setBounds(150, 190, 140, 50);
 
@@ -136,11 +143,13 @@ public class LoginGUI extends JPanel {
         managerButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         managerButton.setForeground(new java.awt.Color(0, 0, 0));
         managerButton.setText("Manager");
-        /*managerButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-
-            }
-        });*/
+        /*
+         * managerButton.addActionListener(new java.awt.event.ActionListener() {
+         * public void actionPerformed(java.awt.event.ActionEvent evt) {
+         * 
+         * }
+         * });
+         */
         add(managerButton);
         managerButton.setBounds(150, 370, 140, 50);
 
@@ -172,11 +181,13 @@ public class LoginGUI extends JPanel {
         loginButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         loginButton.setForeground(new java.awt.Color(0, 0, 0));
         loginButton.setText("Login");
-        /*loginButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-
-            }
-        });*/
+        /*
+         * loginButton.addActionListener(new java.awt.event.ActionListener() {
+         * public void actionPerformed(java.awt.event.ActionEvent evt) {
+         * 
+         * }
+         * });
+         */
         add(loginButton);
         loginButton.setBounds(280, 420, 120, 40);
 
@@ -193,11 +204,13 @@ public class LoginGUI extends JPanel {
 
         emailText.setBackground(java.awt.Color.black);
         emailText.setForeground(new java.awt.Color(255, 255, 255));
-        /*emailText.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-
-            }
-        });*/
+        /*
+         * emailText.addActionListener(new java.awt.event.ActionListener() {
+         * public void actionPerformed(java.awt.event.ActionEvent evt) {
+         * 
+         * }
+         * });
+         */
         add(emailText);
         emailText.setBounds(60, 190, 270, 18);
 
@@ -205,11 +218,13 @@ public class LoginGUI extends JPanel {
         dashboardButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         dashboardButton.setForeground(new java.awt.Color(0, 0, 0));
         dashboardButton.setText("X");
-        /*dashboardButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-
-            }
-        });*/
+        /*
+         * dashboardButton.addActionListener(new java.awt.event.ActionListener() {
+         * public void actionPerformed(java.awt.event.ActionEvent evt) {
+         * 
+         * }
+         * });
+         */
         add(dashboardButton);
         dashboardButton.setBounds(370, 20, 50, 40);
 
@@ -252,11 +267,13 @@ public class LoginGUI extends JPanel {
         finishButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         finishButton.setForeground(new java.awt.Color(0, 0, 0));
         finishButton.setText("Finish");
-        /*finishButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-
-            }
-        });*/
+        /*
+         * finishButton.addActionListener(new java.awt.event.ActionListener() {
+         * public void actionPerformed(java.awt.event.ActionEvent evt) {
+         * 
+         * }
+         * });
+         */
         add(finishButton);
         finishButton.setBounds(160, 240, 120, 40);
 
@@ -293,11 +310,13 @@ public class LoginGUI extends JPanel {
         tryAgainButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         tryAgainButton.setForeground(new java.awt.Color(0, 0, 0));
         tryAgainButton.setText("Try Again");
-        /*tryAgainButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-
-            }
-        });*/
+        /*
+         * tryAgainButton.addActionListener(new java.awt.event.ActionListener() {
+         * public void actionPerformed(java.awt.event.ActionEvent evt) {
+         * 
+         * }
+         * });
+         */
         add(tryAgainButton);
         tryAgainButton.setBounds(160, 240, 120, 40);
 

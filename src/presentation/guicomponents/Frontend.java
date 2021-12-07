@@ -41,7 +41,7 @@ public class Frontend extends JFrame {
         registerProperty = new RegisterPropertyGUI(this);
 
         manageSubscriptions = new ManageSubscriptionsGUI(this);
-        
+
         addSearchCriteriaForm = new AddSearchCriteriaFormGUI(this);
         manageLandlordProperties = new ManageLandlordPropertiesGUI(this);
         payFeeForm = new PayFeeFormGUI(this);

@@ -91,11 +91,14 @@ public class RegisterPropertyGUI extends JPanel {
         registerPropertyButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         registerPropertyButton.setForeground(new java.awt.Color(0, 0, 0));
         registerPropertyButton.setText("Register Property");
-        /*registerPropertyButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-
-            }
-        });*/
+        /*
+         * registerPropertyButton.addActionListener(new java.awt.event.ActionListener()
+         * {
+         * public void actionPerformed(java.awt.event.ActionEvent evt) {
+         * 
+         * }
+         * });
+         */
         add(registerPropertyButton);
         registerPropertyButton.setBounds(250, 680, 200, 40);
 
@@ -112,11 +115,13 @@ public class RegisterPropertyGUI extends JPanel {
 
         postalCodeText.setBackground(java.awt.Color.black);
         postalCodeText.setForeground(new java.awt.Color(255, 255, 255));
-        /*postalCodeText.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-
-            }
-        });*/
+        /*
+         * postalCodeText.addActionListener(new java.awt.event.ActionListener() {
+         * public void actionPerformed(java.awt.event.ActionEvent evt) {
+         * 
+         * }
+         * });
+         */
         add(postalCodeText);
         postalCodeText.setBounds(310, 550, 130, 18);
 
@@ -124,11 +129,13 @@ public class RegisterPropertyGUI extends JPanel {
         dashboardButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         dashboardButton.setForeground(new java.awt.Color(0, 0, 0));
         dashboardButton.setText("X");
-        /*dashboardButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-
-            }
-        });*/
+        /*
+         * dashboardButton.addActionListener(new java.awt.event.ActionListener() {
+         * public void actionPerformed(java.awt.event.ActionEvent evt) {
+         * 
+         * }
+         * });
+         */
         add(dashboardButton);
         dashboardButton.setBounds(410, 20, 50, 40);
 
@@ -223,11 +230,13 @@ public class RegisterPropertyGUI extends JPanel {
         propertyTypeComboBox.setForeground(java.awt.Color.black);
         propertyTypeComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(
                 new String[] { "Apartment", "Basement", "Condo", "Attached", "Detached", "Room", "Garage" }));
-        /*propertyTypeComboBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-
-            }
-        });*/
+        /*
+         * propertyTypeComboBox.addActionListener(new java.awt.event.ActionListener() {
+         * public void actionPerformed(java.awt.event.ActionEvent evt) {
+         * 
+         * }
+         * });
+         */
         add(propertyTypeComboBox);
         propertyTypeComboBox.setBounds(50, 370, 120, 20);
 
@@ -247,71 +256,85 @@ public class RegisterPropertyGUI extends JPanel {
 
         titleText.setBackground(java.awt.Color.black);
         titleText.setForeground(new java.awt.Color(255, 255, 255));
-        /*titleText.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-
-            }
-        });*/
+        /*
+         * titleText.addActionListener(new java.awt.event.ActionListener() {
+         * public void actionPerformed(java.awt.event.ActionEvent evt) {
+         * 
+         * }
+         * });
+         */
         add(titleText);
         titleText.setBounds(60, 180, 270, 18);
 
         rentText.setBackground(java.awt.Color.black);
         rentText.setForeground(new java.awt.Color(255, 255, 255));
-        /*rentText.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-
-            }
-        });*/
+        /*
+         * rentText.addActionListener(new java.awt.event.ActionListener() {
+         * public void actionPerformed(java.awt.event.ActionEvent evt) {
+         * 
+         * }
+         * });
+         */
         add(rentText);
         rentText.setBounds(290, 450, 110, 18);
 
         squareFeetText.setBackground(java.awt.Color.black);
         squareFeetText.setForeground(new java.awt.Color(255, 255, 255));
-        /*squareFeetText.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-
-            }
-        });*/
+        /*
+         * squareFeetText.addActionListener(new java.awt.event.ActionListener() {
+         * public void actionPerformed(java.awt.event.ActionEvent evt) {
+         * 
+         * }
+         * });
+         */
         add(squareFeetText);
         squareFeetText.setBounds(150, 450, 110, 18);
 
         streetNameText.setBackground(java.awt.Color.black);
         streetNameText.setForeground(new java.awt.Color(255, 255, 255));
-        /*streetNameText.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-
-            }
-        });*/
+        /*
+         * streetNameText.addActionListener(new java.awt.event.ActionListener() {
+         * public void actionPerformed(java.awt.event.ActionEvent evt) {
+         * 
+         * }
+         * });
+         */
         add(streetNameText);
         streetNameText.setBounds(40, 550, 130, 18);
 
         cityText.setBackground(java.awt.Color.black);
         cityText.setForeground(new java.awt.Color(255, 255, 255));
-        /*cityText.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-
-            }
-        });*/
+        /*
+         * cityText.addActionListener(new java.awt.event.ActionListener() {
+         * public void actionPerformed(java.awt.event.ActionEvent evt) {
+         * 
+         * }
+         * });
+         */
         add(cityText);
         cityText.setBounds(40, 620, 130, 18);
 
         provinceStateText.setBackground(java.awt.Color.black);
         provinceStateText.setForeground(new java.awt.Color(255, 255, 255));
-        /*provinceStateText.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-
-            }
-        });*/
+        /*
+         * provinceStateText.addActionListener(new java.awt.event.ActionListener() {
+         * public void actionPerformed(java.awt.event.ActionEvent evt) {
+         * 
+         * }
+         * });
+         */
         add(provinceStateText);
         provinceStateText.setBounds(180, 620, 130, 18);
 
         countryText.setBackground(java.awt.Color.black);
         countryText.setForeground(new java.awt.Color(255, 255, 255));
-        /*countryText.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-
-            }
-        });*/
+        /*
+         * countryText.addActionListener(new java.awt.event.ActionListener() {
+         * public void actionPerformed(java.awt.event.ActionEvent evt) {
+         * 
+         * }
+         * });
+         */
         add(countryText);
         countryText.setBounds(320, 620, 130, 18);
 
@@ -349,11 +372,13 @@ public class RegisterPropertyGUI extends JPanel {
         finishButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         finishButton.setForeground(new java.awt.Color(0, 0, 0));
         finishButton.setText("Finish");
-        /*finishButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-
-            }
-        });*/
+        /*
+         * finishButton.addActionListener(new java.awt.event.ActionListener() {
+         * public void actionPerformed(java.awt.event.ActionEvent evt) {
+         * 
+         * }
+         * });
+         */
         add(finishButton);
         finishButton.setBounds(160, 240, 120, 40);
 
@@ -390,11 +415,13 @@ public class RegisterPropertyGUI extends JPanel {
         tryAgainButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         tryAgainButton.setForeground(new java.awt.Color(0, 0, 0));
         tryAgainButton.setText("Try Again");
-        /*tryAgainButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-
-            }
-        });*/
+        /*
+         * tryAgainButton.addActionListener(new java.awt.event.ActionListener() {
+         * public void actionPerformed(java.awt.event.ActionEvent evt) {
+         * 
+         * }
+         * });
+         */
         add(tryAgainButton);
         tryAgainButton.setBounds(160, 240, 120, 40);
 
