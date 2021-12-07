@@ -39,7 +39,9 @@ public class Frontend extends JFrame {
         signup = new SignupGUI(this);
         login = new LoginGUI(this);
         registerProperty = new RegisterPropertyGUI(this);
+
         manageSubscriptions = new ManageSubscriptionsGUI(this);
+        
         addSearchCriteriaForm = new AddSearchCriteriaFormGUI(this);
         manageLandlordProperties = new ManageLandlordPropertiesGUI(this);
         payFeeForm = new PayFeeFormGUI(this);
@@ -51,7 +53,61 @@ public class Frontend extends JFrame {
         propertyView = new PropertyViewGUI(this);
 
         // set SignupGUI on JFrame
-        this.add(registerProperty);
+        this.add(manageSubscriptions);
         this.pack();
+    }
+
+    // getter methods
+
+    public SignupGUI getSignup() {
+        return signup;
+    }
+
+    public LoginGUI getLogin() {
+        return login;
+    }
+
+    public RegisterPropertyGUI getRegisterProperty() {
+        return registerProperty;
+    }
+
+    public ManageSubscriptionsGUI getManageSubscriptions() {
+        return manageSubscriptions;
+    }
+
+    public AddSearchCriteriaFormGUI getAddSearchCriteriaForm() {
+        return addSearchCriteriaForm;
+    }
+
+    public ManageLandlordPropertiesGUI getManageLandlordProperties() {
+        return manageLandlordProperties;
+    }
+
+    public PayFeeFormGUI getPayFeeForm() {
+        return payFeeForm;
+    }
+
+    public ManageManagerPropertiesGUI getManageManagerProperties() {
+        return manageManagerProperties;
+    }
+
+    public ChangeFeesGUI getChangeFees() {
+        return changeFees;
+    }
+
+    public ViewCompanyDatabaseGUI getViewCompanyDatabase() {
+        return viewCompanyDatabase;
+    }
+
+    public PeriodicalReportFormGUI getPeriodicalReportForm() {
+        return periodicalReportForm;
+    }
+
+    public DashboardGUI getDashboard() {
+        return dashboard;
+    }
+
+    public PropertyViewGUI getPropertyView() {
+        return propertyView;
     }
 }
