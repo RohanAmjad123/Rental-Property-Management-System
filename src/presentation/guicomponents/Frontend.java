@@ -53,4 +53,58 @@ public class Frontend extends JFrame {
         // set SignupGUI on JFrame
         this.add(registerProperty);
     }
+
+    // getter methods
+    
+    public SignupGUI getSignup() {
+        return signup;
+    }
+
+    public LoginGUI getLogin() {
+        return login;
+    }
+
+    public RegisterPropertyGUI getRegisterProperty() {
+        return registerProperty;
+    }
+
+    public ManageSubscriptionsGUI getManageSubscriptions() {
+        return manageSubscriptions;
+    }
+
+    public AddSearchCriteriaFormGUI getAddSearchCriteriaForm() {
+        return addSearchCriteriaForm;
+    }
+
+    public ManageLandlordPropertiesGUI getManageLandlordProperties() {
+        return manageLandlordProperties;
+    }
+
+    public PayFeeFormGUI getPayFeeForm() {
+        return payFeeForm;
+    }
+
+    public ManageManagerPropertiesGUI getManageManagerProperties() {
+        return manageManagerProperties;
+    }
+
+    public ChangeFeesGUI getChangeFees() {
+        return changeFees;
+    }
+
+    public ViewCompanyDatabaseGUI getViewCompanyDatabase() {
+        return viewCompanyDatabase;
+    }
+
+    public PeriodicalReportFormGUI getPeriodicalReportForm() {
+        return periodicalReportForm;
+    }
+
+    public DashboardGUI getDashboard() {
+        return dashboard;
+    }
+
+    public PropertyViewGUI getPropertyView() {
+        return propertyView;
+    }
 }
