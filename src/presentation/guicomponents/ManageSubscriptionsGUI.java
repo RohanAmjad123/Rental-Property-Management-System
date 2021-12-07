@@ -109,7 +109,7 @@ public class ManageSubscriptionsGUI extends JPanel {
     }
 
     // getter methods
-    
+
     public javax.swing.JLabel getCopyrightLabel() {
         return copyrightLabel;
     }

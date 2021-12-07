@@ -71,11 +71,13 @@ public class EditSearchCriteriaFormGUI extends JPanel {
         unsubscribeButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         unsubscribeButton.setForeground(new java.awt.Color(0, 0, 0));
         unsubscribeButton.setText("Unsubscribe");
-        /*unsubscribeButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-
-            }
-        });*/
+        /*
+         * unsubscribeButton.addActionListener(new java.awt.event.ActionListener() {
+         * public void actionPerformed(java.awt.event.ActionEvent evt) {
+         * 
+         * }
+         * });
+         */
         add(unsubscribeButton);
         unsubscribeButton.setBounds(320, 320, 150, 40);
 
@@ -83,11 +85,13 @@ public class EditSearchCriteriaFormGUI extends JPanel {
         dashboardButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         dashboardButton.setForeground(new java.awt.Color(0, 0, 0));
         dashboardButton.setText("X");
-        /*dashboardButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-
-            }
-        });*/
+        /*
+         * dashboardButton.addActionListener(new java.awt.event.ActionListener() {
+         * public void actionPerformed(java.awt.event.ActionEvent evt) {
+         * 
+         * }
+         * });
+         */
         add(dashboardButton);
         dashboardButton.setBounds(560, 20, 50, 40);
 
@@ -95,11 +99,13 @@ public class EditSearchCriteriaFormGUI extends JPanel {
         updateButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         updateButton.setForeground(new java.awt.Color(0, 0, 0));
         updateButton.setText("Update");
-        /*updateButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-
-            }
-        });*/
+        /*
+         * updateButton.addActionListener(new java.awt.event.ActionListener() {
+         * public void actionPerformed(java.awt.event.ActionEvent evt) {
+         * 
+         * }
+         * });
+         */
         add(updateButton);
         updateButton.setBounds(170, 320, 120, 40);
 
@@ -113,11 +119,13 @@ public class EditSearchCriteriaFormGUI extends JPanel {
         propertyTypeComboBox.setForeground(java.awt.Color.black);
         propertyTypeComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(
                 new String[] { "Apartment", "Basement", "Condo", "Attached", "Detached", "Room", "Garage" }));
-        /*propertyTypeComboBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-
-            }
-        });*/
+        /*
+         * propertyTypeComboBox.addActionListener(new java.awt.event.ActionListener() {
+         * public void actionPerformed(java.awt.event.ActionEvent evt) {
+         * 
+         * }
+         * });
+         */
         add(propertyTypeComboBox);
         propertyTypeComboBox.setBounds(80, 190, 120, 20);
 
@@ -149,11 +157,13 @@ public class EditSearchCriteriaFormGUI extends JPanel {
 
         maxRentText.setBackground(java.awt.Color.black);
         maxRentText.setForeground(new java.awt.Color(255, 255, 255));
-        /*maxRentText.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-
-            }
-        });*/
+        /*
+         * maxRentText.addActionListener(new java.awt.event.ActionListener() {
+         * public void actionPerformed(java.awt.event.ActionEvent evt) {
+         * 
+         * }
+         * });
+         */
         add(maxRentText);
         maxRentText.setBounds(450, 190, 110, 18);
 
