@@ -18,50 +18,50 @@ public class RegisterPropertyGUI extends JPanel {
     private Frontend view;
 
     // Variables declaration - do not modify
-    private javax.swing.JLabel bathroomLabel;
-    private javax.swing.JSpinner bathroomSpinner;
-    private javax.swing.JLabel bedroomLabel;
-    private javax.swing.JSpinner bedroomSpinner;
-    private javax.swing.JLabel cityLabel;
-    private javax.swing.JComboBox<String> cityQuadrantComboBox;
-    private javax.swing.JLabel cityQuadrantLabel;
-    private javax.swing.JTextField cityText;
-    private javax.swing.JLabel copyrightLabel;
-    private javax.swing.JLabel countryLabel;
-    private javax.swing.JTextField countryText;
-    private javax.swing.JButton dashboardButton;
-    private javax.swing.JLabel descriptionLabel;
-    private javax.swing.JTextArea descriptionText;
-    private javax.swing.JComboBox<String> furnishedComboBox;
-    private javax.swing.JLabel furnishedLabel;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel postalCodeLabel;
-    private javax.swing.JTextField postalCodeText;
-    private javax.swing.JComboBox<String> propertyTypeComboBox;
-    private javax.swing.JLabel propertyTypeLabel;
-    private javax.swing.JLabel provinceStateLabel;
-    private javax.swing.JTextField provinceStateText;
-    private javax.swing.JLabel registerLandlordPropertyLabel;
-    private javax.swing.JButton registerPropertyButton;
-    private javax.swing.JLabel rentLabel;
-    private javax.swing.JLabel rentSlowerLabel;
-    private javax.swing.JTextField rentText;
-    private javax.swing.JLabel squareFeetLabel;
-    private javax.swing.JTextField squareFeetText;
-    private javax.swing.JLabel streetNameLabel;
-    private javax.swing.JTextField streetNameText;
-    private javax.swing.JLabel titleLabel;
-    private javax.swing.JTextField titleText;
+    private javax.swing.JLabel bathroomLabel = new javax.swing.JLabel();
+    private javax.swing.JSpinner bathroomSpinner = new javax.swing.JSpinner();
+    private javax.swing.JLabel bedroomLabel = new javax.swing.JLabel();
+    private javax.swing.JSpinner bedroomSpinner = new javax.swing.JSpinner();
+    private javax.swing.JLabel cityLabel = new javax.swing.JLabel();
+    private javax.swing.JComboBox<String> cityQuadrantComboBox = new javax.swing.JComboBox<String>();
+    private javax.swing.JLabel cityQuadrantLabel = new javax.swing.JLabel();
+    private javax.swing.JTextField cityText = new javax.swing.JTextField();
+    private javax.swing.JLabel copyrightLabel = new javax.swing.JLabel();
+    private javax.swing.JLabel countryLabel = new javax.swing.JLabel();
+    private javax.swing.JTextField countryText = new javax.swing.JTextField();
+    private javax.swing.JButton dashboardButton = new javax.swing.JButton();
+    private javax.swing.JLabel descriptionLabel = new javax.swing.JLabel();
+    private javax.swing.JTextArea descriptionText = new javax.swing.JTextArea();
+    private javax.swing.JComboBox<String> furnishedComboBox = new javax.swing.JComboBox<String>();
+    private javax.swing.JLabel furnishedLabel = new javax.swing.JLabel();
+    private javax.swing.JScrollPane jScrollPane1 = new javax.swing.JScrollPane();
+    private javax.swing.JLabel postalCodeLabel = new javax.swing.JLabel();
+    private javax.swing.JTextField postalCodeText = new javax.swing.JTextField();
+    private javax.swing.JComboBox<String> propertyTypeComboBox = new javax.swing.JComboBox<String>();
+    private javax.swing.JLabel propertyTypeLabel = new javax.swing.JLabel();
+    private javax.swing.JLabel provinceStateLabel = new javax.swing.JLabel();
+    private javax.swing.JTextField provinceStateText = new javax.swing.JTextField();
+    private javax.swing.JLabel registerLandlordPropertyLabel = new javax.swing.JLabel();
+    private javax.swing.JButton registerPropertyButton = new javax.swing.JButton();
+    private javax.swing.JLabel rentLabel = new javax.swing.JLabel();
+    private javax.swing.JLabel rentSlowerLabel = new javax.swing.JLabel();
+    private javax.swing.JTextField rentText = new javax.swing.JTextField();
+    private javax.swing.JLabel squareFeetLabel = new javax.swing.JLabel();
+    private javax.swing.JTextField squareFeetText = new javax.swing.JTextField();
+    private javax.swing.JLabel streetNameLabel = new javax.swing.JLabel();
+    private javax.swing.JTextField streetNameText = new javax.swing.JTextField();
+    private javax.swing.JLabel titleLabel = new javax.swing.JLabel();
+    private javax.swing.JTextField titleText = new javax.swing.JTextField();
     // End of variables declaration
 
     // Variables declaration - do not modify
-    private javax.swing.JButton finishButton;
-    private javax.swing.JLabel propertyRegistrationSuccessfulLabel;
+    private javax.swing.JButton finishButton = new javax.swing.JButton();
+    private javax.swing.JLabel propertyRegistrationSuccessfulLabel = new javax.swing.JLabel();
     // End of variables declaration
 
     // Variables declaration - do not modify
-    private javax.swing.JLabel propertyRegistrationUnsuccessfulLabel;
-    private javax.swing.JButton tryAgainButton;
+    private javax.swing.JLabel propertyRegistrationUnsuccessfulLabel = new javax.swing.JLabel();
+    private javax.swing.JButton tryAgainButton = new javax.swing.JButton();
     // End of variables declaration
 
     public RegisterPropertyGUI(Frontend view) {
@@ -76,41 +76,6 @@ public class RegisterPropertyGUI extends JPanel {
 
     public void registrationForm() {
         removeAll();
-
-        rentSlowerLabel = new javax.swing.JLabel();
-        registerLandlordPropertyLabel = new javax.swing.JLabel();
-        registerPropertyButton = new javax.swing.JButton();
-        copyrightLabel = new javax.swing.JLabel();
-        titleLabel = new javax.swing.JLabel();
-        postalCodeText = new javax.swing.JTextField();
-        dashboardButton = new javax.swing.JButton();
-        countryLabel = new javax.swing.JLabel();
-        descriptionLabel = new javax.swing.JLabel();
-        propertyTypeLabel = new javax.swing.JLabel();
-        rentLabel = new javax.swing.JLabel();
-        bedroomLabel = new javax.swing.JLabel();
-        bathroomLabel = new javax.swing.JLabel();
-        squareFeetLabel = new javax.swing.JLabel();
-        furnishedLabel = new javax.swing.JLabel();
-        streetNameLabel = new javax.swing.JLabel();
-        postalCodeLabel = new javax.swing.JLabel();
-        cityQuadrantLabel = new javax.swing.JLabel();
-        cityLabel = new javax.swing.JLabel();
-        provinceStateLabel = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        descriptionText = new javax.swing.JTextArea();
-        propertyTypeComboBox = new javax.swing.JComboBox<>();
-        bathroomSpinner = new javax.swing.JSpinner();
-        bedroomSpinner = new javax.swing.JSpinner();
-        cityQuadrantComboBox = new javax.swing.JComboBox<>();
-        titleText = new javax.swing.JTextField();
-        rentText = new javax.swing.JTextField();
-        squareFeetText = new javax.swing.JTextField();
-        streetNameText = new javax.swing.JTextField();
-        cityText = new javax.swing.JTextField();
-        provinceStateText = new javax.swing.JTextField();
-        countryText = new javax.swing.JTextField();
-        furnishedComboBox = new javax.swing.JComboBox<>();
 
         setBackground(java.awt.Color.darkGray);
         setPreferredSize(new java.awt.Dimension(480, 741));
@@ -134,7 +99,7 @@ public class RegisterPropertyGUI extends JPanel {
         registerPropertyButton.setText("Register Property");
         registerPropertyButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-
+                successPage();
             }
         });
         add(registerPropertyButton);
@@ -369,11 +334,6 @@ public class RegisterPropertyGUI extends JPanel {
     public void successPage() {
         removeAll();
 
-        rentSlowerLabel = new javax.swing.JLabel();
-        propertyRegistrationSuccessfulLabel = new javax.swing.JLabel();
-        finishButton = new javax.swing.JButton();
-        copyrightLabel = new javax.swing.JLabel();
-
         setBackground(java.awt.Color.darkGray);
         setPreferredSize(new java.awt.Dimension(436, 491));
         setLayout(null);
@@ -409,15 +369,11 @@ public class RegisterPropertyGUI extends JPanel {
 
         revalidate();
         repaint();
+        view.pack();
     }
 
     public void errorPage() {
         removeAll();
-
-        rentSlowerLabel = new javax.swing.JLabel();
-        propertyRegistrationUnsuccessfulLabel = new javax.swing.JLabel();
-        tryAgainButton = new javax.swing.JButton();
-        copyrightLabel = new javax.swing.JLabel();
 
         setBackground(java.awt.Color.darkGray);
         setPreferredSize(new java.awt.Dimension(436, 491));
@@ -454,5 +410,6 @@ public class RegisterPropertyGUI extends JPanel {
 
         revalidate();
         repaint();
+        view.pack();
     }
 }
