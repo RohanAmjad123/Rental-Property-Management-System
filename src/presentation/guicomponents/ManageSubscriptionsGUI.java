@@ -117,6 +117,9 @@ public class ManageSubscriptionsGUI extends JPanel {
          */
         add(editButton);
         editButton.setBounds(260, 300, 120, 40);
+
+        revalidate();
+        repaint();
     }
 
     // getter methods
