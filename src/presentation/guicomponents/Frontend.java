@@ -7,9 +7,6 @@ import javax.swing.*;
  * 
  * @since December 4th, 2021
  * @author Azlan Amjad
- * @author Rohan Amjad
- * @author Gibran Akmal
- * @author Ibrahim Asad
  * @version 1.0
  */
 public class Frontend extends JFrame {
@@ -43,6 +40,7 @@ public class Frontend extends JFrame {
         editSearchCriteriaForm = new EditSearchCriteriaFormGUI(this);
 
         manageLandlordProperties = new ManageLandlordPropertiesGUI(this);
+
         payFeeForm = new PayFeeFormGUI(this);
         manageManagerProperties = new ManageManagerPropertiesGUI(this);
         changeFees = new ChangeFeesGUI(this);
@@ -52,7 +50,7 @@ public class Frontend extends JFrame {
         propertyView = new PropertyViewGUI(this);
 
         // set SignupGUI on JFrame
-        this.add(manageSubscriptions);
+        this.add(manageLandlordProperties);
         this.pack();
     }
 
