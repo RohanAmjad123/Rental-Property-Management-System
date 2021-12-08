@@ -48,7 +48,6 @@ public class LoginGUI extends JPanel {
         // assign view reference
         this.view = view;
         userChoice();
-        ;
     }
 
     public void userChoice() {

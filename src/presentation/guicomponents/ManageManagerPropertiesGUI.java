@@ -81,8 +81,8 @@ public class ManageManagerPropertiesGUI extends JPanel {
         propertyList.setModel(propertyListModel);
         propertyList.addListSelectionListener(new ListSelectionListener() {
             @Override
-            public void valueChanged(ListSelectionEvent arg0) {
-                if (!arg0.getValueIsAdjusting()) {
+            public void valueChanged(ListSelectionEvent evt) {
+                if (!evt.getValueIsAdjusting()) {
                     displayChoices();
                 }
             }
@@ -172,7 +172,7 @@ public class ManageManagerPropertiesGUI extends JPanel {
     }
 
     // getter methods
-    
+
     public javax.swing.JLabel getChangePropertyStateLabel() {
         return changePropertyStateLabel;
     }

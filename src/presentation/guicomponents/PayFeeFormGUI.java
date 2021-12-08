@@ -1,7 +1,6 @@
 package presentation.guicomponents;
 
 import javax.swing.*;
-
 import business.businesslogic.Fee;
 
 /**
@@ -344,6 +343,8 @@ public class PayFeeFormGUI extends JPanel {
         view.pack();
     }
 
+    // getter method
+    
     public javax.swing.JLabel getCopyrightLabel() {
         return copyrightLabel;
     }
