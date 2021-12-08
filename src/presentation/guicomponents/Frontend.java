@@ -7,9 +7,6 @@ import javax.swing.*;
  * 
  * @since December 4th, 2021
  * @author Azlan Amjad
- * @author Rohan Amjad
- * @author Gibran Akmal
- * @author Ibrahim Asad
  * @version 1.0
  */
 public class Frontend extends JFrame {
@@ -17,7 +14,7 @@ public class Frontend extends JFrame {
     private LoginGUI login;
     private RegisterPropertyGUI registerProperty;
     private ManageSubscriptionsGUI manageSubscriptions;
-    private AddSearchCriteriaFormGUI addSearchCriteriaForm;
+    private EditSearchCriteriaFormGUI editSearchCriteriaForm;
     private ManageLandlordPropertiesGUI manageLandlordProperties;
     private PayFeeFormGUI payFeeForm;
     private ManageManagerPropertiesGUI manageManagerProperties;
@@ -39,11 +36,11 @@ public class Frontend extends JFrame {
         signup = new SignupGUI(this);
         login = new LoginGUI(this);
         registerProperty = new RegisterPropertyGUI(this);
-
         manageSubscriptions = new ManageSubscriptionsGUI(this);
-        
-        addSearchCriteriaForm = new AddSearchCriteriaFormGUI(this);
+        editSearchCriteriaForm = new EditSearchCriteriaFormGUI(this);
+
         manageLandlordProperties = new ManageLandlordPropertiesGUI(this);
+
         payFeeForm = new PayFeeFormGUI(this);
         manageManagerProperties = new ManageManagerPropertiesGUI(this);
         changeFees = new ChangeFeesGUI(this);
@@ -53,7 +50,7 @@ public class Frontend extends JFrame {
         propertyView = new PropertyViewGUI(this);
 
         // set SignupGUI on JFrame
-        this.add(manageSubscriptions);
+        this.add(manageLandlordProperties);
         this.pack();
     }
 
@@ -75,8 +72,8 @@ public class Frontend extends JFrame {
         return manageSubscriptions;
     }
 
-    public AddSearchCriteriaFormGUI getAddSearchCriteriaForm() {
-        return addSearchCriteriaForm;
+    public EditSearchCriteriaFormGUI getAddSearchCriteriaForm() {
+        return editSearchCriteriaForm;
     }
 
     public ManageLandlordPropertiesGUI getManageLandlordProperties() {
