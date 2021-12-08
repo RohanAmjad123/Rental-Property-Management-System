@@ -42,15 +42,14 @@ public class Frontend extends JFrame {
         payFeeForm = new PayFeeFormGUI(this);
         manageManagerProperties = new ManageManagerPropertiesGUI(this);
         changeFees = new ChangeFeesGUI(this);
-
         viewCompanyDatabase = new ViewCompanyDatabaseGUI(this);
-
         periodicalReportForm = new PeriodicalReportFormGUI(this);
+
         dashboard = new DashboardGUI(this);
         propertyView = new PropertyViewGUI(this);
 
         // set SignupGUI on JFrame
-        this.add(viewCompanyDatabase);
+        this.add(periodicalReportForm);
         this.pack();
     }
 
