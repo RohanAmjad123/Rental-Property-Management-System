@@ -43,7 +43,7 @@ public class CompanyDatabase {
         }
     }
 
-    public boolean validSignup(User u) {
+    public boolean validSignup(User u) throws SQLException {
         String sqlInsert = "INSERT INTO users VALUES (?, ?, ?, ?, ?)";
 
         try {
@@ -60,13 +60,13 @@ public class CompanyDatabase {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            return false;
+            throw new SQLException("Signup failed!");
         }
 
         return true;
     }
 
-    public User login(String email, String password, String userType) {
+    public User login(String email, String password, String userType) throws SQLException {
         String sqlCheck = "SELECT * FROM users WHERE email=(?) AND password=(?) AND user_type=(?)";
         User u = new User();
 
@@ -91,12 +91,13 @@ public class CompanyDatabase {
 
         } catch (SQLException e) {
             e.printStackTrace();
+            throw new SQLException("Login failed!");
         }
 
         return u;
     }
 
-    public boolean registerProperty(Property p) {
+    public boolean registerProperty(Property p) throws SQLException {
         String sqlInsert = "INSERT INTO properties VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try {
@@ -128,12 +129,12 @@ public class CompanyDatabase {
 
         } catch (SQLException e) {
             e.printStackTrace();
-            return false;
+            throw new SQLException("Property registration failed!");
         }
         return true;
     }
 
-    public boolean updateProperty(Property p) {
+    public boolean updateProperty(Property p) throws SQLException {
         String sqlUpdate = "UPDATE properties SET " + 
         "title=(?), " + 
         "description=(?), " + 
@@ -187,12 +188,12 @@ public class CompanyDatabase {
         }
         catch (SQLException e) {
             e.printStackTrace();
-            return false;
+            throw new SQLException("Property update failed!");
         }
         return true;
     }
 
-    public boolean deleteProperty(String postalCode) {
+    public boolean deleteProperty(String postalCode) throws SQLException {
         String sqlDelete = "DELETE FROM properties WHERE postal_code=(?)";
 
         try {
@@ -207,13 +208,13 @@ public class CompanyDatabase {
         }
         catch(SQLException e) {
             e.printStackTrace();
-            return false;
+            throw new SQLException("Property delete failed!");
         }
 
         return true;
     }
 
-    public ArrayList<Property> getProperties(String landlordID) {
+    public ArrayList<Property> getProperties(String landlordID) throws SQLException {
         ArrayList<Property> properties = new ArrayList<Property>();
         String sql = "SELECT * FROM properties WHERE landlord_id=(?)";
 
@@ -235,12 +236,12 @@ public class CompanyDatabase {
         }
         catch(SQLException e) {
             e.printStackTrace();
-            return properties;
+            throw new SQLException("Could not get properties!");
         }
         return properties;
     }
 
-    public ArrayList<Property> getAllProperties() {
+    public ArrayList<Property> getAllProperties() throws SQLException {
         ArrayList<Property> properties = new ArrayList<Property>();
         String sql = "SELECT * FROM properties";
 
@@ -261,12 +262,12 @@ public class CompanyDatabase {
         }
         catch(SQLException e) {
             e.printStackTrace();
-            return properties;
+            throw new SQLException("Could not get properties!");
         }
         return properties;
     }
 
-    public ArrayList<Property> getStateProperties(String state) {
+    public ArrayList<Property> getStateProperties(String state) throws SQLException {
         ArrayList<Property> properties = new ArrayList<Property>();
         String sql = "SELECT * FROM properties WHERE state=(?)";
 
@@ -288,12 +289,12 @@ public class CompanyDatabase {
         }
         catch(SQLException e) {
             e.printStackTrace();
-            return properties;
+            throw new SQLException("Could not get properties!");
         }
         return properties;
     }
 
-    public ArrayList<User> getAllUsers() {
+    public ArrayList<User> getAllUsers() throws SQLException {
         ArrayList<User> users = new ArrayList<User>();
         String sql = "SELECT * FROM users";
 
@@ -308,12 +309,12 @@ public class CompanyDatabase {
         }
         catch(SQLException e) {
             e.printStackTrace();
-            return users;
+            throw new SQLException("Could not get users!");
         }
         return users;
     }
 
-    public ArrayList<User> getSpecificUsers(String user_type) {
+    public ArrayList<User> getSpecificUsers(String user_type) throws SQLException {
         ArrayList<User> users = new ArrayList<User>();
         String sql = "SELECT * FROM users WHERE user_type=(?)";
 
@@ -329,12 +330,12 @@ public class CompanyDatabase {
         }
         catch(SQLException e) {
             e.printStackTrace();
-            return users;
+            throw new SQLException("Could not get users!");
         }
         return users;
     }
 
-    public Property getProperty(String postalCode) {
+    public Property getProperty(String postalCode) throws SQLException {
         Property p = new Property();
         String sql = "SELECT * FROM properties WHERE postal_code=(?)";
 
@@ -369,12 +370,12 @@ public class CompanyDatabase {
         }
         catch(SQLException e) {
             e.printStackTrace();
-            return p;
+            throw new SQLException("Could not get property!");
         }
         return p;
     }
 
-    public boolean setFee(Fee fee) {
+    public boolean setFee(Fee fee) throws SQLException {
         String sql = "UPDATE fees SET fee_period=(?), fee_amount=(?) WHERE fee_id=(?)";
         
         int feeID = 1; 
@@ -392,12 +393,12 @@ public class CompanyDatabase {
         }
         catch (SQLException e) {
             e.printStackTrace();
-            return false;
+            throw new SQLException("Set fee failed!");
         }
         return true;
     }
 
-    public Fee getFee() {
+    public Fee getFee() throws SQLException {
         String sql = "SELECT * FROM fees";
         Fee f = new Fee();
 
@@ -413,12 +414,12 @@ public class CompanyDatabase {
         }
         catch (SQLException e) {
             e.printStackTrace();
-            return f;
+            throw new SQLException("Could not get fee!");
         }
         return f;
     }
 
-    public boolean subscribe(SearchCriteria criteria) {
+    public boolean subscribe(SearchCriteria criteria) throws SQLException {
         String sql = "INSERT INTO subscriptions VALUES (?, ?, ?, ?, ?, ?, ?)";
 
         try {
@@ -438,12 +439,12 @@ public class CompanyDatabase {
         }
         catch (SQLException e) {
             e.printStackTrace();
-            return false;
+            throw new SQLException("Subscribe failed!");
         }
         return true;
     }
 
-    public boolean unsubscribe(String renterID) {
+    public boolean unsubscribe(String renterID) throws SQLException {
         String sql = "DELETE FROM subscriptions WHERE renter_id=(?)";
         
         try {
@@ -457,12 +458,12 @@ public class CompanyDatabase {
         }
         catch (SQLException e) {
             e.printStackTrace();
-            return false;
+            throw new SQLException("Unsubscribe failed!");
         }
         return true;
     }
 
-    public SearchCriteria getSubscription(String renterID) {
+    public SearchCriteria getSubscription(String renterID) throws SQLException {
         String sql = "SELECT * FROM subscriptions WHERE renter_id=(?)";
         SearchCriteria s = new SearchCriteria();
 
@@ -484,12 +485,12 @@ public class CompanyDatabase {
         }
         catch (SQLException e) {
             e.printStackTrace();
-            return s;
+            throw new SQLException("Could not get subscription!");
         }
         return s;
     }
 
-    public boolean updateSearchCriteria(SearchCriteria criteria) {
+    public boolean updateSearchCriteria(SearchCriteria criteria) throws SQLException {
         String sql = "UPDATE subscriptions SET property_type=(?), bedrooms=(?), bathrooms=(?), max_rent=(?), city_quadrant=(?), furnished=(?) WHERE renter_id=(?)";
         
         try {
@@ -509,9 +510,33 @@ public class CompanyDatabase {
         }
         catch (SQLException e) {
             e.printStackTrace();
-            return false;
+            throw new SQLException("Update subscription failed!");
         }
         return true;
     }
 
+    public ArrayList<String> getManagerKeys() throws SQLException {
+        String sql = "SELECT * FROM manager_keys";
+        ArrayList<String> manager_keys = new ArrayList<String>();
+
+        try {
+            Statement stmt = dbConnect.createStatement();
+
+            ResultSet rs = stmt.executeQuery(sql);
+
+            if (!rs.isBeforeFirst()) {
+                throw new SQLException("Could not get manager keys!");
+            }
+
+            while (rs.next()) {
+                manager_keys.add(rs.getString(1));
+            }
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+            throw new SQLException("Could not get manager keys!");
+        }
+
+        return manager_keys;
+    }
 }
