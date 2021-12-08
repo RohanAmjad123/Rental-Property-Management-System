@@ -358,4 +358,86 @@ public class ViewCompanyDatabaseGUI extends JPanel {
         repaint();
         view.pack();
     }
+
+    // getter methods
+
+    public javax.swing.JLabel getChooseInformationLabel() {
+        return chooseInformationLabel;
+    }
+
+    public javax.swing.JLabel getCopyrightLabel() {
+        return copyrightLabel;
+    }
+
+    public javax.swing.JButton getDashboardButton() {
+        return dashboardButton;
+    }
+
+    public javax.swing.JButton getLandlordButton() {
+        return landlordButton;
+    }
+
+    public javax.swing.JLabel getLandlordLabel() {
+        return landlordLabel;
+    }
+
+    public javax.swing.JButton getPropertyButton() {
+        return propertyButton;
+    }
+
+    public javax.swing.JLabel getPropertyLabel() {
+        return propertyLabel;
+    }
+
+    public javax.swing.JLabel getRentSlowerLabel() {
+        return rentSlowerLabel;
+    }
+
+    public javax.swing.JButton getRenterButton() {
+        return renterButton;
+    }
+
+    public javax.swing.JLabel getRenterLabel() {
+        return renterLabel;
+    }
+
+    public javax.swing.JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public javax.swing.JLabel getRenterInformationLabel() {
+        return renterInformationLabel;
+    }
+
+    public javax.swing.JList<User> getRenterList() {
+        return renterList;
+    }
+
+    public DefaultListModel<User> getRenterListModel() {
+        return renterListModel;
+    }
+
+    public javax.swing.JLabel getLandlordInformationLabel() {
+        return landlordInformationLabel;
+    }
+
+    public javax.swing.JList<User> getLandlordList() {
+        return landlordList;
+    }
+
+    public DefaultListModel<User> getLandlordListModel() {
+        return landlordListModel;
+    }
+
+    public javax.swing.JLabel getPropertyInformationLabel() {
+        return propertyInformationLabel;
+    }
+
+    public javax.swing.JList<Property> getPropertyList() {
+        return propertyList;
+    }
+
+    public DefaultListModel<Property> getPropertyListModel() {
+        return propertyListModel;
+    }
 }
