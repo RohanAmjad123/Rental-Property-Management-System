@@ -171,6 +171,8 @@ public class ManageManagerPropertiesGUI extends JPanel {
         repaint();
     }
 
+    // getter methods
+    
     public javax.swing.JLabel getChangePropertyStateLabel() {
         return changePropertyStateLabel;
     }

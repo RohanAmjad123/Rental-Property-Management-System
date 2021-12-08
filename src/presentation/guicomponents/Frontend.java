@@ -40,17 +40,17 @@ public class Frontend extends JFrame {
         editSearchCriteriaForm = new EditSearchCriteriaFormGUI(this);
         manageLandlordProperties = new ManageLandlordPropertiesGUI(this);
         payFeeForm = new PayFeeFormGUI(this);
-
         manageManagerProperties = new ManageManagerPropertiesGUI(this);
 
         changeFees = new ChangeFeesGUI(this);
+
         viewCompanyDatabase = new ViewCompanyDatabaseGUI(this);
         periodicalReportForm = new PeriodicalReportFormGUI(this);
         dashboard = new DashboardGUI(this);
         propertyView = new PropertyViewGUI(this);
 
         // set SignupGUI on JFrame
-        this.add(manageManagerProperties);
+        this.add(changeFees);
         this.pack();
     }
 
