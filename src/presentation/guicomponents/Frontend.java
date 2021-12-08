@@ -52,7 +52,7 @@ public class Frontend extends JFrame {
         propertyView = new PropertyViewGUI(this);
 
         // set SignupGUI on JFrame
-        this.add(editSearchCriteriaForm);
+        this.add(manageSubscriptions);
         this.pack();
     }
 

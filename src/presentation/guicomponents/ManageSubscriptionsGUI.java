@@ -1,6 +1,9 @@
 package presentation.guicomponents;
 
 import javax.swing.*;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+
 import business.businesslogic.SearchCriteria;
 
 /**
@@ -70,24 +73,19 @@ public class ManageSubscriptionsGUI extends JPanel {
         subscriptionList.setBackground(new java.awt.Color(0, 0, 0));
         subscriptionList.setForeground(new java.awt.Color(255, 255, 255));
         subscriptionList.setModel(subscriptionListModel);
+        subscriptionList.addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent arg0) {
+                if (!arg0.getValueIsAdjusting()) {
+                    displayEdit();
+                }
+            }
+        });
+
         jScrollPane1.setViewportView(subscriptionList);
 
         add(jScrollPane1);
         jScrollPane1.setBounds(60, 160, 520, 120);
-
-        editButton.setBackground(new java.awt.Color(255, 255, 255));
-        editButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        editButton.setForeground(new java.awt.Color(0, 0, 0));
-        editButton.setText("Edit");
-        /*
-         * editButton.addActionListener(new java.awt.event.ActionListener() {
-         * public void actionPerformed(java.awt.event.ActionEvent evt) {
-         * 
-         * }
-         * });
-         */
-        add(editButton);
-        editButton.setBounds(260, 300, 120, 40);
 
         dashboardButton.setBackground(new java.awt.Color(255, 255, 255));
         dashboardButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -106,6 +104,22 @@ public class ManageSubscriptionsGUI extends JPanel {
         revalidate();
         repaint();
         view.pack();
+    }
+
+    public void displayEdit() {
+        editButton.setBackground(new java.awt.Color(255, 255, 255));
+        editButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        editButton.setForeground(new java.awt.Color(0, 0, 0));
+        editButton.setText("Edit");
+        /*
+         * editButton.addActionListener(new java.awt.event.ActionListener() {
+         * public void actionPerformed(java.awt.event.ActionEvent evt) {
+         * 
+         * }
+         * });
+         */
+        add(editButton);
+        editButton.setBounds(260, 300, 120, 40);
     }
 
     // getter methods
