@@ -46,10 +46,11 @@ public class Frontend extends JFrame {
         periodicalReportForm = new PeriodicalReportFormGUI(this);
 
         dashboard = new DashboardGUI(this);
+
         propertyView = new PropertyViewGUI(this);
 
         // set SignupGUI on JFrame
-        this.add(periodicalReportForm);
+        this.add(dashboard);
         this.pack();
     }
 
