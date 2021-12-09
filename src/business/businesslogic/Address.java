@@ -1,3 +1,4 @@
+package business.businesslogic;
 
 public class Address {
 	
@@ -17,10 +18,16 @@ public class Address {
 		stateProvince = sp;
 		country = cou;
 	}
-	
-	
-	
-	
+
+	public Address() {
+		streetName = "";
+		postalCode = "";
+		cityQuadrant = "";
+		city = ""; 
+		stateProvince = "";
+		country = "";
+	}
+
 	public void setStreetName(String a){
 		streetName = a;
 	}

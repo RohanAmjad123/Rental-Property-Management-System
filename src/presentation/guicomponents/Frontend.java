@@ -7,9 +7,6 @@ import javax.swing.*;
  * 
  * @since December 4th, 2021
  * @author Azlan Amjad
- * @author Rohan Amjad
- * @author Gibran Akmal
- * @author Ibrahim Asad
  * @version 1.0
  */
 public class Frontend extends JFrame {
@@ -17,7 +14,7 @@ public class Frontend extends JFrame {
     private LoginGUI login;
     private RegisterPropertyGUI registerProperty;
     private ManageSubscriptionsGUI manageSubscriptions;
-    private AddSearchCriteriaFormGUI addSearchCriteriaForm;
+    private EditSearchCriteriaFormGUI editSearchCriteriaForm;
     private ManageLandlordPropertiesGUI manageLandlordProperties;
     private PayFeeFormGUI payFeeForm;
     private ManageManagerPropertiesGUI manageManagerProperties;
@@ -28,7 +25,8 @@ public class Frontend extends JFrame {
     private PropertyViewGUI propertyView;
 
     /**
-     * class Frontend constructor, used by class Backend to construct its view object.
+     * class Frontend constructor, used by class Backend to construct its view
+     * object.
      */
     public Frontend() {
         // construct parent class JFrame
@@ -39,17 +37,74 @@ public class Frontend extends JFrame {
         login = new LoginGUI(this);
         registerProperty = new RegisterPropertyGUI(this);
         manageSubscriptions = new ManageSubscriptionsGUI(this);
-        addSearchCriteriaForm = new AddSearchCriteriaFormGUI(this);
+        editSearchCriteriaForm = new EditSearchCriteriaFormGUI(this);
         manageLandlordProperties = new ManageLandlordPropertiesGUI(this);
         payFeeForm = new PayFeeFormGUI(this);
         manageManagerProperties = new ManageManagerPropertiesGUI(this);
         changeFees = new ChangeFeesGUI(this);
         viewCompanyDatabase = new ViewCompanyDatabaseGUI(this);
         periodicalReportForm = new PeriodicalReportFormGUI(this);
+
         dashboard = new DashboardGUI(this);
+
         propertyView = new PropertyViewGUI(this);
 
-        // set DashboardGUI on JFrame
+        // set SignupGUI on JFrame
         this.add(dashboard);
+        this.pack();
+    }
+
+    // getter methods
+
+    public SignupGUI getSignup() {
+        return signup;
+    }
+
+    public LoginGUI getLogin() {
+        return login;
+    }
+
+    public RegisterPropertyGUI getRegisterProperty() {
+        return registerProperty;
+    }
+
+    public ManageSubscriptionsGUI getManageSubscriptions() {
+        return manageSubscriptions;
+    }
+
+    public EditSearchCriteriaFormGUI getAddSearchCriteriaForm() {
+        return editSearchCriteriaForm;
+    }
+
+    public ManageLandlordPropertiesGUI getManageLandlordProperties() {
+        return manageLandlordProperties;
+    }
+
+    public PayFeeFormGUI getPayFeeForm() {
+        return payFeeForm;
+    }
+
+    public ManageManagerPropertiesGUI getManageManagerProperties() {
+        return manageManagerProperties;
+    }
+
+    public ChangeFeesGUI getChangeFees() {
+        return changeFees;
+    }
+
+    public ViewCompanyDatabaseGUI getViewCompanyDatabase() {
+        return viewCompanyDatabase;
+    }
+
+    public PeriodicalReportFormGUI getPeriodicalReportForm() {
+        return periodicalReportForm;
+    }
+
+    public DashboardGUI getDashboard() {
+        return dashboard;
+    }
+
+    public PropertyViewGUI getPropertyView() {
+        return propertyView;
     }
 }

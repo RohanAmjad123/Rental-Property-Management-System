@@ -1,29 +1,23 @@
-
+package business.businesslogic;
 
 public class Fee {
 	
 	private int feePeriod;
-	private int feeAmound;
+	private int feeAmount;
 	
-	// fp stands for feePeriod
-	// fa stands for fee Amound
-	public Date(int fp, int fa){
+	
+	public Fee(int fp, int fa){
 		feePeriod = fp;
-		feeAmound = fa;
-
+		feeAmount = fa;
 	}
-			
-	public Date(){
-		feePeriod = "";
-		feeAmound = "";
 
+	public Fee() {
+		feePeriod = 0;
+		feeAmount = 0;
 	}
 	
-	
-	
-	
-	public void setFeePeriod(int a){
-		feePeriod = a;
+	public void setFeePeriod(int feePeriod){
+		this.feePeriod = feePeriod;
 	}
 	
 	public int getFeePeriod(){
@@ -31,12 +25,12 @@ public class Fee {
 	}
 		
 	
-	public void setFeeAmound(int a){
-		feeAmound = a;
+	public void setFeeAmound(int feeAmount){
+		this.feeAmount = feeAmount;
 	}
 	
-	public int getFeeAmound(){
-		return feeAmound;
+	public int getFeeAmount(){
+		return feeAmount;
 	}
 	
 
