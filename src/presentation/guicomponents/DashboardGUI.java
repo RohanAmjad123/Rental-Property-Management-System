@@ -46,6 +46,12 @@ public class DashboardGUI extends JPanel {
     private DefaultListModel<Property> propertyListModel = new DefaultListModel<Property>();
 
     // Variables declaration - do not modify
+    private javax.swing.JLabel logoLabel = new javax.swing.JLabel();
+    private javax.swing.JButton startButton = new javax.swing.JButton();
+    private javax.swing.JLabel welcomeLabel = new javax.swing.JLabel();
+    // End of variables declaration
+
+    // Variables declaration - do not modify
     private javax.swing.JButton logoutButton = new javax.swing.JButton();
     private javax.swing.JButton manageSubscriptionButton = new javax.swing.JButton();
     private javax.swing.JLabel renterLabel = new javax.swing.JLabel();
@@ -72,7 +78,7 @@ public class DashboardGUI extends JPanel {
         list.add(new Property());
         list.add(new Property());
         updatePropertiesView(list);
-        loggedInManager();
+        startPage();
     }
 
     // update Property list model
@@ -81,6 +87,49 @@ public class DashboardGUI extends JPanel {
         for (Property p : updatedPropertyListModel) {
             this.propertyListModel.addElement(p);
         }
+    }
+
+    public void startPage() {
+        removeAll();
+
+        setBackground(java.awt.Color.darkGray);
+        setPreferredSize(new java.awt.Dimension(878, 471));
+        setLayout(null);
+
+        copyrightLabel.setForeground(new java.awt.Color(255, 255, 255));
+        copyrightLabel.setText("© 2021 RentSlower Team");
+        add(copyrightLabel);
+        copyrightLabel.setBounds(30, 430, 170, 20);
+
+        startButton.setBackground(new java.awt.Color(255, 255, 255));
+        startButton.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        startButton.setForeground(new java.awt.Color(0, 0, 0));
+        startButton.setText("Start");
+        /*
+         * startButton.addActionListener(new java.awt.event.ActionListener() {
+         * public void actionPerformed(java.awt.event.ActionEvent evt) {
+         * 
+         * }
+         * });
+         */
+        add(startButton);
+        startButton.setBounds(310, 290, 240, 70);
+
+        welcomeLabel.setFont(new java.awt.Font("Heiti TC", 1, 36)); // NOI18N
+        welcomeLabel.setForeground(new java.awt.Color(255, 255, 255));
+        welcomeLabel.setText("Welcome to");
+        add(welcomeLabel);
+        welcomeLabel.setBounds(160, 60, 230, 80);
+
+        logoLabel.setFont(new java.awt.Font("Heiti TC", 1, 120)); // NOI18N
+        logoLabel.setForeground(new java.awt.Color(255, 255, 255));
+        logoLabel.setText("RentSlower");
+        add(logoLabel);
+        logoLabel.setBounds(120, 130, 670, 130);
+
+        revalidate();
+        repaint();
+        view.pack();
     }
 
     public void signedOut() {
@@ -991,6 +1040,18 @@ public class DashboardGUI extends JPanel {
 
     public DefaultListModel<Property> getPropertyListModel() {
         return propertyListModel;
+    }
+
+    public javax.swing.JLabel getLogoLabel() {
+        return logoLabel;
+    }
+
+    public javax.swing.JButton getStartButton() {
+        return startButton;
+    }
+
+    public javax.swing.JLabel getWelcomeLabel() {
+        return welcomeLabel;
     }
 
     public javax.swing.JButton getLogoutButton() {
