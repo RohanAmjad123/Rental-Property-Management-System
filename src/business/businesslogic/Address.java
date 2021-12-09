@@ -79,6 +79,8 @@ public class Address {
 		return country;
 	}
 	
-		
+	public String getAddressFormatted() {
+		return this.streetName + " " + this.cityQuadrant + ", " + this.city + " " + this.stateProvince + ", " + this.postalCode;
+	}
 	
 }

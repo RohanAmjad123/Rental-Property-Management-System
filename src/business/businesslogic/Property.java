@@ -19,6 +19,8 @@ public class Property {
 	private DateModel feeExpiry;
 	private int feeAmount;
 
+	private DateModel rentalDate;
+
 	public Property(String title, String description, String propertyType, int rent, int bedrooms, int bathrooms, int squareFeet,
 					String furnished, String landlordID, String state, DateModel feeExpiry, int feeAmount, DateModel listingDate, Address address) {
 		this.title = title;
@@ -35,6 +37,27 @@ public class Property {
 		this.feeAmount = feeAmount;
 		this.address = address;
 		this.listingDate = listingDate;
+		this.rentalDate = new DateModel("0000", "00", "00");
+	}
+
+	public Property(String title, String description, String propertyType, int rent, int bedrooms, int bathrooms, int squareFeet,
+					String furnished, String landlordID, String state, DateModel feeExpiry, int feeAmount, DateModel listingDate, Address address,
+					DateModel rentalDate) {
+		this.title = title;
+		this.description = description;
+		this.propertyType = propertyType;
+		this.rent = rent;
+		this.bedrooms = bedrooms;
+		this.bathrooms = bathrooms;
+		this.squareFeet = squareFeet;
+		this.furnished = furnished;
+		this.landlordID = landlordID;
+		this.state = state;
+		this.feeExpiry = feeExpiry;
+		this.feeAmount = feeAmount;
+		this.address = address;
+		this.listingDate = listingDate;
+		this.rentalDate = rentalDate;
 	}
 
 	public Property() {
@@ -164,5 +187,13 @@ public class Property {
 
 	public void setFeeAmount(int amount) {
 		this.feeAmount = amount;
+	}
+
+	public void setRentalDate(DateModel rentalDate) {
+		this.rentalDate = rentalDate;
+	}
+
+	public DateModel getRentalDate() {
+		return this.rentalDate;
 	}
 }

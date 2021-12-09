@@ -47,10 +47,76 @@ public class Frontend extends JFrame {
         propertyView = new PropertyViewGUI(this);
         dashboard = new DashboardGUI(this);
 
-        // set SignupGUI on JFrame
-        this.add(dashboard);
+        this.dashboard();
+    }
+
+    // methods for changing panel on frame
+
+    public void signup() {
+        this.setContentPane(this.getSignup());
         this.pack();
     }
+
+    public void login() {
+        this.setContentPane(this.getLogin());
+        this.pack();
+    }
+
+    public void registerProperty() {
+        this.setContentPane(this.registerProperty);
+        this.pack();
+    }
+
+    public void manageSubscriptions() {
+        this.setContentPane(this.manageSubscriptions);
+        this.pack();
+    }
+
+    public void editSearchCriteriaFrom() {
+        this.setContentPane(this.getEditSearchCriteriaForm());
+        this.pack();
+    }
+
+    public void manageLandlordProperties() {
+        this.setContentPane(this.getManageLandlordProperties());
+        this.pack();
+    }
+
+    public void payFeeForm() {
+        this.setContentPane(this.getPayFeeForm());
+        this.pack();
+    }
+
+    public void manageManagerProperties() {
+        this.setContentPane(this.getManageManagerProperties());
+        this.pack();
+    }
+
+    public void changeFees() {
+        this.setContentPane(this.getChangeFees());
+        this.pack();
+    }
+
+    public void viewCompanyDatabase() {
+        this.setContentPane(this.getViewCompanyDatabase());
+        this.pack();
+    }
+
+    public void periodicalReportForm() {
+        this.setContentPane(this.getPeriodicalReportForm());
+        this.pack();
+    }
+
+    public void propertyView() {
+        this.setContentPane(this.getPropertyView());
+        this.pack();
+    }
+
+    public void dashboard() {
+        this.setContentPane(this.getDashboard());
+        this.pack();
+    }
+
 
     // getter methods
 
@@ -70,7 +136,7 @@ public class Frontend extends JFrame {
         return manageSubscriptions;
     }
 
-    public EditSearchCriteriaFormGUI getAddSearchCriteriaForm() {
+    public EditSearchCriteriaFormGUI getEditSearchCriteriaForm() {
         return editSearchCriteriaForm;
     }
 
