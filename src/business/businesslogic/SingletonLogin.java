@@ -18,11 +18,11 @@ public class SingletonLogin {
 	public User getCurrentUser() {
 		return currentUser;
 	}
-	
-	public SingletonLogin getInstance(){
-		if(onlyInstance == null){
-			onlyInstance = new SingletonLogin();
-		}
+  
+	public static Singleton getInstance(){
+		if(onlyInstance==null){
+		  onlyInstance = new Singleton();
+	  }
 		return onlyInstance;
 	}
 	
