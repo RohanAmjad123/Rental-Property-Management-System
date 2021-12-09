@@ -63,7 +63,7 @@ public class PayFeeFormGUI extends JPanel {
         this.currentFee = updatedFee;
     }
 
-    private void payFeeForm() {
+    public void payFeeForm() {
         removeAll();
 
         setBackground(java.awt.Color.darkGray);
@@ -344,7 +344,7 @@ public class PayFeeFormGUI extends JPanel {
     }
 
     // getter method
-    
+
     public javax.swing.JLabel getCopyrightLabel() {
         return copyrightLabel;
     }
