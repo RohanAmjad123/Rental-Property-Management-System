@@ -39,8 +39,7 @@ public class EditSearchCriteriaFormGUI extends JPanel {
         editSearchCriteriaForm();
     }
 
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">
-    private void editSearchCriteriaForm() {
+    public void editSearchCriteriaForm() {
         removeAll();
 
         setBackground(java.awt.Color.darkGray);

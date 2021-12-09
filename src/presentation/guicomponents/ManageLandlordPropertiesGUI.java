@@ -1,7 +1,6 @@
 package presentation.guicomponents;
 
 import java.util.ArrayList;
-
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -18,7 +17,7 @@ import business.businesslogic.Property;
 public class ManageLandlordPropertiesGUI extends JPanel {
     private Frontend view;
 
-    // Variables declaration - do not modify                     
+    // Variables declaration - do not modify
     private javax.swing.JLabel changePropertyStateLabel = new javax.swing.JLabel();
     private javax.swing.JButton changeStateButton = new javax.swing.JButton();
     private javax.swing.JComboBox<String> changeStateComboBox = new javax.swing.JComboBox<String>();
@@ -55,7 +54,7 @@ public class ManageLandlordPropertiesGUI extends JPanel {
 
     public void manageProperties() {
         removeAll();
-        
+
         setBackground(java.awt.Color.darkGray);
         setPreferredSize(new java.awt.Dimension(752, 418));
         setLayout(null);
@@ -82,8 +81,8 @@ public class ManageLandlordPropertiesGUI extends JPanel {
         propertyList.setModel(propertyListModel);
         propertyList.addListSelectionListener(new ListSelectionListener() {
             @Override
-            public void valueChanged(ListSelectionEvent arg0) {
-                if (!arg0.getValueIsAdjusting()) {
+            public void valueChanged(ListSelectionEvent evt) {
+                if (!evt.getValueIsAdjusting()) {
                     displayChoices();
                 }
             }
@@ -98,11 +97,13 @@ public class ManageLandlordPropertiesGUI extends JPanel {
         dashboardButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         dashboardButton.setForeground(new java.awt.Color(0, 0, 0));
         dashboardButton.setText("X");
-        /*dashboardButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-
-            }
-        });*/
+        /*
+         * dashboardButton.addActionListener(new java.awt.event.ActionListener() {
+         * public void actionPerformed(java.awt.event.ActionEvent evt) {
+         * 
+         * }
+         * });
+         */
         add(dashboardButton);
         dashboardButton.setBounds(680, 20, 50, 40);
 
@@ -120,12 +121,15 @@ public class ManageLandlordPropertiesGUI extends JPanel {
 
         changeStateComboBox.setBackground(new java.awt.Color(255, 255, 255));
         changeStateComboBox.setForeground(java.awt.Color.black);
-        changeStateComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Inactive", "Active", "Rented" }));
-        /*changeStateComboBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-
-            }
-        });*/
+        changeStateComboBox
+                .setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Inactive", "Active", "Rented" }));
+        /*
+         * changeStateComboBox.addActionListener(new java.awt.event.ActionListener() {
+         * public void actionPerformed(java.awt.event.ActionEvent evt) {
+         * 
+         * }
+         * });
+         */
         add(changeStateComboBox);
         changeStateComboBox.setBounds(570, 170, 120, 20);
 
@@ -133,11 +137,13 @@ public class ManageLandlordPropertiesGUI extends JPanel {
         changeStateButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         changeStateButton.setForeground(new java.awt.Color(0, 0, 0));
         changeStateButton.setText("Change State");
-        /*changeStateButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-
-            }
-        });*/
+        /*
+         * changeStateButton.addActionListener(new java.awt.event.ActionListener() {
+         * public void actionPerformed(java.awt.event.ActionEvent evt) {
+         * 
+         * }
+         * });
+         */
         add(changeStateButton);
         changeStateButton.setBounds(550, 200, 160, 40);
 
@@ -151,11 +157,13 @@ public class ManageLandlordPropertiesGUI extends JPanel {
         deleteButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         deleteButton.setForeground(new java.awt.Color(0, 0, 0));
         deleteButton.setText("Delete");
-        /*deleteButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-
-            }
-        });*/
+        /*
+         * deleteButton.addActionListener(new java.awt.event.ActionListener() {
+         * public void actionPerformed(java.awt.event.ActionEvent evt) {
+         * 
+         * }
+         * });
+         */
         add(deleteButton);
         deleteButton.setBounds(570, 290, 120, 40);
 
@@ -164,7 +172,7 @@ public class ManageLandlordPropertiesGUI extends JPanel {
     }
 
     // getter methods
-    
+
     public javax.swing.JLabel getChangePropertyStateLabel() {
         return changePropertyStateLabel;
     }

@@ -72,8 +72,8 @@ public class ManageSubscriptionsGUI extends JPanel {
         subscriptionList.setModel(subscriptionListModel);
         subscriptionList.addListSelectionListener(new ListSelectionListener() {
             @Override
-            public void valueChanged(ListSelectionEvent arg0) {
-                if (!arg0.getValueIsAdjusting()) {
+            public void valueChanged(ListSelectionEvent evt) {
+                if (!evt.getValueIsAdjusting()) {
                     displayEdit();
                 }
             }
