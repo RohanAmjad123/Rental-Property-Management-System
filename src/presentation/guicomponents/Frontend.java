@@ -1,6 +1,7 @@
 package presentation.guicomponents;
 
 import javax.swing.*;
+import java.awt.*;
 
 /**
  * Class Frontend
@@ -47,60 +48,7 @@ public class Frontend extends JFrame {
         propertyView = new PropertyViewGUI(this);
         dashboard = new DashboardGUI(this);
 
-        // add all GUI panels
-        this.add(signup);
-        this.add(login);
-        this.add(registerProperty);
-        this.add(manageSubscriptions);
-        this.add(editSearchCriteriaForm);
-        this.add(manageLandlordProperties);
-        this.add(payFeeForm);
-        this.add(manageManagerProperties);
-        this.add(changeFees);
-        this.add(viewCompanyDatabase);
-        this.add(periodicalReportForm);
-        this.add(propertyView);
-        this.add(dashboard);
-
-
-        // set all panels as not visible
-        signup.setVisible(false);
-        signup.setPreferredSize(new java.awt.Dimension(0, 0));
-
-        login.setVisible(false);
-        login.setPreferredSize(new java.awt.Dimension(0, 0));
-
-        registerProperty.setVisible(false);
-        registerProperty.setPreferredSize(new java.awt.Dimension(0, 0));
-
-        manageSubscriptions.setVisible(false);
-        manageSubscriptions.setPreferredSize(new java.awt.Dimension(0, 0));
-
-        editSearchCriteriaForm.setVisible(false);
-        editSearchCriteriaForm.setPreferredSize(new java.awt.Dimension(0, 0));
-
-        manageLandlordProperties.setVisible(false);
-        manageLandlordProperties.setPreferredSize(new java.awt.Dimension(0, 0));
-
-        payFeeForm.setVisible(false);
-        payFeeForm.setPreferredSize(new java.awt.Dimension(0, 0));
-
-        manageManagerProperties.setVisible(false);
-        manageManagerProperties.setPreferredSize(new java.awt.Dimension(0, 0));
-
-        changeFees.setVisible(false);
-        changeFees.setPreferredSize(new java.awt.Dimension(0, 0));
-
-        viewCompanyDatabase.setVisible(false);
-        viewCompanyDatabase.setPreferredSize(new java.awt.Dimension(0, 0));
-
-        periodicalReportForm.setVisible(false);
-        periodicalReportForm.setPreferredSize(new java.awt.Dimension(0, 0));
-
-        propertyView.setVisible(false);
-        propertyView.setPreferredSize(new java.awt.Dimension(0, 0));
-
-        dashboard.setVisible(true);
+        this.setContentPane(this.getDashboard());
         this.pack();
     }
 
