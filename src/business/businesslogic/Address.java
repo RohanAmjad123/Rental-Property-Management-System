@@ -80,7 +80,7 @@ public class Address {
 	}
 	
 	public String getAddressFormatted() {
-		return this.streetName + " " + this.cityQuadrant + ", " + this.stateProvince + " " + this.stateProvince + ", " + this.postalCode;
+		return this.streetName + " " + this.cityQuadrant + ", " + this.city + " " + this.stateProvince + ", " + this.postalCode;
 	}
 	
 }

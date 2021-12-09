@@ -736,9 +736,9 @@ public class CompanyDatabase {
         ArrayList<String> landlordNames = new ArrayList<String>();
 
         String sql1 = "SELECT COUNT(*) FROM properties WHERE listing_date >=? AND listing_date <=?";
-        String sql2 = "SELECT COUNT(*) FROM properties WHERE listing_date >=? AND listing_date <=? AND rental_date >=? AND rental_date <=?";
+        String sql2 = "SELECT COUNT(*) FROM properties WHERE listing_date >=? AND listing_date <=? AND rental_date >=? AND rental_date <=? AND state=?";
         String sql3 = "SELECT COUNT(*) FROM properties WHERE listing_date >=? AND listing_date <=? AND state=?";
-        String sql4 = "SELECT * FROM properties INNER JOIN ON properties.landlord_id = users.email WHERE listing_date >=? AND listing_date <=? AND rental_date >=? AND rental_date <=? AND users.user_type=?";
+        String sql4 = "SELECT * FROM properties INNER JOIN users ON properties.landlord_id = users.email WHERE listing_date >=? AND listing_date <=? AND rental_date >=? AND rental_date <=? AND users.user_type=? AND state=?";
 
         try {
             PreparedStatement stmt1 = dbConnect.prepareStatement(sql1);
@@ -749,7 +749,7 @@ public class CompanyDatabase {
             stmt2.setString(2, endDate);
             stmt2.setString(3, startDate);
             stmt2.setString(4, endDate);
-            stmt2.setString(5, "landlord");
+            stmt2.setString(5, "rented");
             PreparedStatement stmt3 = dbConnect.prepareStatement(sql3);
             stmt3.setString(1, startDate);
             stmt3.setString(2, endDate);
@@ -759,6 +759,8 @@ public class CompanyDatabase {
             stmt4.setString(2, endDate);
             stmt4.setString(3, startDate);
             stmt4.setString(4, endDate);
+            stmt4.setString(5, "landlord");
+            stmt4.setString(6, "rented");
 
             ResultSet rs1 = stmt1.executeQuery();
             rs1.next();
@@ -769,7 +771,7 @@ public class CompanyDatabase {
             ResultSet rs4 = stmt4.executeQuery();
 
             while (rs4.next()) {
-                String[] feeExp = rs4.getString("fee_expiru").split("-");
+                String[] feeExp = rs4.getString("fee_expiry").split("-");
                 String[] listDate = rs4.getString("listing_date").split("-");
                 String[] rental = rs4.getString("rental_date").split("-");
                 DateModel feeExpiry = new DateModel(feeExp[0], feeExp[1], feeExp[2]);
@@ -797,15 +799,8 @@ public class CompanyDatabase {
         }
         
         try {
-            File myObj = new File("summary_report.txt");
-            if (myObj.createNewFile()) {
-                System.out.println("File created: " + myObj.getName());
-            } 
-            else {
-                System.out.println("File already exists.");
-            }
-
-            FileWriter myWriter = new FileWriter("filename.txt");
+            System.out.println("writing to file");
+            FileWriter myWriter = new FileWriter("summary_report_" + startDate + "_" + endDate + ".txt");
             myWriter.write("Number of Properties listed from " + startDate + " to " + endDate + ": " + numberOfPropertiesListedInPeriod + "\n");
             myWriter.write("Number of Properties rented from " + startDate + " to " + endDate + ": " + numberOfPropertiesRentedInPeriod + "\n");
             myWriter.write("Number of Active listings in range " + startDate + " to " + endDate + ": " + numberOfActiveListingsInPeriod + "\n");
