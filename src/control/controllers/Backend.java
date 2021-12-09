@@ -22,12 +22,12 @@ public class Backend {
     /**
      * 
      */
-    Backend() {
+    public Backend() {
         view = new Frontend();
-        model = new CompanyDatabase("", "", "", "");
+        model = new CompanyDatabase("jdbc:mysql://localhost:3306/Rental_Property_Management_System", "test", "testpass123");
 
         SignupController signupController = new SignupController(view, model);
-        LoginController loginController = new LoginController(view, model);
+        /*LoginController loginController = new LoginController(view, model);
         DashboardController dashboardController = new DashboardController(view, model);
         PropertyController propertyController = new PropertyController(view, model);
         RegisterPropertyController registerPropertyController = new RegisterPropertyController(view, model);
@@ -35,22 +35,27 @@ public class Backend {
         ChangeFeesController changeFeesController = new ChangeFeesController(view, model);
         ViewCompanyDBSController viewCompanyDBSController = new ViewCompanyDBSController(view, model);
         PeriodicalSummaryReportController periodicalSummaryReportController = new PeriodicalSummaryReportController(view, model);
-
+        */
         controllers = new ArrayList<Controller>();
 
         controllers.add(signupController);
-        controllers.add(loginController);
+        /*controllers.add(loginController);
         controllers.add(dashboardController);
         controllers.add(propertyController);
         controllers.add(registerPropertyController);
         controllers.add(subscriptionController);
         controllers.add(changeFeesController);
         controllers.add(viewCompanyDBSController);
-        controllers.add(periodicalSummaryReportController);
+        controllers.add(periodicalSummaryReportController);*/
     }
 
     public void runApp() {
         // set frontend view true
         view.setVisible(true);
+    }
+
+    public static void main(String args[]) {
+        Backend e = new Backend();
+        e.runApp();
     }
 }

@@ -16,14 +16,12 @@ import java.util.*;
  * @version 1.0
  */
 public class CompanyDatabase {
-    private final String DATABASENAME;
     private final String DBURL;
     private final String USERNAME;
     private final String PASSWORD;
     private Connection dbConnect;
 
-    public CompanyDatabase(String databaseName, String dburl, String username, String password) {
-        this.DATABASENAME = databaseName;
+    public CompanyDatabase(String dburl, String username, String password) {
         this.DBURL = dburl;
         this.USERNAME = username;
         this.PASSWORD = password;
@@ -40,6 +38,7 @@ public class CompanyDatabase {
             this.dbConnect = DriverManager.getConnection(DBURL, USERNAME, PASSWORD);
         } catch (SQLException e) {
             e.printStackTrace();
+            System.exit(0);
         }
     }
 
@@ -517,7 +516,7 @@ public class CompanyDatabase {
 
     public ArrayList<String> getManagerKeys() throws SQLException {
         String sql = "SELECT * FROM manager_keys";
-        ArrayList<String> manager_keys = new ArrayList<String>();
+        ArrayList<String> managerKeys = new ArrayList<String>();
 
         try {
             Statement stmt = dbConnect.createStatement();
@@ -529,7 +528,7 @@ public class CompanyDatabase {
             }
 
             while (rs.next()) {
-                manager_keys.add(rs.getString(1));
+                managerKeys.add(rs.getString(1));
             }
         }
         catch (SQLException e) {
@@ -537,6 +536,10 @@ public class CompanyDatabase {
             throw new SQLException("Could not get manager keys!");
         }
 
-        return manager_keys;
+        return managerKeys;
+    }
+
+    public boolean getPeriodicalSummary(DateModel start, DateModel end) {
+        return true;
     }
 }
