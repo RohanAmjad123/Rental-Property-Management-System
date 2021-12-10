@@ -206,7 +206,7 @@ public class Address {
 		return country;
 	}
 	/**
-     * getAddressFormatted method is a getter meathod, the private variables of
+     * getAddressFormatted method is a getter meathod, the private variables formatted as
      * streetName + " " + cityQuadrant + ", " + city + " " + stateProvince + ", " + postalCode
      * as a single large String value are returned
      * @return
