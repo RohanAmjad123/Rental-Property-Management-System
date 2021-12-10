@@ -21,8 +21,10 @@ public class Property {
 
 	private DateModel rentalDate;
 
-	public Property(String title, String description, String propertyType, int rent, int bedrooms, int bathrooms, int squareFeet,
-					String furnished, String landlordID, String state, DateModel feeExpiry, int feeAmount, DateModel listingDate, Address address) {
+	public Property(String title, String description, String propertyType, int rent, int bedrooms, int bathrooms,
+			int squareFeet,
+			String furnished, String landlordID, String state, DateModel feeExpiry, int feeAmount,
+			DateModel listingDate, Address address) {
 		this.title = title;
 		this.description = description;
 		this.propertyType = propertyType;
@@ -40,9 +42,11 @@ public class Property {
 		this.rentalDate = new DateModel("0000", "00", "00");
 	}
 
-	public Property(String title, String description, String propertyType, int rent, int bedrooms, int bathrooms, int squareFeet,
-					String furnished, String landlordID, String state, DateModel feeExpiry, int feeAmount, DateModel listingDate, Address address,
-					DateModel rentalDate) {
+	public Property(String title, String description, String propertyType, int rent, int bedrooms, int bathrooms,
+			int squareFeet,
+			String furnished, String landlordID, String state, DateModel feeExpiry, int feeAmount,
+			DateModel listingDate, Address address,
+			DateModel rentalDate) {
 		this.title = title;
 		this.description = description;
 		this.propertyType = propertyType;
@@ -75,6 +79,17 @@ public class Property {
 		this.feeAmount = 0;
 		this.address = new Address();
 		this.listingDate = new DateModel();
+	}
+
+	@Override
+	public String toString() {
+		String s = "";
+		s = "======================================================================\n";
+		s += "Title: " + this.getTitle() + "\n";
+		s += "Rent: " + this.getRent() + "\n";
+		s += this.getAddress().getStreetName() + ", " + this.getAddress().getPostalCode() + ", " + this.getAddress().getCity() + ", " + this.getAddress().getStateProvince() + ", " + this.getAddress().getCountry() + "\n";
+		s += "=====================================================================\n";
+		return s;
 	}
 
 	public String getTitle() {

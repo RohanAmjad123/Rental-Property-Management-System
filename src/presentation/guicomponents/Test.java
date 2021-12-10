@@ -5,7 +5,7 @@ public class Test {
         Frontend view = new Frontend();
         view.setVisible(true);
 
-        try {
+        /*try {
             Thread.sleep(2000);
         } catch (InterruptedException ex) {
             Thread.currentThread().interrupt();
@@ -19,6 +19,6 @@ public class Test {
             Thread.currentThread().interrupt();
         }
 
-        view.registerProperty();
+        view.registerProperty();*/
     }
 }
