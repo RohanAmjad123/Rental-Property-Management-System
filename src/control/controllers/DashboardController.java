@@ -8,6 +8,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.sql.SQLException;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseEvent;
 
 /**
  * Class DashboardController
@@ -18,7 +20,7 @@ import java.sql.SQLException;
  * @author Ibrahim Asad
  * @version 1.0
  */
-public class DashboardController implements Controller, ActionListener {
+public class DashboardController implements Controller, ActionListener, MouseListener {
     private Frontend view;
     private CompanyDatabase model;
 
@@ -38,6 +40,7 @@ public class DashboardController implements Controller, ActionListener {
         view.getDashboard().getChangeFeesButton().addActionListener(this);
         view.getDashboard().getViewCompanyDatabaseButton().addActionListener(this);
         view.getDashboard().getGenerateSummaryReportButton().addActionListener(this);
+        view.getDashboard().getPropertyList().addMouseListener(this);
     }
 
     public void actionPerformed(ActionEvent e) {
@@ -186,4 +189,22 @@ public class DashboardController implements Controller, ActionListener {
             view.periodicalReportForm();
         }
     }
+
+    public void mouseClicked(MouseEvent e) {
+        if (e.getClickCount() == 2) {
+            int index = view.getDashboard().getPropertyList().locationToIndex(e.getPoint());
+
+            Property p = view.getDashboard().getPropertyList().getModel().getElementAt(index);
+            
+            view.getPropertyView().updatePropertyView(p);
+
+            view.propertyView();
+            view.getPropertyView().propertyView();
+        }
+    }
+
+    public void mouseExited(MouseEvent e) {}
+    public void mouseReleased(MouseEvent e) {}
+    public void mousePressed(MouseEvent e) {}
+    public void mouseEntered(MouseEvent e) {}
 }
