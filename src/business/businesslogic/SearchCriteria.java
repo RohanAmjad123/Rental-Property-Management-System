@@ -21,7 +21,7 @@ public class SearchCriteria {
 	private String furnished;
 
 	/**
-	 * Address constuctor, Initializes the private variable values of renterID propertyType bedrooms bathrooms maxRent
+	 * SearchCriteria constuctor, Initializes the private variable values of renterID propertyType bedrooms bathrooms maxRent
 	 * cityQuadrant furnished with the values renterID propertyType bedrooms bathrooms maxRent
 	 * cityQuadrant and furnished that is passed through the constructor
 	 * @param renterID parameter is a Type String 
@@ -44,7 +44,7 @@ public class SearchCriteria {
 	}
 
 	/**
-	 * Address constuctor, Initializes the private variable values of propertyType bedrooms bathrooms maxRent
+	 * SearchCriteria constuctor, Initializes the private variable values of propertyType bedrooms bathrooms maxRent
 	 * cityQuadrant furnished with the values propertyType bedrooms bathrooms maxRent
 	 * cityQuadrant and furnished that is passed through the constructor and also intilizes the renterID with ""
 	 * @param propertyType parameter is a Type String 
@@ -66,7 +66,7 @@ public class SearchCriteria {
 	}
 
 	/**
-	 * Address constuctor, Initializes the private variable values of renterID propertyType bedrooms bathrooms maxRent
+	 * SearchCriteria constuctor, Initializes the private variable values of renterID propertyType bedrooms bathrooms maxRent
 	 * cityQuadrant and furnished. The string variable are initilized with the String value of "" and the int variables 
 	 * are initilized with an int value of 0
 	 */ 
