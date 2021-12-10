@@ -1,5 +1,15 @@
 package control.controllers;
 
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import presentation.guicomponents.*;
+import datasource.companydatabase.*;
+import business.businesslogic.*;
+import business.usermodels.*;
+import java.util.ArrayList;
+import java.sql.SQLException;
+import java.time.LocalDate;
+
 /**
  * Class PropertyController
  * @since December 4th, 2021
@@ -9,6 +19,143 @@ package control.controllers;
  * @author Ibrahim Asad
  * @version 1.0
  */
-public class PropertyController implements Controller {
-    
+public class PropertyController implements Controller, ActionListener {
+    private Frontend view;
+    private CompanyDatabase model;
+
+    public PropertyController(Frontend view, CompanyDatabase model) {
+        this.view = view;
+        this.model = model;
+
+        view.getPropertyView().getBackButton().addActionListener(this);
+        view.getPropertyView().getSendEmailButton().addActionListener(this);
+        view.getManageManagerProperties().getDeleteButton().addActionListener(this);
+        view.getManageLandlordProperties().getDeleteButton().addActionListener(this);
+        view.getManageManagerProperties().getDashboardButton().addActionListener(this);
+        view.getManageLandlordProperties().getDashboardButton().addActionListener(this);
+        view.getManageManagerProperties().getChangeStateButton().addActionListener(this);
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == view.getPropertyView().getBackButton()) {
+            ArrayList<Property> activeProperties = new ArrayList<Property>();
+
+            try {
+                activeProperties = model.getStateProperties("active");
+                view.getDashboard().updatePropertiesView(activeProperties);
+            }
+            catch (SQLException exception) {
+                exception.printStackTrace();
+            }
+
+            User u = SingletonLogin.getInstance().getCurrentUser();
+
+            if (u.getUserType().equals("renter")) {
+                view.dashboard();
+                view.getDashboard().loggedInRenter();
+            }
+            else if (u.getUserType().equals("landlord")) {
+                view.dashboard();
+                view.getDashboard().loggedInLandlord();
+            }
+            else if (u.getUserType().equals("manager")) {
+                view.dashboard();
+                view.getDashboard().loggedInManager();
+            }
+            else {
+                view.dashboard();
+                view.getDashboard().signedOut();
+            }
+        }
+        else if (e.getSource() == view.getPropertyView().getSendEmailButton()) {
+            String to = view.getPropertyView().getPropertyToBeViewed().getLandlordID();
+            String from;
+            User u = SingletonLogin.getInstance().getCurrentUser();
+
+            if (u.getUserType().equals("renter") || u.getUserType().equals("landlord") || u.getUserType().equals("manager")) {
+                from = u.getEmail();
+            }
+            else {
+                from = "comapany@mail.com";
+            }
+
+            //MAIL SERVICE IMPLEMENTED
+        }
+        else if (e.getSource() == view.getManageManagerProperties().getDeleteButton()) {
+            String postalCode = view.getManageManagerProperties().getPropertyList().getSelectedValue().getAddress().getPostalCode();
+
+            try {
+                model.deleteProperty(postalCode);
+
+                ArrayList<Property> updatedProperties = new ArrayList<Property>();
+
+                updatedProperties = model.getAllProperties();
+
+                view.getManageManagerProperties().updatePropertiesView(updatedProperties);
+                view.getManageManagerProperties().manageProperties();
+            }
+            catch (SQLException exception) {
+                exception.printStackTrace();
+            }
+        }
+        else if (e.getSource() == view.getManageLandlordProperties().getDeleteButton()) {
+            String postalCode = view.getManageLandlordProperties().getPropertyList().getSelectedValue().getAddress().getPostalCode();
+
+            try {
+                model.deleteProperty(postalCode);
+
+                ArrayList<Property> updatedProperties = new ArrayList<Property>();
+
+                updatedProperties = model.getProperties(SingletonLogin.getInstance().getCurrentUser().getEmail());
+
+                view.getManageLandlordProperties().updatePropertiesView(updatedProperties);
+                view.getManageLandlordProperties().manageProperties();
+            }
+            catch (SQLException exception) {
+                exception.printStackTrace();
+            }
+        }
+        else if (e.getSource() == view.getManageManagerProperties().getDashboardButton()) {
+            view.dashboard();
+            view.getDashboard().loggedInManager();
+        }
+        else if (e.getSource() == view.getManageLandlordProperties().getDashboardButton()) {
+            view.dashboard();
+            view.getDashboard().loggedInLandlord();
+        }
+        else if (e.getSource() == view.getManageManagerProperties().getChangeStateButton()) {
+            Property p = view.getManageManagerProperties().getPropertyList().getSelectedValue();
+            String state = view.getManageManagerProperties().getChangeStateComboBox().getSelectedItem().toString();
+
+            if (p.getState().equals("inactive") && state.equals("Active")) {
+                try {
+                    Fee f = model.getFee();
+
+                    LocalDate d = LocalDate.now();
+                    d = d.plusDays(f.getFeePeriod());
+                    String day = String.valueOf(d.getDayOfMonth());
+                    String month = String.valueOf(d.getMonthValue());
+                    String year = String.valueOf(d.getYear());
+                    DateModel feeExpiry = new DateModel(year, month, day);
+                    
+                    p.setFeeExpiry(feeExpiry);
+                    p.setFeeAmount(f.getFeeAmount());
+                    p.setState(state);
+
+                    model.updateProperty(p);
+
+                    ArrayList<Property> updatedProperties = new ArrayList<Property>();
+
+                    updatedProperties = model.getAllProperties();
+
+                    view.getManageManagerProperties().updatePropertiesView(updatedProperties);
+                    view.getManageManagerProperties().manageProperties();
+                }
+                catch (SQLException exception) {
+                    exception.printStackTrace();
+                }
+            }
+
+        }
+    }
 }

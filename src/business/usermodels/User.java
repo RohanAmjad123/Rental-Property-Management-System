@@ -17,9 +17,6 @@ public class User {
 	private String lastName;
 	private String userType;
 
-
-email, password, firstName, lastName, userType
-
 	/**
 	 * User constuctor, Initializes the private variable values of email, password, firstName, lastName, userType
 	 * with the values email, password, firstName, lastName, userType that is passed through the constructor

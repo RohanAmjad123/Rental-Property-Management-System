@@ -190,6 +190,7 @@ public class DashboardController implements Controller, ActionListener, MouseLis
         //if register property button is clicked
         else if (e.getSource() == view.getDashboard().getRegisterPropertyButton()) {
             view.registerProperty();
+            view.getRegisterProperty().registrationForm();
         }
         
         //if manage my properties button is clicked
