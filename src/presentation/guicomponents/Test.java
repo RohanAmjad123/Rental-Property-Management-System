@@ -1,5 +1,4 @@
 package presentation.guicomponents;
-import business.businesslogic.Address;
 
 public class Test {
     public static void main(String args[]) {
