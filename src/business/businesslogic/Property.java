@@ -48,7 +48,7 @@ public class Property {
 		this.feeAmount = feeAmount;
 		this.address = address;
 		this.listingDate = listingDate;
-		this.rentalDate = new DateModel("0000", "00", "00");
+		this.rentalDate = new DateModel("2000", "01", "01");
 	}
 
 	public Property(String title, String description, String propertyType, int rent, int bedrooms, int bathrooms,
