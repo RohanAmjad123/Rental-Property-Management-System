@@ -34,6 +34,10 @@ public class DashboardController implements Controller, ActionListener {
         view.getDashboard().getManageSubscriptionButton().addActionListener(this);
         view.getDashboard().getRegisterPropertyButton().addActionListener(this);
         view.getDashboard().getManageMyPropertiesButton().addActionListener(this);
+        view.getDashboard().getManageAllPropertiesButton().addActionListener(this);
+        view.getDashboard().getChangeFeesButton().addActionListener(this);
+        view.getDashboard().getViewCompanyDatabaseButton().addActionListener(this);
+        view.getDashboard().getGenerateSummaryReportButton().addActionListener(this);
     }
 
     public void actionPerformed(ActionEvent e) {
@@ -157,6 +161,29 @@ public class DashboardController implements Controller, ActionListener {
             catch (SQLException exception) {
                 exception.printStackTrace();
             }
+        }
+        else if (e.getSource() == view.getDashboard().getManageAllPropertiesButton()) {
+            ArrayList<Property> p = new ArrayList<Property>();
+            
+            try {
+                p = model.getAllProperties();
+
+                view.getManageManagerProperties().updatePropertiesView(p);
+                
+                view.manageManagerProperties();
+            }
+            catch (SQLException exception) {
+                exception.printStackTrace();
+            }
+        }
+        else if (e.getSource() == view.getDashboard().getChangeFeesButton()) {
+            view.changeFees();
+        }
+        else if (e.getSource() == view.getDashboard().getViewCompanyDatabaseButton()) {
+            view.viewCompanyDatabase();
+        }
+        else if (e.getSource() == view.getDashboard().getGenerateSummaryReportButton()) {
+            view.periodicalReportForm();
         }
     }
 }

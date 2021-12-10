@@ -315,7 +315,7 @@ public class CompanyDatabase {
             ResultSet rs = stmt.executeQuery(sql);
 
             while (rs.next()) {
-                String[] feeExp = rs.getString("fee_expiru").split("-");
+                String[] feeExp = rs.getString("fee_expiry").split("-");
                 String[] listDate = rs.getString("listing_date").split("-");
                 String[] rental = rs.getString("rental_date").split("-");
                 DateModel feeExpiry = new DateModel(feeExp[0], feeExp[1], feeExp[2]);
