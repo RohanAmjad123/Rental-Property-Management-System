@@ -34,6 +34,7 @@ public class LoginController implements Controller, ActionListener {
 	 	this.view = view;
         this.model = model;
 
+        //relevant buttons in gui binded with action listeners
 		view.getLogin().getDashboardButton().addActionListener(this);
         view.getLogin().getRenterButton().addActionListener(this);
         view.getLogin().getLandlordButton().addActionListener(this);
@@ -58,21 +59,30 @@ public class LoginController implements Controller, ActionListener {
     
     
     public void actionPerformed(ActionEvent e) {
+    	//if renter button is clicked
 		if (e.getSource() == view.getLogin().getRenterButton()) {
 			userType = "renter";
 			view.getLogin().userLogin();
 		}
+		
+		//if landlord button is clicked
 		else if (e.getSource() == view.getLogin().getLandlordButton()) {
 			userType = "landlord";
 			view.getLogin().userLogin();
-		}	
+		}
+		
+		//if manager button is clicked
 		else if (e.getSource() == view.getLogin().getManagerButton()) {
 			userType = "manager";
 			view.getLogin().userLogin();
 		}
+		
+		//if try again button is clicked
 		else if (e.getSource() == view.getLogin().getTryAgainButton()) {
 			view.getLogin().userChoice();
 		}
+		
+		//if login button is clicked
 		else if (e.getSource() == view.getLogin().getLoginButton()){
 			String email = "";
 			String password = "";
@@ -101,6 +111,8 @@ public class LoginController implements Controller, ActionListener {
 			}
 			
 		}
+		
+		//if finish button is clicked
 		else if (e.getSource() == view.getLogin().getFinishButton()) {
 			if (userType.equals("renter")) {
 				view.dashboard();
@@ -115,6 +127,8 @@ public class LoginController implements Controller, ActionListener {
 				view.getDashboard().loggedInManager();
 			}
 		}
+		
+		//if 'x' (exit to dashboard) button is clicked
 		else if (e.getSource() == view.getLogin().getDashboardButton()) {
 			view.dashboard();
 			view.getDashboard().signedOut();
