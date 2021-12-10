@@ -207,8 +207,8 @@ public class CompanyDatabase {
             stmt.setString(8, p.getFurnished());
             stmt.setString(9, p.getLandlordID());
             stmt.setString(10, p.getState());
-            stmt.setString(11, "");
-            stmt.setInt(12, 0);
+            stmt.setString(11, p.getFeeExpiry().getDateFormatted());
+            stmt.setInt(12, p.getFeeAmount());
             stmt.setString(13, p.getListingDate().getDateFormatted());
             stmt.setString(14, p.getAddress().getStreetName());
             stmt.setString(15, p.getAddress().getPostalCode());
@@ -216,8 +216,8 @@ public class CompanyDatabase {
             stmt.setString(17, p.getAddress().getCity());
             stmt.setString(18, p.getAddress().getStateProvince());
             stmt.setString(19, p.getAddress().getCountry());
-            stmt.setString(20, p.getAddress().getPostalCode());
-            stmt.setString(21, p.getRentalDate().getDateFormatted());
+            stmt.setString(20, p.getRentalDate().getDateFormatted());
+            stmt.setString(21, p.getAddress().getPostalCode());
 
             int affectedRows = stmt.executeUpdate();
             if (affectedRows == 0) {
@@ -397,7 +397,7 @@ public class CompanyDatabase {
         DateModel currentDate = new DateModel(year, month, day);
         String currDate = currentDate.getDateFormatted();
 
-        String check = "UPDATE properties SET state='suspended' WHERE state='active' AND fee_expiry<?";
+        String check = "UPDATE properties SET state='suspended' WHERE state='active' AND fee_expiry<=?";
 
         try {
             PreparedStatement checkStmt = dbConnect.prepareStatement(check);

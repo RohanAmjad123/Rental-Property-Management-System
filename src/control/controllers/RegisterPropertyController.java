@@ -144,7 +144,15 @@ public class RegisterPropertyController implements Controller, ActionListener {
                 }
                 landlordID = u.getEmail();
 
+               
                 address = new Address(streetName, postalCode, cityQuadrant, city, stateProvince, country);
+            
+                //new property initialized with stored specifications
+                Property p = new Property(title, description, propertyType, rent, bedrooms, bathrooms, squareFeet, furnished, landlordID, state, feeExpiry, feeAmount, listingDate, address);
+                            
+                model.registerProperty(p);
+                view.getRegisterProperty().successPage();
+              
             }
             catch (NullPointerException exception) {
                 exception.printStackTrace();
@@ -153,14 +161,6 @@ public class RegisterPropertyController implements Controller, ActionListener {
             catch (IllegalArgumentException exception) {
                 exception.printStackTrace();
                 view.getRegisterProperty().errorPage();
-            }
-
-            try {
-            	//new property initialized with stored specifications
-                Property p = new Property(title, description, propertyType, rent, bedrooms, bathrooms, squareFeet, furnished, landlordID, state, feeExpiry, feeAmount, listingDate, address);
-                
-                model.registerProperty(p);
-                view.getRegisterProperty().successPage();
             }
             catch (SQLException exception) {
                 exception.printStackTrace();
