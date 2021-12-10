@@ -5,7 +5,9 @@ import javax.swing.*;
 import business.businesslogic.Property;
 
 /**
- * Class DashboardGUI
+ * Class DashboardGUI: main dashboard view for the application, contains a
+ * signed out, renter logged in, landlord logged in, and manager logged in
+ * layout
  * 
  * @since December 4th, 2021
  * @author Azlan Amjad
@@ -14,7 +16,7 @@ import business.businesslogic.Property;
 public class DashboardGUI extends JPanel {
     private Frontend view;
 
-    // Variables declaration - do not modify
+    // Variables declaration
     private javax.swing.JLabel bathroomLabel = new javax.swing.JLabel();
     private javax.swing.JSpinner bathroomSpinner = new javax.swing.JSpinner();
     private javax.swing.JLabel bedroomLabel = new javax.swing.JLabel();
@@ -45,25 +47,18 @@ public class DashboardGUI extends JPanel {
     // all properties
     private DefaultListModel<Property> propertyListModel = new DefaultListModel<Property>();
 
-    // Variables declaration - do not modify
     private javax.swing.JLabel logoLabel = new javax.swing.JLabel();
     private javax.swing.JButton startButton = new javax.swing.JButton();
     private javax.swing.JLabel welcomeLabel = new javax.swing.JLabel();
-    // End of variables declaration
 
-    // Variables declaration - do not modify
     private javax.swing.JButton logoutButton = new javax.swing.JButton();
     private javax.swing.JButton manageSubscriptionButton = new javax.swing.JButton();
     private javax.swing.JLabel renterLabel = new javax.swing.JLabel();
-    // End of variables declaration
 
-    // Variables declaration - do not modify
     private javax.swing.JLabel landlordLabel = new javax.swing.JLabel();
     private javax.swing.JButton manageMyPropertiesButton = new javax.swing.JButton();
     private javax.swing.JButton registerPropertyButton = new javax.swing.JButton();
-    // End of variables declaration
 
-    // Variables declaration - do not modify
     private javax.swing.JButton changeFeesButton = new javax.swing.JButton();
     private javax.swing.JButton generateSummaryReportButton = new javax.swing.JButton();
     private javax.swing.JButton manageAllPropertiesButton = new javax.swing.JButton();
@@ -71,13 +66,23 @@ public class DashboardGUI extends JPanel {
     private javax.swing.JButton viewCompanyDatabaseButton = new javax.swing.JButton();
     // End of variables declaration
 
+    /**
+     * DashboardGUI constructor, used by Frontend
+     * 
+     * @param view Frontend JFrame
+     */
     public DashboardGUI(Frontend view) {
         // assign view reference
         this.view = view;
         startPage();
     }
 
-    // update Property list model
+    /**
+     * Update DashboardGUIs property list model
+     * 
+     * @param updatedPropertyListModel ArrayList<Property> updated list of
+     *                                 properties
+     */
     public void updatePropertiesView(ArrayList<Property> updatedPropertyListModel) {
         this.propertyListModel.clear();
         for (Property p : updatedPropertyListModel) {
@@ -85,7 +90,11 @@ public class DashboardGUI extends JPanel {
         }
     }
 
+    /**
+     * Instantiate start page dashboard layout
+     */
     public void startPage() {
+        // remove all components from panel
         removeAll();
 
         setBackground(java.awt.Color.darkGray);
@@ -123,12 +132,17 @@ public class DashboardGUI extends JPanel {
         add(logoLabel);
         logoLabel.setBounds(120, 130, 670, 130);
 
+        // revalidate, repaint, then pack frame
         revalidate();
         repaint();
         view.pack();
     }
 
+    /**
+     * Instantiate signed out dashboard layout
+     */
     public void signedOut() {
+        // remove all components from panel
         removeAll();
 
         setBackground(java.awt.Color.darkGray);
@@ -313,12 +327,17 @@ public class DashboardGUI extends JPanel {
         add(joinTodayLabel);
         joinTodayLabel.setBounds(630, 330, 190, 50);
 
+        // revalidate, repaint, then pack frame
         revalidate();
         repaint();
         view.pack();
     }
 
+    /**
+     * Instantiate logged in renter dashboard layout
+     */
     public void loggedInRenter() {
+        // remove all components from panel
         removeAll();
 
         setBackground(java.awt.Color.darkGray);
@@ -498,12 +517,17 @@ public class DashboardGUI extends JPanel {
         add(manageSubscriptionButton);
         manageSubscriptionButton.setBounds(600, 440, 230, 40);
 
+        // revalidate, repaint, then pack frame
         revalidate();
         repaint();
         view.pack();
     }
 
+    /**
+     * Instantiate logged in landlord dashboard layout
+     */
     public void loggedInLandlord() {
+        // remove all components from panel
         removeAll();
 
         setBackground(java.awt.Color.darkGray);
@@ -698,12 +722,17 @@ public class DashboardGUI extends JPanel {
         add(searchLabel);
         searchLabel.setBounds(50, 110, 240, 30);
 
+        // revalidate, repaint, then pack frame
         revalidate();
         repaint();
         view.pack();
     }
 
+    /**
+     * Instantiate logged in manager dashboard layout
+     */
     public void loggedInManager() {
+        // remove all components from panel
         removeAll();
 
         setBackground(java.awt.Color.darkGray);
@@ -927,6 +956,7 @@ public class DashboardGUI extends JPanel {
         add(viewCompanyDatabaseButton);
         viewCompanyDatabaseButton.setBounds(590, 490, 260, 40);
 
+        // revalidate, repaint, then pack frame
         revalidate();
         repaint();
         view.pack();
@@ -934,162 +964,362 @@ public class DashboardGUI extends JPanel {
 
     // getter methods
 
+    /**
+     * bathroomLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getBathroomLabel() {
         return bathroomLabel;
     }
 
+    /**
+     * bathroomSpinner getter method
+     * 
+     * @return JSpinner
+     */
     public javax.swing.JSpinner getBathroomSpinner() {
         return bathroomSpinner;
     }
 
+    /**
+     * bedroomLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getBedroomLabel() {
         return bedroomLabel;
     }
 
+    /**
+     * bedroomSpinner getter method
+     * 
+     * @return JSpinner
+     */
     public javax.swing.JSpinner getBedroomSpinner() {
         return bedroomSpinner;
     }
 
+    /**
+     * cityQuadrantComboBox getter method
+     * 
+     * @return JComboBox<String>
+     */
     public javax.swing.JComboBox<String> getCityQuadrantComboBox() {
         return cityQuadrantComboBox;
     }
 
+    /**
+     * cityQuadrantLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getCityQuadrantLabel() {
         return cityQuadrantLabel;
     }
 
+    /**
+     * copyrightLabel getter method
+     * 
+     * @return Jlabel
+     */
     public javax.swing.JLabel getCopyrightLabel() {
         return copyrightLabel;
     }
 
+    /**
+     * furnishedComboBox getter method
+     * 
+     * @return JComboBox<String>
+     */
     public javax.swing.JComboBox<String> getFurnishedComboBox() {
         return furnishedComboBox;
     }
 
+    /**
+     * furnishedLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getFurnishedLabel() {
         return furnishedLabel;
     }
 
+    /**
+     * jScrollPane1 getter method
+     * 
+     * @return JScrollPane
+     */
     public javax.swing.JScrollPane getjScrollPane1() {
         return jScrollPane1;
     }
 
+    /**
+     * jSeparator1 getter method
+     * 
+     * @return JSeparator
+     */
     public javax.swing.JSeparator getjSeparator1() {
         return jSeparator1;
     }
 
+    /**
+     * jSeparator2 getter method
+     * 
+     * @return JSeparator
+     */
     public javax.swing.JSeparator getjSeparator2() {
         return jSeparator2;
     }
 
+    /**
+     * joinTodayLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getJoinTodayLabel() {
         return joinTodayLabel;
     }
 
+    /**
+     * loginButton getter method
+     * 
+     * @return JButton
+     */
     public javax.swing.JButton getLoginButton() {
         return loginButton;
     }
 
+    /**
+     * maxRentLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getMaxRentLabel() {
         return maxRentLabel;
     }
 
+    /**
+     * maxRentText getter method
+     * 
+     * @return JTextField
+     */
     public javax.swing.JTextField getMaxRentText() {
         return maxRentText;
     }
 
+    /**
+     * mottoLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getMottoLabel() {
         return mottoLabel;
     }
 
+    /**
+     * orLabel getter method
+     * 
+     * @return Jlabel
+     */
     public javax.swing.JLabel getOrLabel() {
         return orLabel;
     }
 
+    /**
+     * propertyList getter method
+     * 
+     * @return JList<Property>
+     */
     public javax.swing.JList<Property> getPropertyList() {
         return propertyList;
     }
 
+    /**
+     * propertyTypeComboBox getter method
+     * 
+     * @return JComboBox<String>
+     */
     public javax.swing.JComboBox<String> getPropertyTypeComboBox() {
         return propertyTypeComboBox;
     }
 
+    /**
+     * propertyTypeLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getPropertyTypeLabel() {
         return propertyTypeLabel;
     }
 
+    /**
+     * rentSlowerLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getRentSlowerLabel() {
         return rentSlowerLabel;
     }
 
+    /**
+     * searchButton getter method
+     * 
+     * @return JButton
+     */
     public javax.swing.JButton getSearchButton() {
         return searchButton;
     }
 
+    /**
+     * searchLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getSearchLabel() {
         return searchLabel;
     }
 
+    /**
+     * signupButton getter method
+     * 
+     * @return JButton
+     */
     public javax.swing.JButton getSignupButton() {
         return signupButton;
     }
 
+    /**
+     * propertyListModel getter method
+     * 
+     * @return DefaultListModel<Property>
+     */
     public DefaultListModel<Property> getPropertyListModel() {
         return propertyListModel;
     }
 
+    /**
+     * logoLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getLogoLabel() {
         return logoLabel;
     }
 
+    /**
+     * startButton getter method
+     * 
+     * @return JButton
+     */
     public javax.swing.JButton getStartButton() {
         return startButton;
     }
 
+    /**
+     * welcomeLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getWelcomeLabel() {
         return welcomeLabel;
     }
 
+    /**
+     * logoutButton getter method
+     * 
+     * @return JButton
+     */
     public javax.swing.JButton getLogoutButton() {
         return logoutButton;
     }
 
+    /**
+     * manageSubscriptionButton getter method
+     * 
+     * @return JButton
+     */
     public javax.swing.JButton getManageSubscriptionButton() {
         return manageSubscriptionButton;
     }
 
+    /**
+     * renterLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getRenterLabel() {
         return renterLabel;
     }
 
+    /**
+     * landlordLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getLandlordLabel() {
         return landlordLabel;
     }
 
+    /**
+     * manageMyPropertiesButton getter method
+     * 
+     * @return JButton
+     */
     public javax.swing.JButton getManageMyPropertiesButton() {
         return manageMyPropertiesButton;
     }
 
+    /**
+     * registerPropertyButton getter method
+     * 
+     * @return JButton
+     */
     public javax.swing.JButton getRegisterPropertyButton() {
         return registerPropertyButton;
     }
 
+    /**
+     * changeFeesButton getter methods
+     * 
+     * @return JButton
+     */
     public javax.swing.JButton getChangeFeesButton() {
         return changeFeesButton;
     }
 
+    /**
+     * generateSummaryReportButton getter methods
+     * 
+     * @return JButton
+     */
     public javax.swing.JButton getGenerateSummaryReportButton() {
         return generateSummaryReportButton;
     }
 
+    /**
+     * manageAllPropertiesButton getter method
+     * 
+     * @return JButton
+     */
     public javax.swing.JButton getManageAllPropertiesButton() {
         return manageAllPropertiesButton;
     }
 
+    /**
+     * managerLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getManagerLabel() {
         return managerLabel;
     }
 
+    /**
+     * viewCompanyDatabaseButton getter method
+     * 
+     * @return JButton
+     */
     public javax.swing.JButton getViewCompanyDatabaseButton() {
         return viewCompanyDatabaseButton;
     }

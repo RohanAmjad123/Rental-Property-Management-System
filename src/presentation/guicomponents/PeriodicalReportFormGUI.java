@@ -3,7 +3,8 @@ package presentation.guicomponents;
 import javax.swing.*;
 
 /**
- * Class PeriodicalReportFormGUI
+ * Class PeriodicalReportFormGUI: a panel which displays a form to get From and
+ * To dates to generate a periodical summary report
  * 
  * @since December 4th, 2021
  * @author Azlan Amjad
@@ -34,13 +35,22 @@ public class PeriodicalReportFormGUI extends JPanel {
     private javax.swing.JLabel toYearLabel = new javax.swing.JLabel();
     // End of variables declaration
 
+    /**
+     * PeriodicalReportFormGUI constructor, used by Frontend
+     * 
+     * @param view Frontend JFrame
+     */
     public PeriodicalReportFormGUI(Frontend view) {
         // assign view reference
         this.view = view;
         reportForm();
     }
 
+    /**
+     * Instantiate report form layout
+     */
     public void reportForm() {
+        // remove all components from panel
         removeAll();
 
         setBackground(java.awt.Color.darkGray);
@@ -182,6 +192,7 @@ public class PeriodicalReportFormGUI extends JPanel {
         add(toDayComboBox);
         toDayComboBox.setBounds(60, 330, 80, 20);
 
+        // revalidate, repaint, then pack frame
         revalidate();
         repaint();
         view.pack();
@@ -189,78 +200,173 @@ public class PeriodicalReportFormGUI extends JPanel {
 
     // getter methods
 
+    /**
+     * copyrightLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getCopyrightLabel() {
         return copyrightLabel;
     }
 
+    /**
+     * dashboardButton getter method
+     * 
+     * @return JButton
+     */
     public javax.swing.JButton getDashboardButton() {
         return dashboardButton;
     }
 
+    /**
+     * fromDayComboBox getter method
+     * 
+     * @return JComboBox<String>
+     */
     public javax.swing.JComboBox<String> getFromDayComboBox() {
         return fromDayComboBox;
     }
 
+    /**
+     * fromDayLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getFromDayLabel() {
         return fromDayLabel;
     }
 
+    /**
+     * fromLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getFromLabel() {
         return fromLabel;
     }
 
+    /**
+     * fromMonthComboBox getter method
+     * 
+     * @return JComboBox<String>
+     */
     public javax.swing.JComboBox<String> getFromMonthComboBox() {
         return fromMonthComboBox;
     }
 
+    /**
+     * fromMonthLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getFromMonthLabel() {
         return fromMonthLabel;
     }
 
+    /**
+     * fromYearComboBox getter method
+     * 
+     * @return JComboBox<String>
+     */
     public javax.swing.JComboBox<String> getFromYearComboBox() {
         return fromYearComboBox;
     }
 
+    /**
+     * fromYearLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getFromYearLabel() {
         return fromYearLabel;
     }
 
+    /**
+     * generateButton getter method
+     * 
+     * @return JButton
+     */
     public javax.swing.JButton getGenerateButton() {
         return generateButton;
     }
 
+    /**
+     * generateLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getGenerateLabel() {
         return generateLabel;
     }
 
+    /**
+     * rentSlowerLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getRentSlowerLabel() {
         return rentSlowerLabel;
     }
 
+    /**
+     * toDayComboBox getter method
+     * 
+     * @return JComboBox<String>
+     */
     public javax.swing.JComboBox<String> getToDayComboBox() {
         return toDayComboBox;
     }
 
+    /**
+     * toDayLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getToDayLabel() {
         return toDayLabel;
     }
 
+    /**
+     * toLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getToLabel() {
         return toLabel;
     }
 
+    /**
+     * toMonthComboBox getter method
+     * 
+     * @return JComboBox<String>
+     */
     public javax.swing.JComboBox<String> getToMonthComboBox() {
         return toMonthComboBox;
     }
 
+    /**
+     * toMonthLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getToMonthLabel() {
         return toMonthLabel;
     }
 
+    /**
+     * toYearComboBox getter method
+     * 
+     * @return JComboBox<String>
+     */
     public javax.swing.JComboBox<String> getToYearComboBox() {
         return toYearComboBox;
     }
 
+    /**
+     * toYearLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getToYearLabel() {
         return toYearLabel;
     }

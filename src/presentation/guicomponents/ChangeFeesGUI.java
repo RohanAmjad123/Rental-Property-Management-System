@@ -38,7 +38,7 @@ public class ChangeFeesGUI extends JPanel {
     }
 
     /**
-     * Method to instantiate the Change Fees form layout
+     * Instantiate the change fees form layout
      */
     public void changeFeesForm() {
         // remove all components from panel

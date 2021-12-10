@@ -3,7 +3,9 @@ package presentation.guicomponents;
 import javax.swing.*;
 
 /**
- * Class SignupGUI
+ * Class SignupGUI: a panel to display a signup view, includes user choice
+ * layout,
+ * signup layout, success and error page
  * 
  * @since December 4th, 2021
  * @author Azlan Amjad
@@ -23,9 +25,7 @@ public class SignupGUI extends JPanel {
     private javax.swing.JButton renterButton = new javax.swing.JButton();
     private javax.swing.JLabel renterLabel = new javax.swing.JLabel();
     private javax.swing.JLabel userChoiceLabel = new javax.swing.JLabel();
-    // End of variables declaration
 
-    // Variables declaration - do not modify
     private javax.swing.JLabel emailLabel = new javax.swing.JLabel();
     private javax.swing.JTextField emailText = new javax.swing.JTextField();
     private javax.swing.JLabel firstNameLabel = new javax.swing.JLabel();
@@ -36,35 +36,34 @@ public class SignupGUI extends JPanel {
     private javax.swing.JPasswordField passwordText = new javax.swing.JPasswordField();
     private javax.swing.JLabel renterSignupLabel = new javax.swing.JLabel();
     private javax.swing.JButton signupButton = new javax.swing.JButton();
-    // End of variables declaration
 
-    // Variables declaration - do not modify
     private javax.swing.JLabel managerKeyLabel = new javax.swing.JLabel();
     private javax.swing.JPasswordField managerKeyText = new javax.swing.JPasswordField();
     private javax.swing.JLabel managerSignupLabel = new javax.swing.JLabel();
-    // End of variables declaration
 
-    // Variables declaration - do not modify
     private javax.swing.JLabel landordSignupLabel = new javax.swing.JLabel();
-    // End of variables declaration
 
-    // Variables declaration - do not modify
     private javax.swing.JButton finishButton = new javax.swing.JButton();
     private javax.swing.JLabel signupSuccessfulLabel = new javax.swing.JLabel();
-    // End of variables declaration
 
-    // Variables declaration - do not modify
     private javax.swing.JLabel signupUnsuccessfulLabel = new javax.swing.JLabel();
     private javax.swing.JButton tryAgainButton = new javax.swing.JButton();
-    // End of variables declaration
 
+    /**
+     * SignupGUI constructor, used by Frontend
+     * @param view Frontend JFrame
+     */
     public SignupGUI(Frontend view) {
         // assign view reference
         this.view = view;
         userChoice();
     }
 
+    /**
+     * Instantiate user choice layout
+     */
     public void userChoice() {
+        // remove all components from panel
         removeAll();
 
         setBackground(java.awt.Color.darkGray);
@@ -163,12 +162,17 @@ public class SignupGUI extends JPanel {
         add(managerButton);
         managerButton.setBounds(150, 370, 140, 50);
 
+        // revalidate, repaint, and then pack frame
         revalidate();
         repaint();
         view.pack();
     }
 
+    /**
+     * Instantiate renter signup layout
+     */
     public void renterSignup() {
+        // remove all components from panel
         removeAll();
 
         setBackground(java.awt.Color.darkGray);
@@ -285,12 +289,17 @@ public class SignupGUI extends JPanel {
         add(dashboardButton);
         dashboardButton.setBounds(370, 20, 50, 40);
 
+        // revalidate, repaint, then pack frame
         revalidate();
         repaint();
         view.pack();
     }
 
+    /**
+     * Instantiate landlord signup layout
+     */
     public void landlordSignup() {
+        // remove all components from panel
         removeAll();
 
         setBackground(java.awt.Color.darkGray);
@@ -407,12 +416,17 @@ public class SignupGUI extends JPanel {
         add(dashboardButton);
         dashboardButton.setBounds(370, 20, 50, 40);
 
+        // revalidate, repaint, then pack frame
         revalidate();
         repaint();
         view.pack();
     }
 
+    /**
+     * Instantiate manager signup layout
+     */
     public void managerSignup() {
+        // remove all components from panel
         removeAll();
 
         setBackground(java.awt.Color.darkGray);
@@ -540,12 +554,17 @@ public class SignupGUI extends JPanel {
         add(passwordText);
         passwordText.setBounds(50, 350, 270, 20);
 
+        // revalidate, repaint, then pack frame
         revalidate();
         repaint();
         view.pack();
     }
 
+    /**
+     * Instantiate success page layout
+     */
     public void successPage() {
+        // remove all components from layout
         removeAll();
 
         setBackground(java.awt.Color.darkGray);
@@ -582,12 +601,14 @@ public class SignupGUI extends JPanel {
         copyrightLabel.setText("© 2021 RentSlower Team");
         add(copyrightLabel);
         copyrightLabel.setBounds(20, 460, 170, 20);
-
+        
+        // revalidate, repaint, then pack frame
         revalidate();
         repaint();
         view.pack();
     }
 
+    // 
     public void errorPage() {
         removeAll();
 
