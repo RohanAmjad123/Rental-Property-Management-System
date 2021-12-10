@@ -1,5 +1,14 @@
 package business.businesslogic;
 
+/**
+ * Class Property
+ * 
+ * @since December 4th, 2021
+ * @author Rohan Amjad
+ * @author Ibrahim Asad
+ * @author Azlan Amjad
+ * @version 1.0
+ */
 public class Property {
 
 	private String landlordID;
@@ -83,12 +92,10 @@ public class Property {
 
 	@Override
 	public String toString() {
-		String s = "";
-		s = "======================================================================\n";
-		s += "Title: " + this.getTitle() + "\n";
-		s += "Rent: " + this.getRent() + "\n";
-		s += this.getAddress().getStreetName() + ", " + this.getAddress().getPostalCode() + ", " + this.getAddress().getCity() + ", " + this.getAddress().getStateProvince() + ", " + this.getAddress().getCountry() + "\n";
-		s += "=====================================================================\n";
+		String s = "- ";
+		s += "Title: " + this.getTitle() + ", ";
+		s += "	Rent: " + this.getRent() + ", ";
+		s += "	Address: " + this.getAddress().getStreetName() + ", " + this.getAddress().getPostalCode() + ", " + this.getAddress().getCity() + ", " + this.getAddress().getStateProvince() + ", " + this.getAddress().getCountry();
 		return s;
 	}
 
