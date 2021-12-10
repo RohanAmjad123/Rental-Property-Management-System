@@ -37,10 +37,6 @@ public class ManageManagerPropertiesGUI extends JPanel {
     public ManageManagerPropertiesGUI(Frontend view) {
         // assign view reference
         this.view = view;
-        ArrayList<Property> list = new ArrayList<Property>();
-        list.add(new Property());
-        list.add(new Property());
-        updatePropertiesView(list);
         manageProperties();
     }
 

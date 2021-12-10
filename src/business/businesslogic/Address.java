@@ -12,7 +12,6 @@ import java.util.regex.*;
  * @version 1.0
  */
 public class Address {
-
 	private String streetName;
 	private String postalCode;
 	private String cityQuadrant;
@@ -23,18 +22,65 @@ public class Address {
 	public Address(String sn, String pc, String cq, String ct, String sp, String cou) throws IllegalArgumentException {
 		Pattern myPattern;
 		Matcher myMatcher;
+		boolean isMatch;
 		
 		// street name
 		streetName = sn;
 
 		// postal code
-		myPattern = Pattern.compile("[A-Z]");
-		
-		postalCode = pc;
-		cityQuadrant = cq;
-		city = ct;
-		stateProvince = sp;
-		country = cou;
+		myPattern = Pattern.compile("^[A-Z][0-9][A-Z]\\s[0-9][A-Z][0-9]$");
+		myMatcher = myPattern.matcher(pc);
+		isMatch = myMatcher.find();
+		if (isMatch) {
+			postalCode = pc;
+		}
+		else {
+			throw new IllegalArgumentException();
+		}
+
+		// city quadrant
+		myPattern = Pattern.compile("^[NS][EW]$");
+		myMatcher = myPattern.matcher(cq);
+		isMatch = myMatcher.find();
+		if (isMatch) {
+			cityQuadrant = cq;
+		}
+		else {
+			throw new IllegalArgumentException();
+		}
+
+		// city
+		myPattern = Pattern.compile("^[a-zA-Z]+$");
+		myMatcher = myPattern.matcher(ct);
+		isMatch = myMatcher.find();
+		if (isMatch) {
+			city = ct;
+		}
+		else {
+			throw new IllegalArgumentException();
+		}
+
+		// state / province
+		myPattern = Pattern.compile("^[A-Z][A-Z]$");
+		myMatcher = myPattern.matcher(sp);
+		isMatch = myMatcher.find();
+		if (isMatch) {
+			stateProvince = sp;
+		}
+		else {
+			throw new IllegalArgumentException();
+		}
+
+		// country
+		myPattern = Pattern.compile("^[a-zA-Z]+$");
+		myMatcher = myPattern.matcher(cou);
+		isMatch = myMatcher.find();
+		if (isMatch) {
+			country = cou;
+		}
+		else {
+			throw new IllegalArgumentException();
+		}
 	}
 
 	public Address() {

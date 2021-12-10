@@ -1,34 +1,45 @@
 package business.businesslogic;
 
-public class SearchCriteria{
-		
+/**
+ * Class SearchCriteria
+ * 
+ * @since December 4th, 2021
+ * @author Azlan Amjad
+ * @author Rohan Amjad
+ * @author Ibrahim Asad
+ * @version 1.0
+ */
+public class SearchCriteria {
+
 	private String propertyType;
 	private String renterID;
 	private int bedrooms;
 	private int bathrooms;
 	private int maxRent;
-	
+
 	private String cityQuadrant;
 	private String furnished;
 
-	public SearchCriteria(String renterID, String propertyType, int bedrooms, int bathrooms, int maxRent, String cityQuadrant, String furnished) {
+	public SearchCriteria(String renterID, String propertyType, int bedrooms, int bathrooms, int maxRent,
+			String cityQuadrant, String furnished) {
 		this.renterID = renterID;
 		this.propertyType = propertyType;
 		this.bedrooms = bedrooms;
 		this.bathrooms = bathrooms;
 		this.maxRent = maxRent;
 		this.cityQuadrant = cityQuadrant;
-		this. furnished = furnished;
+		this.furnished = furnished;
 	}
 
-	public SearchCriteria(String propertyType, int bedrooms, int bathrooms, int maxRent, String cityQuadrant, String furnished) {
+	public SearchCriteria(String propertyType, int bedrooms, int bathrooms, int maxRent, String cityQuadrant,
+			String furnished) {
 		this.renterID = "";
 		this.propertyType = propertyType;
 		this.bedrooms = bedrooms;
 		this.bathrooms = bathrooms;
 		this.maxRent = maxRent;
 		this.cityQuadrant = cityQuadrant;
-		this. furnished = furnished;
+		this.furnished = furnished;
 	}
 
 	public SearchCriteria() {
@@ -38,7 +49,7 @@ public class SearchCriteria{
 		this.bathrooms = 0;
 		this.maxRent = 0;
 		this.cityQuadrant = "";
-		this. furnished = "";
+		this.furnished = "";
 	}
 
 	@Override
@@ -52,22 +63,22 @@ public class SearchCriteria{
 		s += "	Furnished: " + this.getFurnished();
 		return s;
 	}
-	
-	public String getPropertyType(){
-		return propertyType;	
+
+	public String getPropertyType() {
+		return propertyType;
 	}
-		
-	public void setPropertyType(String propType){
+
+	public void setPropertyType(String propType) {
 		this.propertyType = propType;
-	}	
-	
-	public int getBedrooms(){
-		return bedrooms;	
 	}
-		
-	public void setBedrooms(int bedrooms){
+
+	public int getBedrooms() {
+		return bedrooms;
+	}
+
+	public void setBedrooms(int bedrooms) {
 		this.bedrooms = bedrooms;
-	}	
+	}
 
 	public int getBathrooms() {
 		return bathrooms;
@@ -76,37 +87,37 @@ public class SearchCriteria{
 	public void setBathrooms(int bathrooms) {
 		this.bathrooms = bathrooms;
 	}
-	
-	public int getMaxRent(){
-		return maxRent;	
+
+	public int getMaxRent() {
+		return maxRent;
 	}
-		
-	public void setMaxRent(int maxRent){
+
+	public void setMaxRent(int maxRent) {
 		this.maxRent = maxRent;
-	}	
-	
-	public String getCityQuadrant(){
+	}
+
+	public String getCityQuadrant() {
 		return cityQuadrant;
 	}
-	
-	public void setCityQuadrant(String cityQuadrant){
+
+	public void setCityQuadrant(String cityQuadrant) {
 		this.cityQuadrant = cityQuadrant;
 	}
-	
+
 	public String getFurnished() {
 		return furnished;
 	}
-	
-	public void setFurnished(String furnished){
+
+	public void setFurnished(String furnished) {
 		this.furnished = furnished;
 	}
-	
+
 	public String getRenterID() {
 		return this.renterID;
 	}
-	
+
 	public void setRenterID(String id) {
 		this.renterID = id;
 	}
-	
+
 }

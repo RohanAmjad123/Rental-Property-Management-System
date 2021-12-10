@@ -72,7 +72,7 @@ public class Frontend extends JFrame {
         this.pack();
     }
 
-    public void editSearchCriteriaFrom() {
+    public void editSearchCriteriaForm() {
         this.setContentPane(this.getEditSearchCriteriaForm());
         this.pack();
     }

@@ -1,9 +1,6 @@
 package presentation.guicomponents;
 
 import javax.swing.*;
-
-import business.businesslogic.Address;
-import business.businesslogic.DateModel;
 import business.businesslogic.Property;
 
 /**
@@ -58,10 +55,6 @@ public class PropertyViewGUI extends JPanel {
     public PropertyViewGUI(Frontend view) {
         // assign view reference
         this.view = view;
-        Property newProperty = new Property("Azlans house", "This is Azlans house, please rent!", "Detached", 2000, 5,
-                20, 2000000, "No", "483535", "Active", new DateModel(), 60, new DateModel(),
-                new Address("yeet street yah", "T4G 4G3", "NE", "Calgary", "Alberta", "Canada"));
-        updatePropertyView(newProperty);
         propertyView();
     }
 
