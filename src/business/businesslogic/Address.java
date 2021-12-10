@@ -28,7 +28,7 @@ public class Address {
 		streetName = sn;
 
 		// postal code
-		myPattern = Pattern.compile("");
+		myPattern = Pattern.compile("[A-Z]");
 		
 		postalCode = pc;
 		cityQuadrant = cq;
