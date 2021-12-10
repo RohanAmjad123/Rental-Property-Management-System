@@ -191,7 +191,7 @@ public class CompanyDatabase {
                 "state_province=?, " +
                 "country=?, " +
                 "rental_date=?" +
-                "WHERE postal_code=(?)";
+                "WHERE postal_code=?";
 
         try {
             PreparedStatement stmt = dbConnect.prepareStatement(sqlUpdate);
@@ -382,7 +382,7 @@ public class CompanyDatabase {
      */
     public ArrayList<Property> getSearchProperties(SearchCriteria criteria) throws SQLException {
         ArrayList<Property> properties = new ArrayList<Property>();
-        String sql = "SELECT * FROM properties WHERE = property_type=? AND bedrooms >=? AND bathrooms>=? AND furnished=? AND rent<=? AND city_quadrant=?";
+        String sql = "SELECT * FROM properties WHERE property_type=? AND bedrooms >=? AND bathrooms>=? AND furnished=? AND rent<=? AND city_quadrant=?";
 
         try {
             PreparedStatement stmt = dbConnect.prepareStatement(sql);
@@ -391,12 +391,12 @@ public class CompanyDatabase {
             stmt.setInt(3, criteria.getBathrooms());
             stmt.setString(4, criteria.getFurnished());
             stmt.setInt(5, criteria.getMaxRent());
-            stmt.setString(1, criteria.getCityQuadrant());
+            stmt.setString(6, criteria.getCityQuadrant());
 
             ResultSet rs = stmt.executeQuery();
 
             while (rs.next()) {
-                String[] feeExp = rs.getString("fee_expiru").split("-");
+                String[] feeExp = rs.getString("fee_expiry").split("-");
                 String[] listDate = rs.getString("listing_date").split("-");
                 String[] rental = rs.getString("rental_date").split("-");
                 DateModel feeExpiry = new DateModel(feeExp[0], feeExp[1], feeExp[2]);

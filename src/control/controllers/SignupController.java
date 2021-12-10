@@ -30,6 +30,8 @@ public class SignupController implements Controller, ActionListener {
         view.getSignup().getManagerButton().addActionListener(this);
         view.getSignup().getSignupButton().addActionListener(this);
         view.getSignup().getTryAgainButton().addActionListener(this);
+        view.getSignup().getFinishButton().addActionListener(this);
+        view.getSignup().getDashboardButton().addActionListener(this);
     }
 
     public void actionPerformed(ActionEvent e) {
@@ -100,6 +102,16 @@ public class SignupController implements Controller, ActionListener {
         }
         else if (e.getSource() == view.getSignup().getTryAgainButton()) {
             view.getSignup().userChoice();
+        }
+        else if (e.getSource() == view.getSignup().getFinishButton()) {
+            view.dashboard();
+            view.getSignup().userChoice();
+            view.getDashboard().signedOut();
+        }
+        else if (e.getSource() == view.getSignup().getDashboardButton()) {
+            view.dashboard();
+            view.getSignup().userChoice();
+            view.getDashboard().signedOut();
         }
     }
 
