@@ -208,7 +208,7 @@ public class Property {
   
     /**
      * setPropertyType method is a setter meathod, the private variables of
-     * propertyType is initilized with the value of description that is passed into the function
+     * propertyType is initilized with the value of propertyType that is passed into the function
      * @param propertyType, is a String type and is used to set the private variables of propertyType
      */
 	public void setPropertyType(String propertyType) {
@@ -226,7 +226,7 @@ public class Property {
  
     /**
      * setRent method is a setter meathod, the private variables of
-     * rent is initilized with the value of description that is passed into the function
+     * rent is initilized with the value of rent that is passed into the function
      * @param rent, is a int type and is used to set the private variables of rent
      */
 	public void setRent(int rent) {
@@ -244,7 +244,7 @@ public class Property {
    
     /**
      * setBedrooms method is a setter meathod, the private variables of
-     * bedrooms is initilized with the value of description that is passed into the function
+     * bedrooms is initilized with the value of bedrooms that is passed into the function
      * @param bedrooms, is a int type and is used to set the private variables of bedrooms
      */
 	public void setBedrooms(int bedrooms) {
@@ -262,7 +262,7 @@ public class Property {
   
     /**
      * setBathrooms method is a setter meathod, the private variables of
-     * bathrooms is initilized with the value of description that is passed into the function
+     * bathrooms is initilized with the value of bathrooms that is passed into the function
      * @param bathrooms, is a int type and is used to set the private variables of bathrooms
      */
 	public void setBathrooms(int bathrooms) {
@@ -280,7 +280,7 @@ public class Property {
   
     /**
      * setSquareFeet method is a setter meathod, the private variables of
-     * squareFeet is initilized with the value of description that is passed into the function
+     * squareFeet is initilized with the value of sq that is passed into the function
      * @param sq, is a int type and is used to set the private variables of squareFeet
      */
 	public void setSquareFeet(int sq) {
@@ -298,7 +298,7 @@ public class Property {
 
     /**
      * setFurnished method is a setter meathod, the private variables of
-     * furnished is initilized with the value of title that is passed into the function
+     * furnished is initilized with the value of furnished that is passed into the function
      * @param furnished, is a String type and is used to set the private variables of furnished
      */
 	public void setFurnished(String furnished) {
@@ -316,7 +316,7 @@ public class Property {
 
     /**
      * setLandlordID method is a setter meathod, the private variables of
-     * landlordID is initilized with the value of title that is passed into the function
+     * landlordID is initilized with the value of id that is passed into the function
      * @param landlordID, is a String type and is used to set the private variables of landlordID
      */
 	public void setLandlordID(String id) {
@@ -334,7 +334,7 @@ public class Property {
 
     /**
      * setState method is a setter meathod, the private variables of
-     * state is initilized with the value of title that is passed into the function
+     * state is initilized with the value of state that is passed into the function
      * @param state, is a String type and is used to set the private variables of state
      */
 	public void setState(String state) {
@@ -352,7 +352,7 @@ public class Property {
 	
 	/**
      * setAddress method is a setter meathod, the private variables of
-     * address is initilized with the value of description that is passed into the function
+     * address is initilized with the value of address that is passed into the function
      * @param address, is a Address type and is used to set the private variables of address
      */
 	public void setAddress(Address address) {
@@ -370,7 +370,7 @@ public class Property {
 
 	/**
      * setListingDate method is a setter meathod, the private variables of
-     * listingDate is initilized with the value of description that is passed into the function
+     * listingDate is initilized with the value of d that is passed into the function
      * @param d, is a DateModel type and is used to set the private variables of listingDate
      */
 	public void setListingDate(DateModel d) {
@@ -388,7 +388,7 @@ public class Property {
 
 	/**
      * setFeeExpiry method is a setter meathod, the private variables of
-     * feeExpiry is initilized with the value of description that is passed into the function
+     * feeExpiry is initilized with the value of d that is passed into the function
      * @param d, is a DateModel type and is used to set the private variables of feeExpiry
      */
 	public void setFeeExpiry(DateModel d) {
@@ -406,7 +406,7 @@ public class Property {
 
     /**
      * setFeeAmount method is a setter meathod, the private variables of
-     * feeAmount is initilized with the value of description that is passed into the function
+     * feeAmount is initilized with the value of amount that is passed into the function
      * @param feeAmount, is a int type and is used to set the private variables of feeAmount
      */
 	public void setFeeAmount(int amount) {
@@ -415,7 +415,7 @@ public class Property {
 
 	/**
      * setRentalDate method is a setter meathod, the private variables of
-     * rentalDate is initilized with the value of description that is passed into the function
+     * rentalDate is initilized with the value of rentalDate that is passed into the function
      * @param rentalDate, is a DateModel type and is used to set the private variables of rentalDate
      */
 	public void setRentalDate(DateModel rentalDate) {
