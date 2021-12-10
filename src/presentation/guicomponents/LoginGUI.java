@@ -13,7 +13,7 @@ import javax.swing.*;
 public class LoginGUI extends JPanel {
     private Frontend view;
 
-    // Variables declaration - do not modify
+    // Variables declaration
     private javax.swing.JLabel copyrightLabel = new javax.swing.JLabel();
     private javax.swing.JButton dashboardButton = new javax.swing.JButton();
     private javax.swing.JButton landlordButton = new javax.swing.JButton();
@@ -37,7 +37,6 @@ public class LoginGUI extends JPanel {
 
     private javax.swing.JLabel loginUnsuccessfulLabel = new javax.swing.JLabel();
     private javax.swing.JButton tryAgainButton = new javax.swing.JButton();
-    // End of variables declaration
 
     /**
      * LoginGUI constructor, used by Frontend

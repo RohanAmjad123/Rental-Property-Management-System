@@ -18,7 +18,7 @@ import business.businesslogic.Property;
 public class ManageLandlordPropertiesGUI extends JPanel {
     private Frontend view;
 
-    // Variables declaration - do not modify
+    // Variables declaration
     private javax.swing.JLabel changePropertyStateLabel = new javax.swing.JLabel();
     private javax.swing.JButton changeStateButton = new javax.swing.JButton();
     private javax.swing.JComboBox<String> changeStateComboBox = new javax.swing.JComboBox<String>();
@@ -30,7 +30,6 @@ public class ManageLandlordPropertiesGUI extends JPanel {
     private javax.swing.JLabel manageLandlordPropertiesLabel = new javax.swing.JLabel();
     private javax.swing.JList<Property> propertyList = new javax.swing.JList<Property>();
     private javax.swing.JLabel rentSlowerLabel = new javax.swing.JLabel();
-    // End of variables declaration
 
     // landlord properties
     private DefaultListModel<Property> propertyListModel = new DefaultListModel<Property>();

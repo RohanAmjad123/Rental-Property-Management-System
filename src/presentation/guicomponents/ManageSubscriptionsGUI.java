@@ -1,8 +1,6 @@
 package presentation.guicomponents;
 
 import javax.swing.*;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
 
 import business.businesslogic.SearchCriteria;
 
@@ -17,7 +15,7 @@ import business.businesslogic.SearchCriteria;
 public class ManageSubscriptionsGUI extends JPanel {
     private Frontend view;
 
-    // Variables declaration - do not modify
+    // Variables declaration
     private javax.swing.JLabel copyrightLabel = new javax.swing.JLabel();
     private javax.swing.JButton dashboardButton = new javax.swing.JButton();
     private javax.swing.JButton editButton = new javax.swing.JButton();
@@ -25,7 +23,6 @@ public class ManageSubscriptionsGUI extends JPanel {
     private javax.swing.JLabel manageRenterSubscriptionLabel = new javax.swing.JLabel();
     private javax.swing.JLabel rentSlowerLabel = new javax.swing.JLabel();
     private javax.swing.JList<SearchCriteria> subscriptionList = new javax.swing.JList<SearchCriteria>();
-    // End of variables declaration
 
     // user subscription
     private DefaultListModel<SearchCriteria> subscriptionListModel = new DefaultListModel<SearchCriteria>();
