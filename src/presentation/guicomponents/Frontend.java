@@ -47,7 +47,7 @@ public class Frontend extends JFrame {
         propertyView = new PropertyViewGUI(this);
         dashboard = new DashboardGUI(this);
 
-        this.dashboard();
+        this.manageSubscriptions();
     }
 
     // methods for changing panel on frame

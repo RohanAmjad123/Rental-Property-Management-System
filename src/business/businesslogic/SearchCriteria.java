@@ -30,6 +30,18 @@ public class SearchCriteria{
 		this.cityQuadrant = "";
 		this. furnished = "";
 	}
+
+	@Override
+	public String toString() {
+		String s = "- ";
+		s += "Property Type: " + this.getPropertyType() + ", ";
+		s += "	Bedrooms: " + String.valueOf(this.getBedrooms()) + ", ";
+		s += "	Bathrooms: " + String.valueOf(this.getBathrooms()) + ", ";
+		s += "	Max Rent: " + String.valueOf(this.getMaxRent()) + ", ";
+		s += "	City Quadrant: " + this.getCityQuadrant() + ", ";
+		s += "	Furnished: " + this.getFurnished();
+		return s;
+	}
 	
 	public String getPropertyType(){
 		return propertyType;	
