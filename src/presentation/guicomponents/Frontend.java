@@ -32,6 +32,9 @@ public class Frontend extends JFrame {
         // construct parent class JFrame
         super("Rental Property Management System");
 
+        // set close operation
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
         // construct all GUI JPanels
         signup = new SignupGUI(this);
         login = new LoginGUI(this);
