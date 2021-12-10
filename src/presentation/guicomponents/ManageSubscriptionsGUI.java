@@ -32,7 +32,6 @@ public class ManageSubscriptionsGUI extends JPanel {
     public ManageSubscriptionsGUI(Frontend view) {
         // assign view reference
         this.view = view;
-        updateSubscriptionView(new SearchCriteria());
         manageSubscription();
     }
 

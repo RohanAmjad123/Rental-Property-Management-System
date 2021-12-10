@@ -95,7 +95,8 @@ public class Property {
 		String s = "- ";
 		s += this.getTitle() + ", ";
 		s += "	Rent: $" + this.getRent() + ", ";
-		s += this.getAddress().getAddressFormatted();
+		s += this.getAddress().getAddressFormatted() + ", ";
+		s += this.getState();
 		return s;
 	}
 

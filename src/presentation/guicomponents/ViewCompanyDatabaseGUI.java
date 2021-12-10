@@ -56,22 +56,6 @@ public class ViewCompanyDatabaseGUI extends JPanel {
     public ViewCompanyDatabaseGUI(Frontend view) {
         // assign view reference
         this.view = view;
-
-        ArrayList<User> renters = new ArrayList<User>();
-        renters.add(new User("Azlanamjad_123@hotmail.com", "Azlan123", "Azlan", "Amjad", "renter"));
-        renters.add(new User());
-        updateRentersView(renters);
-
-        ArrayList<User> landlords = new ArrayList<User>();
-        landlords.add(new User());
-        landlords.add(new User());
-        updateLandlordsView(landlords);
-
-        ArrayList<Property> properties = new ArrayList<Property>();
-        properties.add(new Property());
-        properties.add(new Property());
-        updatePropertiesView(properties);
-
         chooseInformation();
     }
 

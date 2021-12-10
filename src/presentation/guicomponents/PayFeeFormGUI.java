@@ -53,8 +53,6 @@ public class PayFeeFormGUI extends JPanel {
     public PayFeeFormGUI(Frontend view) {
         // assign view reference
         this.view = view;
-        currentFee.setFeeAmound(1000);
-        currentFee.setFeePeriod(60);
         payFeeForm();
     }
 
