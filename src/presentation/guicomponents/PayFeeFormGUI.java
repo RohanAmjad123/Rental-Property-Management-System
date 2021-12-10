@@ -13,7 +13,7 @@ import business.businesslogic.Fee;
 public class PayFeeFormGUI extends JPanel {
     private Frontend view;
 
-    // Variables declaration - do not modify
+    // Variables declaration
     private javax.swing.JLabel copyrightLabel = new javax.swing.JLabel();
     private javax.swing.JLabel creditCardNumberLabel = new javax.swing.JLabel();
     private javax.swing.JTextField creditCardNumberText = new javax.swing.JTextField();
@@ -41,7 +41,6 @@ public class PayFeeFormGUI extends JPanel {
 
     private javax.swing.JLabel paymentUnsuccessfulLabel = new javax.swing.JLabel();
     private javax.swing.JButton tryAgainButton = new javax.swing.JButton();
-    // End of variables declaration
 
     // current fee object
     private Fee currentFee = new Fee();

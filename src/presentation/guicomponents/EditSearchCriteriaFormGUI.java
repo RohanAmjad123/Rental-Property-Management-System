@@ -13,7 +13,7 @@ import javax.swing.*;
 public class EditSearchCriteriaFormGUI extends JPanel {
     private Frontend view;
 
-    // Variables declaration - do not modify
+    // Variables declaration
     private javax.swing.JLabel bathroomLabel = new javax.swing.JLabel();
     private javax.swing.JSpinner bathroomSpinner = new javax.swing.JSpinner();
     private javax.swing.JLabel bedroomLabel = new javax.swing.JLabel();
@@ -32,7 +32,6 @@ public class EditSearchCriteriaFormGUI extends JPanel {
     private javax.swing.JLabel rentSlowerLabel = new javax.swing.JLabel();
     private javax.swing.JButton unsubscribeButton = new javax.swing.JButton();
     private javax.swing.JButton updateButton = new javax.swing.JButton();
-    // End of variables declaration
 
     /**
      * EditSearchCriteriaFormGUI constructor, used by Frontend

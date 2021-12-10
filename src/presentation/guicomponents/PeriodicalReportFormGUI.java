@@ -13,7 +13,7 @@ import javax.swing.*;
 public class PeriodicalReportFormGUI extends JPanel {
     private Frontend view;
 
-    // Variables declaration - do not modify
+    // Variables declaration
     private javax.swing.JLabel copyrightLabel = new javax.swing.JLabel();
     private javax.swing.JButton dashboardButton = new javax.swing.JButton();
     private javax.swing.JComboBox<String> fromDayComboBox = new javax.swing.JComboBox<String>();
@@ -33,7 +33,6 @@ public class PeriodicalReportFormGUI extends JPanel {
     private javax.swing.JLabel toMonthLabel = new javax.swing.JLabel();
     private javax.swing.JComboBox<String> toYearComboBox = new javax.swing.JComboBox<String>();
     private javax.swing.JLabel toYearLabel = new javax.swing.JLabel();
-    // End of variables declaration
 
     /**
      * PeriodicalReportFormGUI constructor, used by Frontend

@@ -50,6 +50,7 @@ public class ViewCompanyDatabaseGUI extends JPanel {
 
     /**
      * ViewCompanyDatabaseGUI constructor, used by Frontend
+     * 
      * @param view Frontend JFrame
      */
     public ViewCompanyDatabaseGUI(Frontend view) {
@@ -60,6 +61,7 @@ public class ViewCompanyDatabaseGUI extends JPanel {
 
     /**
      * Update ViewCompanyDatabaseGUIs renter list model
+     * 
      * @param updatedRenterListModel ArrayList<User> updated renter list
      */
     public void updateRentersView(ArrayList<User> updatedRenterListModel) {
@@ -71,6 +73,7 @@ public class ViewCompanyDatabaseGUI extends JPanel {
 
     /**
      * Update ViewCompanyDatabaseGUIs landlord list model
+     * 
      * @param updatedLandlordListModel ArrayList<User> updated landlord list
      */
     public void updateLandlordsView(ArrayList<User> updatedLandlordListModel) {
@@ -82,6 +85,7 @@ public class ViewCompanyDatabaseGUI extends JPanel {
 
     /**
      * Update ViewCompanyDatabaseGUIs property list model
+     * 
      * @param updatedPropertyListModel ArrayList<Property> updated property list
      */
     public void updatePropertiesView(ArrayList<Property> updatedPropertyListModel) {
@@ -375,84 +379,180 @@ public class ViewCompanyDatabaseGUI extends JPanel {
 
     /**
      * chooseInformationLabel getter method
-     * @return 
+     * 
+     * @return Jlabel
      */
     public javax.swing.JLabel getChooseInformationLabel() {
         return chooseInformationLabel;
     }
 
+    /**
+     * copyrightLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getCopyrightLabel() {
         return copyrightLabel;
     }
 
+    /**
+     * dashboardButton getter method
+     * 
+     * @return JButton
+     */
     public javax.swing.JButton getDashboardButton() {
         return dashboardButton;
     }
 
+    /**
+     * landlordButton getter method
+     * 
+     * @return JButton
+     */
     public javax.swing.JButton getLandlordButton() {
         return landlordButton;
     }
 
+    /**
+     * landlordLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getLandlordLabel() {
         return landlordLabel;
     }
 
+    /**
+     * propertyButton getter method
+     * 
+     * @return JButton
+     */
     public javax.swing.JButton getPropertyButton() {
         return propertyButton;
     }
 
+    /**
+     * propertyLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getPropertyLabel() {
         return propertyLabel;
     }
 
+    /**
+     * rentSlowerLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getRentSlowerLabel() {
         return rentSlowerLabel;
     }
 
+    /**
+     * renterButton getter method
+     * 
+     * @return JButton
+     */
     public javax.swing.JButton getRenterButton() {
         return renterButton;
     }
 
+    /**
+     * renterLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getRenterLabel() {
         return renterLabel;
     }
 
+    /**
+     * jScrollPane1 getter method
+     * 
+     * @return JScrollPane
+     */
     public javax.swing.JScrollPane getjScrollPane1() {
         return jScrollPane1;
     }
 
+    /**
+     * renterInformationLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getRenterInformationLabel() {
         return renterInformationLabel;
     }
 
+    /**
+     * renterList getter method
+     * 
+     * @return JList<User>
+     */
     public javax.swing.JList<User> getRenterList() {
         return renterList;
     }
 
+    /**
+     * renterListModel getter method
+     * 
+     * @return DefaultListModel<User>
+     */
     public DefaultListModel<User> getRenterListModel() {
         return renterListModel;
     }
 
+    /**
+     * landlordInformationLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getLandlordInformationLabel() {
         return landlordInformationLabel;
     }
 
+    /**
+     * landlordList getter method
+     * 
+     * @return JList<User>
+     */
     public javax.swing.JList<User> getLandlordList() {
         return landlordList;
     }
 
+    /**
+     * landlordListModel getter method
+     * 
+     * @return DefaultListModel<User>
+     */
     public DefaultListModel<User> getLandlordListModel() {
         return landlordListModel;
     }
 
+    /**
+     * propertyInformationLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getPropertyInformationLabel() {
         return propertyInformationLabel;
     }
 
+    /**
+     * propertyList getter method
+     * 
+     * @return JList<Property>
+     */
     public javax.swing.JList<Property> getPropertyList() {
         return propertyList;
     }
 
+    /**
+     * propertyListModel getter method
+     * 
+     * @return DefaultListModel<Property>
+     */
     public DefaultListModel<Property> getPropertyListModel() {
         return propertyListModel;
     }

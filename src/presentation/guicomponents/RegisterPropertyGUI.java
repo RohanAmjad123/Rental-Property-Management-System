@@ -13,7 +13,7 @@ import javax.swing.*;
 public class RegisterPropertyGUI extends JPanel {
     private Frontend view;
 
-    // Variables declaration - do not modify
+    // Variables declaration
     private javax.swing.JLabel bathroomLabel = new javax.swing.JLabel();
     private javax.swing.JSpinner bathroomSpinner = new javax.swing.JSpinner();
     private javax.swing.JLabel bedroomLabel = new javax.swing.JLabel();
@@ -54,7 +54,6 @@ public class RegisterPropertyGUI extends JPanel {
 
     private javax.swing.JLabel propertyRegistrationUnsuccessfulLabel = new javax.swing.JLabel();
     private javax.swing.JButton tryAgainButton = new javax.swing.JButton();
-    // End of variables declaration
 
     /**
      * RegisterPropertyGUI constructor, used by Frontend
