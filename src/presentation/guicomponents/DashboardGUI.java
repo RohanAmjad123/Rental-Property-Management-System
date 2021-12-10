@@ -42,7 +42,6 @@ public class DashboardGUI extends JPanel {
     private javax.swing.JButton searchButton = new javax.swing.JButton();
     private javax.swing.JLabel searchLabel = new javax.swing.JLabel();
     private javax.swing.JButton signupButton = new javax.swing.JButton();
-    // End of variables declaration
 
     // all properties
     private DefaultListModel<Property> propertyListModel = new DefaultListModel<Property>();
@@ -64,7 +63,6 @@ public class DashboardGUI extends JPanel {
     private javax.swing.JButton manageAllPropertiesButton = new javax.swing.JButton();
     private javax.swing.JLabel managerLabel = new javax.swing.JLabel();
     private javax.swing.JButton viewCompanyDatabaseButton = new javax.swing.JButton();
-    // End of variables declaration
 
     /**
      * DashboardGUI constructor, used by Frontend

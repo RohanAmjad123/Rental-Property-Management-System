@@ -1,8 +1,6 @@
 package presentation.guicomponents;
 
 import javax.swing.*;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
 
 import business.businesslogic.SearchCriteria;
 
@@ -17,7 +15,7 @@ import business.businesslogic.SearchCriteria;
 public class ManageSubscriptionsGUI extends JPanel {
     private Frontend view;
 
-    // Variables declaration - do not modify
+    // Variables declaration
     private javax.swing.JLabel copyrightLabel = new javax.swing.JLabel();
     private javax.swing.JButton dashboardButton = new javax.swing.JButton();
     private javax.swing.JButton editButton = new javax.swing.JButton();
@@ -25,7 +23,6 @@ public class ManageSubscriptionsGUI extends JPanel {
     private javax.swing.JLabel manageRenterSubscriptionLabel = new javax.swing.JLabel();
     private javax.swing.JLabel rentSlowerLabel = new javax.swing.JLabel();
     private javax.swing.JList<SearchCriteria> subscriptionList = new javax.swing.JList<SearchCriteria>();
-    // End of variables declaration
 
     // user subscription
     private DefaultListModel<SearchCriteria> subscriptionListModel = new DefaultListModel<SearchCriteria>();
@@ -91,14 +88,18 @@ public class ManageSubscriptionsGUI extends JPanel {
         subscriptionList.setBackground(new java.awt.Color(0, 0, 0));
         subscriptionList.setForeground(new java.awt.Color(255, 255, 255));
         subscriptionList.setModel(subscriptionListModel);
-        subscriptionList.addListSelectionListener(new ListSelectionListener() {
-            @Override
-            public void valueChanged(ListSelectionEvent evt) {
-                if (!evt.getValueIsAdjusting()) {
-                    displayEdit();
-                }
-            }
-        });
+
+        /*
+         * subscriptionList.addListSelectionListener(new ListSelectionListener() {
+         * 
+         * @Override
+         * public void valueChanged(ListSelectionEvent evt) {
+         * if (!evt.getValueIsAdjusting()) {
+         * displayEdit();
+         * }
+         * }
+         * });
+         */
 
         jScrollPane1.setViewportView(subscriptionList);
 
@@ -119,15 +120,6 @@ public class ManageSubscriptionsGUI extends JPanel {
         add(dashboardButton);
         dashboardButton.setBounds(560, 20, 50, 40);
 
-        revalidate();
-        repaint();
-        view.pack();
-    }
-
-    /**
-     * Instantiate edit option for subscriptions
-     */
-    public void displayEdit() {
         editButton.setBackground(new java.awt.Color(255, 255, 255));
         editButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         editButton.setForeground(new java.awt.Color(0, 0, 0));
@@ -142,9 +134,9 @@ public class ManageSubscriptionsGUI extends JPanel {
         add(editButton);
         editButton.setBounds(260, 300, 120, 40);
 
-        // revalidate and repaint
         revalidate();
         repaint();
+        view.pack();
     }
 
     // getter methods

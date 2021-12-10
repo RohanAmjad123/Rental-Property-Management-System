@@ -23,7 +23,6 @@ public class ChangeFeesGUI extends JPanel {
     private javax.swing.JLabel feePeriodLabel = new javax.swing.JLabel();
     private javax.swing.JLabel rentSlowerLabel = new javax.swing.JLabel();
     private javax.swing.JButton updateButton = new javax.swing.JButton();
-    // End of variables declaration
 
     /**
      * ChangeFeesGUI Constructor, used by Frontend
