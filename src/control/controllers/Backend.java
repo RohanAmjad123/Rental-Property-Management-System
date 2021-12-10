@@ -27,8 +27,7 @@ public class Backend {
         model = new CompanyDatabase("jdbc:mysql://localhost:3306/Rental_Property_Management_System", "test", "testpass123");
 
         SignupController signupController = new SignupController(view, model);
-        /*LoginController loginController = new LoginController(view, model);
-        */
+        LoginController loginController = new LoginController(view, model);
         DashboardController dashboardController = new DashboardController(view, model);
         //PropertyController propertyController = new PropertyController(view, model);
         RegisterPropertyController registerPropertyController = new RegisterPropertyController(view, model);
@@ -41,7 +40,7 @@ public class Backend {
         controllers = new ArrayList<Controller>();
 
         controllers.add(signupController);
-        //controllers.add(loginController);
+        controllers.add(loginController);
         controllers.add(dashboardController);
         //controllers.add(propertyController);
         controllers.add(registerPropertyController);
