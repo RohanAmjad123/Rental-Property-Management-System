@@ -30,6 +30,14 @@ public class DashboardController implements Controller, ActionListener {
         view.getDashboard().getSignupButton().addActionListener(this);
         view.getDashboard().getSearchButton().addActionListener(this);
         view.getDashboard().getLoginButton().addActionListener(this);
+        view.getDashboard().getLogoutButton().addActionListener(this);
+        view.getDashboard().getManageSubscriptionButton().addActionListener(this);
+        view.getDashboard().getRegisterPropertyButton().addActionListener(this);
+        view.getDashboard().getManageMyPropertiesButton().addActionListener(this);
+        view.getDashboard().getManageAllPropertiesButton().addActionListener(this);
+        view.getDashboard().getChangeFeesButton().addActionListener(this);
+        view.getDashboard().getViewCompanyDatabaseButton().addActionListener(this);
+        view.getDashboard().getGenerateSummaryReportButton().addActionListener(this);
     }
 
     public void actionPerformed(ActionEvent e) {
@@ -53,6 +61,7 @@ public class DashboardController implements Controller, ActionListener {
         }
         else if (e.getSource() == view.getDashboard().getLoginButton()) {
             view.login();
+            view.getLogin().userChoice();
         }
         else if (e.getSource() == view.getDashboard().getSearchButton()) {
             String propertyType = "";
@@ -106,11 +115,75 @@ public class DashboardController implements Controller, ActionListener {
                 view.getDashboard().loggedInRenter();
             }
             else if (u.getUserType().equals("landlord")) {
-                view.getDashboard().loggedInRenter();
+                view.getDashboard().loggedInLandlord();
             }
             else if (u.getUserType().equals("manager")) {
                 view.getDashboard().loggedInManager();
             }
+        }
+        else if (e.getSource() == view.getDashboard().getLogoutButton()) {
+            SingletonLogin x = SingletonLogin.getInstance();
+            x.logout();
+            view.getDashboard().signedOut();
+        }
+        else if (e.getSource() == view.getDashboard().getManageSubscriptionButton()) {
+            SearchCriteria s = new SearchCriteria();
+            
+            try {
+                s = model.getSubscription(SingletonLogin.getInstance().getCurrentUser().getEmail());
+
+                if (s.getRenterID().equals("")) {
+                    view.getManageSubscriptions().deleteSubscription();
+                }
+                else {
+                    view.getManageSubscriptions().updateSubscriptionView(s);
+                }
+
+                view.manageSubscriptions();
+            }
+            catch (SQLException exception) {
+                exception.printStackTrace();
+            }
+        }
+        else if (e.getSource() == view.getDashboard().getRegisterPropertyButton()) {
+            view.registerProperty();
+        }
+        else if (e.getSource() == view.getDashboard().getManageMyPropertiesButton()) {
+            ArrayList<Property> p = new ArrayList<Property>();
+            
+            try {
+                p = model.getProperties(SingletonLogin.getInstance().getCurrentUser().getEmail());
+
+                view.getManageLandlordProperties().updatePropertiesView(p);
+                
+                view.manageLandlordProperties();
+            }
+            catch (SQLException exception) {
+                exception.printStackTrace();
+            }
+        }
+        else if (e.getSource() == view.getDashboard().getManageAllPropertiesButton()) {
+            ArrayList<Property> p = new ArrayList<Property>();
+            
+            try {
+                p = model.getAllProperties();
+
+                view.getManageManagerProperties().updatePropertiesView(p);
+                
+                view.manageManagerProperties();
+            }
+            catch (SQLException exception) {
+                exception.printStackTrace();
+            }
+        }
+        else if (e.getSource() == view.getDashboard().getChangeFeesButton()) {
+            view.changeFees();
+        }
+        else if (e.getSource() == view.getDashboard().getViewCompanyDatabaseButton()) {
+            view.viewCompanyDatabase();
+        }
+        else if (e.getSource() == view.getDashboard().getGenerateSummaryReportButton()) {
+            view.periodicalReportForm();
         }
     }
 }

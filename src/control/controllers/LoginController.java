@@ -21,8 +21,17 @@ public class LoginController implements Controller, ActionListener {
     private Frontend view;
     private CompanyDatabase model;
     
-    public LoginController(Frontend view, CompanyDatabase model) {
-        this.view = view;
+    
+     /**
+     * LoginController constuctor, Initializes the values of Frontend
+     * and CompantDatabase, placing Action Listners to the buttons of our 
+     * GUI so that if a button is pressed it will cause an action.
+     * @param view, parameter is a Frontend type and used to make the GUI
+     * @param model, the model parameter is a CompanyDatabase type and is used to connect to the SQL Database
+     */
+  
+	public LoginController(Frontend view, CompanyDatabase model) {
+	 	this.view = view;
         this.model = model;
 
 		view.getLogin().getDashboardButton().addActionListener(this);
@@ -33,7 +42,21 @@ public class LoginController implements Controller, ActionListener {
         view.getLogin().getFinishButton().addActionListener(this);
         view.getLogin().getTryAgainButton().addActionListener(this);
     }
-
+    
+    
+     /**
+     * actionPerformed function is used when one of the buttons is pressed and will make sure the
+     * an action is performed correctly regarding Login. Users will first select if they are a renter,
+     * landlord, or a manager on the "User Choice" page. It will then proceed to the User Login page 
+     * where they enter their login info and click the "Login" button, if the user exists it will 
+     * open a successful page where the user will then go into the "user logged in as _____" page based on what they chose on the 
+     * "User Choice" page after pressing the "Finish" button. Otherwise it will go to an error page after 
+     * throwing an exception where the user presses the "Try Again" button goes back to the "User Choice" page. If the person presses 
+     * the dashboard button they will go to the "Signed Out" page.
+     * @param e parameter is a ActionEvent type and makes sure to check if a button is pressed and will commit an an action
+     */
+    
+    
     public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == view.getLogin().getRenterButton()) {
 			userType = "renter";
@@ -97,5 +120,6 @@ public class LoginController implements Controller, ActionListener {
 			view.getDashboard().signedOut();
 		}
     }
+
 
 }

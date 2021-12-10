@@ -127,7 +127,7 @@ public class CompanyDatabase {
      * @throws SQLException
      */
     public boolean registerProperty(Property p) throws SQLException {
-        String sqlInsert = "INSERT INTO properties VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String sqlInsert = "INSERT INTO properties VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try {
             PreparedStatement stmt = dbConnect.prepareStatement(sqlInsert);
@@ -150,6 +150,7 @@ public class CompanyDatabase {
             stmt.setString(17, p.getAddress().getCity());
             stmt.setString(18, p.getAddress().getStateProvince());
             stmt.setString(19, p.getAddress().getCountry());
+            stmt.setString(20, p.getRentalDate().getDateFormatted());
 
             int affectedRows = stmt.executeUpdate();
             if (affectedRows == 0) {
@@ -272,7 +273,7 @@ public class CompanyDatabase {
             ResultSet rs = stmt.executeQuery();
 
             while (rs.next()) {
-                String[] feeExp = rs.getString("fee_expiru").split("-");
+                String[] feeExp = rs.getString("fee_expiry").split("-");
                 String[] listDate = rs.getString("listing_date").split("-");
                 String[] rental = rs.getString("rental_date").split("-");
                 DateModel feeExpiry = new DateModel(feeExp[0], feeExp[1], feeExp[2]);
@@ -314,7 +315,7 @@ public class CompanyDatabase {
             ResultSet rs = stmt.executeQuery(sql);
 
             while (rs.next()) {
-                String[] feeExp = rs.getString("fee_expiru").split("-");
+                String[] feeExp = rs.getString("fee_expiry").split("-");
                 String[] listDate = rs.getString("listing_date").split("-");
                 String[] rental = rs.getString("rental_date").split("-");
                 DateModel feeExpiry = new DateModel(feeExp[0], feeExp[1], feeExp[2]);
