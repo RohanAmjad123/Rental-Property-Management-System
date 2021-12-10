@@ -27,6 +27,12 @@ public class SingletonLogin {
 		return currentUser;
 	}
 
+	public void logout() {
+		if (currentUser != null) {
+			currentUser = null;
+		}
+	}
+
 	public static SingletonLogin getInstance() {
 		if (onlyInstance == null) {
 			onlyInstance = new SingletonLogin();
