@@ -127,7 +127,7 @@ public class CompanyDatabase {
      * @throws SQLException
      */
     public boolean registerProperty(Property p) throws SQLException {
-        String sqlInsert = "INSERT INTO properties VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String sqlInsert = "INSERT INTO properties VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try {
             PreparedStatement stmt = dbConnect.prepareStatement(sqlInsert);
@@ -150,6 +150,7 @@ public class CompanyDatabase {
             stmt.setString(17, p.getAddress().getCity());
             stmt.setString(18, p.getAddress().getStateProvince());
             stmt.setString(19, p.getAddress().getCountry());
+            stmt.setString(20, p.getRentalDate().getDateFormatted());
 
             int affectedRows = stmt.executeUpdate();
             if (affectedRows == 0) {
@@ -272,7 +273,7 @@ public class CompanyDatabase {
             ResultSet rs = stmt.executeQuery();
 
             while (rs.next()) {
-                String[] feeExp = rs.getString("fee_expiru").split("-");
+                String[] feeExp = rs.getString("fee_expiry").split("-");
                 String[] listDate = rs.getString("listing_date").split("-");
                 String[] rental = rs.getString("rental_date").split("-");
                 DateModel feeExpiry = new DateModel(feeExp[0], feeExp[1], feeExp[2]);
@@ -314,7 +315,7 @@ public class CompanyDatabase {
             ResultSet rs = stmt.executeQuery(sql);
 
             while (rs.next()) {
-                String[] feeExp = rs.getString("fee_expiru").split("-");
+                String[] feeExp = rs.getString("fee_expiry").split("-");
                 String[] listDate = rs.getString("listing_date").split("-");
                 String[] rental = rs.getString("rental_date").split("-");
                 DateModel feeExpiry = new DateModel(feeExp[0], feeExp[1], feeExp[2]);
@@ -750,14 +751,14 @@ public class CompanyDatabase {
         String endDate = end.getDateFormatted();
         int numberOfPropertiesListedInPeriod;
         int numberOfPropertiesRentedInPeriod;
-        int numberOfActiveListingsInPeriod;
+        int numberOfActiveListings;
         ArrayList<Property> listOfPropertiesRentedInPeriod = new ArrayList<Property>();
         ArrayList<String> landlordNames = new ArrayList<String>();
 
         String sql1 = "SELECT COUNT(*) FROM properties WHERE listing_date >=? AND listing_date <=?";
-        String sql2 = "SELECT COUNT(*) FROM properties WHERE listing_date >=? AND listing_date <=? AND rental_date >=? AND rental_date <=? AND state=?";
-        String sql3 = "SELECT COUNT(*) FROM properties WHERE listing_date >=? AND listing_date <=? AND state=?";
-        String sql4 = "SELECT * FROM properties INNER JOIN users ON properties.landlord_id = users.email WHERE listing_date >=? AND listing_date <=? AND rental_date >=? AND rental_date <=? AND users.user_type=? AND state=?";
+        String sql2 = "SELECT COUNT(*) FROM properties WHERE rental_date >=? AND rental_date <=? AND state=?";
+        String sql3 = "SELECT COUNT(*) FROM properties WHERE state=?";
+        String sql4 = "SELECT * FROM properties INNER JOIN users ON properties.landlord_id = users.email WHERE rental_date >=? AND rental_date <=? AND users.user_type=? AND state=?";
 
         try {
             PreparedStatement stmt1 = dbConnect.prepareStatement(sql1);
@@ -766,20 +767,14 @@ public class CompanyDatabase {
             PreparedStatement stmt2 = dbConnect.prepareStatement(sql2);
             stmt2.setString(1, startDate);
             stmt2.setString(2, endDate);
-            stmt2.setString(3, startDate);
-            stmt2.setString(4, endDate);
-            stmt2.setString(5, "rented");
+            stmt2.setString(3, "rented");
             PreparedStatement stmt3 = dbConnect.prepareStatement(sql3);
-            stmt3.setString(1, startDate);
-            stmt3.setString(2, endDate);
-            stmt3.setString(3, "active");
+            stmt3.setString(1, "active");
             PreparedStatement stmt4 = dbConnect.prepareStatement(sql4);
             stmt4.setString(1, startDate);
             stmt4.setString(2, endDate);
-            stmt4.setString(3, startDate);
-            stmt4.setString(4, endDate);
-            stmt4.setString(5, "landlord");
-            stmt4.setString(6, "rented");
+            stmt4.setString(3, "landlord");
+            stmt4.setString(4, "rented");
 
             ResultSet rs1 = stmt1.executeQuery();
             rs1.next();
@@ -810,7 +805,7 @@ public class CompanyDatabase {
 
             numberOfPropertiesListedInPeriod = rs1.getInt(1);
             numberOfPropertiesRentedInPeriod = rs2.getInt(1);
-            numberOfActiveListingsInPeriod = rs3.getInt(1);
+            numberOfActiveListings = rs3.getInt(1);
         }
         catch (SQLException e) {
             e.printStackTrace();
@@ -825,7 +820,7 @@ public class CompanyDatabase {
             FileWriter myWriter = new FileWriter("summary_report_" + startDate + "_" + endDate + ".txt");
             myWriter.write("Number of Properties listed from " + startDate + " to " + endDate + ": " + numberOfPropertiesListedInPeriod + "\n");
             myWriter.write("Number of Properties rented from " + startDate + " to " + endDate + ": " + numberOfPropertiesRentedInPeriod + "\n");
-            myWriter.write("Number of Active listings in range " + startDate + " to " + endDate + ": " + numberOfActiveListingsInPeriod + "\n");
+            myWriter.write("Number of Active listings: " + numberOfActiveListings + "\n");
 
             for (int i = 0; i < listOfPropertiesRentedInPeriod.size(); i++) {
                 myWriter.write(landlordNames.get(i) + " " + listOfPropertiesRentedInPeriod.get(i).getAddress().getAddressFormatted() + "\n");
