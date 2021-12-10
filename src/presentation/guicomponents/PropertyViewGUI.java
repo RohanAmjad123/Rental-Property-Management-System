@@ -1,9 +1,6 @@
 package presentation.guicomponents;
 
 import javax.swing.*;
-
-import business.businesslogic.Address;
-import business.businesslogic.DateModel;
 import business.businesslogic.Property;
 
 /**

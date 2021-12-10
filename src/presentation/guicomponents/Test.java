@@ -1,5 +1,4 @@
 package presentation.guicomponents;
-
 import business.businesslogic.Address;
 
 public class Test {
@@ -8,12 +7,12 @@ public class Test {
         view.setVisible(true);
 
         // address exception
-        try {
+        /*try {
             Address addr = new Address(" ", "T4J 6J3", "SE", "Calgary", "AB", "Canada");
         }
         catch (IllegalArgumentException e) {
             System.out.print("not good!");
-        }
+        }*/
 
         /*try {
             Thread.sleep(2000);

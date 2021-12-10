@@ -2,6 +2,14 @@ package business.businesslogic;
 
 import business.usermodels.*;
 
+/**
+ * Class SingletonLogin
+ * 
+ * @since December 4th, 2021
+ * @author Rohan Amjad
+ * @author Ibrahim Asad
+ * @version 1.0
+ */
 public class SingletonLogin {
 
 	private static SingletonLogin onlyInstance = null;
