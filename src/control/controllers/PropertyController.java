@@ -7,8 +7,14 @@ import datasource.companydatabase.*;
 import business.businesslogic.*;
 import business.usermodels.*;
 import java.util.ArrayList;
-import java.sql.SQLException;
+import java.util.Properties;
+
 import java.time.LocalDate;
+import java.sql.SQLException;
+
+import javax.mail.*;
+import javax.mail.internet.*;
+import javax.activation.*;
 
 /**
  * Class PropertyController
@@ -79,7 +85,50 @@ public class PropertyController implements Controller, ActionListener {
                 from = "comapany@mail.com";
             }
 
-            //MAIL SERVICE IMPLEMENTED
+            // MAIL SERVICE IMPLEMENTATION
+
+            // sending mail from local host
+            String host = "localhost";
+
+            // System properties
+            Properties properties = System.getProperties();
+
+            // setup mail server using properties
+            properties.setProperty("mail.smtp.host", host);
+
+            // session object
+            Session session = Session.getDefaultInstance(properties);
+
+            try {
+                // Mime Message Object
+                MimeMessage message = new MimeMessage(session);
+
+                // set From header field
+                message.setFrom(new InternetAddress(from));
+
+                // set To header field
+                message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
+
+                // set Email subject line
+                message.setSubject("Email from RentSlower regarding your property");
+
+                // set Email text from JTextArea
+                message.setText(view.getPropertyView().getEmailLandlordTextArea().getText());
+
+                // send email
+                Transport.send(message);
+
+                // display success
+                view.getPropertyView().getEmailLandlordTextArea().setText("Email successfully sent!");
+            }
+            catch (NullPointerException evt) {
+                evt.printStackTrace();
+                view.getPropertyView().getEmailLandlordTextArea().setText("Email error! Could not send Email!");
+            }
+            catch (MessagingException evt) {
+                evt.printStackTrace();
+                view.getPropertyView().getEmailLandlordTextArea().setText("Email error! Could not send Email!");
+            }
         }
         else if (e.getSource() == view.getManageManagerProperties().getDeleteButton()) {
             String postalCode = view.getManageManagerProperties().getPropertyList().getSelectedValue().getAddress().getPostalCode();
