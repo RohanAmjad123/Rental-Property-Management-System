@@ -5,6 +5,7 @@ import business.usermodels.*;
 import java.sql.*;
 import java.util.*;
 import java.io.*;
+import java.time.LocalDate;
 
 /**
  * Class CompanyDatabase
@@ -263,6 +264,26 @@ public class CompanyDatabase {
      * @throws SQLException
      */
     public ArrayList<Property> getProperties(String landlordID) throws SQLException {
+        LocalDate d = LocalDate.now();
+        String day = String.valueOf(d.getDayOfMonth());
+        String month = String.valueOf(d.getMonthValue());
+        String year = String.valueOf(d.getYear());
+        DateModel currentDate = new DateModel(year, month, day);
+        String currDate = currentDate.getDateFormatted();
+
+        String check = "UPDATE properties SET state='suspended' WHERE state='active' AND fee_expiry<?";
+
+        try {
+            PreparedStatement checkStmt = dbConnect.prepareStatement(check);
+            checkStmt.setString(1, currDate);
+
+            checkStmt.executeUpdate();
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+            throw new SQLException("failed check on property state!");
+        }
+        
         ArrayList<Property> properties = new ArrayList<Property>();
         String sql = "SELECT * FROM properties WHERE landlord_id=?";
 
@@ -306,6 +327,26 @@ public class CompanyDatabase {
      * @throws SQLException
      */
     public ArrayList<Property> getAllProperties() throws SQLException {
+        LocalDate d = LocalDate.now();
+        String day = String.valueOf(d.getDayOfMonth());
+        String month = String.valueOf(d.getMonthValue());
+        String year = String.valueOf(d.getYear());
+        DateModel currentDate = new DateModel(year, month, day);
+        String currDate = currentDate.getDateFormatted();
+
+        String check = "UPDATE properties SET state='suspended' WHERE state='active' AND fee_expiry<?";
+
+        try {
+            PreparedStatement checkStmt = dbConnect.prepareStatement(check);
+            checkStmt.setString(1, currDate);
+
+            checkStmt.executeUpdate();
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+            throw new SQLException("failed check on property state!");
+        }
+        
         ArrayList<Property> properties = new ArrayList<Property>();
         String sql = "SELECT * FROM properties";
 
@@ -349,6 +390,26 @@ public class CompanyDatabase {
      * @throws SQLException
      */
     public ArrayList<Property> getStateProperties(String state) throws SQLException {
+        LocalDate d = LocalDate.now();
+        String day = String.valueOf(d.getDayOfMonth());
+        String month = String.valueOf(d.getMonthValue());
+        String year = String.valueOf(d.getYear());
+        DateModel currentDate = new DateModel(year, month, day);
+        String currDate = currentDate.getDateFormatted();
+
+        String check = "UPDATE properties SET state='suspended' WHERE state='active' AND fee_expiry<?";
+
+        try {
+            PreparedStatement checkStmt = dbConnect.prepareStatement(check);
+            checkStmt.setString(1, currDate);
+
+            checkStmt.executeUpdate();
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+            throw new SQLException("failed check on property state!");
+        }
+
         ArrayList<Property> properties = new ArrayList<Property>();
         String sql = "SELECT * FROM properties WHERE state=?";
 
@@ -394,6 +455,26 @@ public class CompanyDatabase {
      * @throws SQLException
      */
     public ArrayList<Property> getSearchProperties(SearchCriteria criteria) throws SQLException {
+        LocalDate d = LocalDate.now();
+        String day = String.valueOf(d.getDayOfMonth());
+        String month = String.valueOf(d.getMonthValue());
+        String year = String.valueOf(d.getYear());
+        DateModel currentDate = new DateModel(year, month, day);
+        String currDate = currentDate.getDateFormatted();
+
+        String check = "UPDATE properties SET state='suspended' WHERE state='active' AND fee_expiry<?";
+
+        try {
+            PreparedStatement checkStmt = dbConnect.prepareStatement(check);
+            checkStmt.setString(1, currDate);
+
+            checkStmt.executeUpdate();
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+            throw new SQLException("failed check on property state!");
+        }
+        
         ArrayList<Property> properties = new ArrayList<Property>();
         String sql = "SELECT * FROM properties WHERE property_type=? AND bedrooms >=? AND bathrooms>=? AND furnished=? AND rent<=? AND city_quadrant=?";
 
