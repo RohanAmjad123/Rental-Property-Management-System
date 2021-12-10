@@ -21,6 +21,16 @@ public class SearchCriteria{
 		this. furnished = furnished;
 	}
 
+	public SearchCriteria(String propertyType, int bedrooms, int bathrooms, int maxRent, String cityQuadrant, String furnished) {
+		this.renterID = "";
+		this.propertyType = propertyType;
+		this.bedrooms = bedrooms;
+		this.bathrooms = bathrooms;
+		this.maxRent = maxRent;
+		this.cityQuadrant = cityQuadrant;
+		this. furnished = furnished;
+	}
+
 	public SearchCriteria() {
 		this.renterID = "";
 		this.propertyType = "";
