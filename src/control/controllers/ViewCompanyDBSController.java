@@ -10,7 +10,7 @@ package control.controllers;
  * @version 1.0
  */
 
-/*
+/**
  *Controller Class for viewing Company Database
  *implements the controller class
  *implements the ActionListener class
@@ -23,8 +23,8 @@ public class ViewCompanyDBSController implements Controller, ActionListener
     private CompanyDatabase model;
     
     
-    /*
-     * Subscription Controller class constructor
+    /**
+     * ViewCompanyDBSController Controller class constructor
      * executes as soon as an instance of this class is created
      * Action Listeners are binded to the different buttons in the different panes
      * They will perform different functions on-click accessible to the manager, specifically being able to:
@@ -34,8 +34,9 @@ public class ViewCompanyDBSController implements Controller, ActionListener
      * @param view is the Frontend instance that all gui components are pulled from
      * @param model is the Company Database instance with the data and the required information for the backend
      */
-    public SubscriptionController(Frontend view,CompanyDatabase model) 
+    public ViewCompanyDBSController(Frontend view,CompanyDatabase model) 
     {
+    	//setting the data members of the view and model
         this.view = view;
         this.model = model;
         
@@ -44,13 +45,13 @@ public class ViewCompanyDBSController implements Controller, ActionListener
         view.getViewCompanyDatabase().getLandlordButton().addActionListener(this);
         view.getViewCompanyDatabase().getPropertyButton().addActionListener(this);
         
-        //x button for all panels are the same
+        //x button (exit to dashboard) for all panels are the same
         view.getViewCompanyDatabase().getDashboardButton().addActionListener(this);  
     }
 
     
-    /*
-     * Action Performed method
+    /**
+     * Action Performed method with no return type
      * executes in response to something triggereing the ActionListener
      * in this case, it can be any of the buttons binded with action listeners
      * this method decides what action to take based off of which button in any of our panels was clicked
@@ -81,13 +82,13 @@ public class ViewCompanyDBSController implements Controller, ActionListener
         	      	
         }
     	
-    	//if 'x' button is pressed on any page
+    	//if 'x' (exit to dashboard) button is pressed on any page
         else if(e.getSource() == view.getViewCompanyDatabase().getDashboardButton()) 
         {        	
         	//required because we are switching GUIs
         	//puts up the dashboard panel
         	//view.dashboard();
-        	//fills it with the corresponding buttons and components for manager
+        	//fills it with the corresponding buttons and components for manager functionality
         	view.getDashboard().loggedInManager();
         }       
     }
