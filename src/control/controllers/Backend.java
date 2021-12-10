@@ -28,8 +28,9 @@ public class Backend {
 
         SignupController signupController = new SignupController(view, model);
         /*LoginController loginController = new LoginController(view, model);
+        */
         DashboardController dashboardController = new DashboardController(view, model);
-        PropertyController propertyController = new PropertyController(view, model);
+        /*PropertyController propertyController = new PropertyController(view, model);
         RegisterPropertyController registerPropertyController = new RegisterPropertyController(view, model);
         SubscriptionController subscriptionController = new SubscriptionController(view, model);        
         ChangeFeesController changeFeesController = new ChangeFeesController(view, model);
@@ -39,9 +40,9 @@ public class Backend {
         controllers = new ArrayList<Controller>();
 
         controllers.add(signupController);
-        /*controllers.add(loginController);
+        //controllers.add(loginController);
         controllers.add(dashboardController);
-        controllers.add(propertyController);
+        /*controllers.add(propertyController);
         controllers.add(registerPropertyController);
         controllers.add(subscriptionController);
         controllers.add(changeFeesController);
