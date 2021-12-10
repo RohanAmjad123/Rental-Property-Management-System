@@ -765,6 +765,39 @@ public class CompanyDatabase {
 
     /**
      * 
+     * @param p
+     * @return
+     * @throws SQLException
+     */
+    public ArrayList<String> getRentersWIthSubscriptionsMatching(Property p) throws SQLException {
+        ArrayList<String> renterID = new ArrayList<String>();
+
+        String sql = "SELECT renterID FROM subscriptions WHERE property_type=? AND bedrooms <=? AND bathrooms <= AND maxRent>=? AND city_quadrant=? AND furnished=?";
+
+        try {
+            PreparedStatement stmt = dbConnect.prepareStatement(sql);
+            stmt.setString(1, p.getPropertyType());
+            stmt.setInt(2, p.getBedrooms());
+            stmt.setInt(3, p.getBathrooms());
+            stmt.setInt(4, p.getRent());
+            stmt.setString(5, p.getAddress().getCityQuadrant());
+            stmt.setString(6, p.getFurnished());
+
+            ResultSet rs = stmt.executeQuery();
+
+            while(rs.next()) {
+                renterID.add(rs.getString("renter_id"));
+            }
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+            throw new SQLException("Failed to get renter IDs that have matching subscriptions!");
+        }
+        
+        return renterID;
+    }
+    /**
+     * 
      * @param criteria
      * @return
      * @throws SQLException
