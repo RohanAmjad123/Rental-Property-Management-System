@@ -699,6 +699,7 @@ public class CompanyDatabase {
             stmt.setInt(4, criteria.getMaxRent());
             stmt.setString(5, criteria.getCityQuadrant());
             stmt.setString(6, criteria.getFurnished());
+            stmt.setString(7, criteria.getRenterID());
 
             int affectedRows = stmt.executeUpdate();
             if (affectedRows == 0) {
