@@ -18,14 +18,34 @@ import java.sql.SQLException;
  * @author Ibrahim Asad
  * @version 1.0
  */
+
+
+/**
+ *Controller Class for Dashboard
+ *implements the controller class
+ *implements the ActionListener class
+ *used to link model to view through the actions and components of the Dashboard (basically the main menu of the software)
+ */
 public class DashboardController implements Controller, ActionListener {
     private Frontend view;
     private CompanyDatabase model;
 
+    
+    /**
+     * Dashboard Controller class constructor
+     * executes as soon as an instance of this class is created
+     * Action Listeners are binded to the different buttons in the different panes
+     * They will perform different functions on-click, specifically being able to: 
+     * logout/login, look at properties, etc.
+     * Depending on what type of user is using the software, their dashboard will be different and customized to their needs
+     * @param view is the Frontend instance that all gui components are pulled from
+     * @param model is the Company Database instance with the data and the required information for the backend
+     */
     public DashboardController(Frontend view, CompanyDatabase model) {
         this.view = view;
         this.model = model;
 
+        //binding all buttons on dashboard with Action Listener
         view.getDashboard().getStartButton().addActionListener(this);
         view.getDashboard().getSignupButton().addActionListener(this);
         view.getDashboard().getSearchButton().addActionListener(this);
@@ -40,7 +60,18 @@ public class DashboardController implements Controller, ActionListener {
         view.getDashboard().getGenerateSummaryReportButton().addActionListener(this);
     }
 
+    
+    /**
+     * Action Performed method with no return type
+     * executes in response to something triggereing the ActionListener
+     * in this case, it can be any of the buttons binded with action listeners
+     * this method decides what action to take based off of which button was clicked
+     * main functionalities e.g transitioning to different panels depending on what type of user is using it etc.
+     * @param e is the instance of the ActionEvent object which is the action event that triggers the ActionListener requiring handling
+     */
     public void actionPerformed(ActionEvent e) {
+    	
+    	//if start button is clicked
         if (e.getSource() == view.getDashboard().getStartButton()) {
             ArrayList<Property> activeProperties = new ArrayList<Property>();
 
@@ -56,13 +87,18 @@ public class DashboardController implements Controller, ActionListener {
             
             view.getDashboard().signedOut();
         }
+        
+        //if sign up button is clicked
         else if (e.getSource() == view.getDashboard().getSignupButton()) {
             view.signup();
         }
+        //if login button is clicked
         else if (e.getSource() == view.getDashboard().getLoginButton()) {
             view.login();
             view.getLogin().userChoice();
         }
+        
+        //if search button is clicked
         else if (e.getSource() == view.getDashboard().getSearchButton()) {
             String propertyType = "";
             int bedrooms = 0;
@@ -121,11 +157,15 @@ public class DashboardController implements Controller, ActionListener {
                 view.getDashboard().loggedInManager();
             }
         }
+        
+        //if logout button is clicked
         else if (e.getSource() == view.getDashboard().getLogoutButton()) {
             SingletonLogin x = SingletonLogin.getInstance();
             x.logout();
             view.getDashboard().signedOut();
         }
+        
+        //if manage subscription button is clicked
         else if (e.getSource() == view.getDashboard().getManageSubscriptionButton()) {
             SearchCriteria s = new SearchCriteria();
             
@@ -145,9 +185,13 @@ public class DashboardController implements Controller, ActionListener {
                 exception.printStackTrace();
             }
         }
+        
+        //if register property button is clicked
         else if (e.getSource() == view.getDashboard().getRegisterPropertyButton()) {
             view.registerProperty();
         }
+        
+        //if manage my properties button is clicked
         else if (e.getSource() == view.getDashboard().getManageMyPropertiesButton()) {
             ArrayList<Property> p = new ArrayList<Property>();
             
@@ -162,6 +206,8 @@ public class DashboardController implements Controller, ActionListener {
                 exception.printStackTrace();
             }
         }
+        
+      //if manage all properties button is clicked
         else if (e.getSource() == view.getDashboard().getManageAllPropertiesButton()) {
             ArrayList<Property> p = new ArrayList<Property>();
             
@@ -176,12 +222,18 @@ public class DashboardController implements Controller, ActionListener {
                 exception.printStackTrace();
             }
         }
+        
+        //if change fees button is clicked
         else if (e.getSource() == view.getDashboard().getChangeFeesButton()) {
             view.changeFees();
         }
+        
+      //if view company Database button is clicked
         else if (e.getSource() == view.getDashboard().getViewCompanyDatabaseButton()) {
             view.viewCompanyDatabase();
         }
+        
+      //if Generate Summary Report button is clicked
         else if (e.getSource() == view.getDashboard().getGenerateSummaryReportButton()) {
             view.periodicalReportForm();
         }
