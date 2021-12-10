@@ -205,10 +205,13 @@ public class Address {
 	public String getCountry() {
 		return country;
 	}
-	/**
-     * getAddressFormatted method is a getter meathod, the private variables formatted as
-     * streetName + " " + cityQuadrant + ", " + city + " " + stateProvince + ", " + postalCode
-     * as a single large String value are returned
+    /**
+     * getAddressFormatted method is a method that formats the variable streetName, postalCode, cityQuadrant, city, 
+     * stateProvince, and country, the private variables are formatted as
+     *
+     * (streetName + " " + cityQuadrant + ", " + city + " " + stateProvince + ", " + postalCode)
+     *
+     * as one single large String value, and is returned
      * @return
      */
 	public String getAddressFormatted() {
