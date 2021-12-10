@@ -18,6 +18,13 @@ import java.sql.SQLException;
  * @author Ibrahim Asad
  * @version 1.2
  */
+
+/**
+ *Controller Class for Change Fees
+ *implements the controller class
+ *implements the ActionListener class
+ *used to link model to view through the actions and components of the Changing Fees ability
+ */
 public class ChangeFeesController implements Controller, ActionListener {
 
  private Frontend view;
