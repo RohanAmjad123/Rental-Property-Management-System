@@ -6,7 +6,9 @@ import business.businesslogic.Property;
 import business.usermodels.User;
 
 /**
- * Class ViewCompanyDatabaseGUI
+ * Class ViewCompanyDatabaseGUI: a panel which allows a manager to view the
+ * company database, it includes information choice, renter information,
+ * landlord information, and property information pages
  * 
  * @since December 4th, 2021
  * @author Azlan Amjad
@@ -15,7 +17,7 @@ import business.usermodels.User;
 public class ViewCompanyDatabaseGUI extends JPanel {
     private Frontend view;
 
-    // Variables declaration - do not modify
+    // Variables declaration
     private javax.swing.JLabel chooseInformationLabel = new javax.swing.JLabel();
     private javax.swing.JLabel copyrightLabel = new javax.swing.JLabel();
     private javax.swing.JButton dashboardButton = new javax.swing.JButton();
@@ -26,40 +28,40 @@ public class ViewCompanyDatabaseGUI extends JPanel {
     private javax.swing.JLabel rentSlowerLabel = new javax.swing.JLabel();
     private javax.swing.JButton renterButton = new javax.swing.JButton();
     private javax.swing.JLabel renterLabel = new javax.swing.JLabel();
-    // End of variables declaration
 
-    // Variables declaration - do not modify
     private javax.swing.JScrollPane jScrollPane1 = new javax.swing.JScrollPane();
     private javax.swing.JLabel renterInformationLabel = new javax.swing.JLabel();
     private javax.swing.JList<User> renterList = new javax.swing.JList<User>();
-    // End of variables declaration
 
     // all renters
     private DefaultListModel<User> renterListModel = new DefaultListModel<User>();
 
-    // Variables declaration - do not modify
     private javax.swing.JLabel landlordInformationLabel = new javax.swing.JLabel();
     private javax.swing.JList<User> landlordList = new javax.swing.JList<User>();
-    // End of variables declaration
 
     // all landlords
     private DefaultListModel<User> landlordListModel = new DefaultListModel<User>();
 
-    // Variables declaration - do not modify
     private javax.swing.JLabel propertyInformationLabel = new javax.swing.JLabel();
     private javax.swing.JList<Property> propertyList = new javax.swing.JList<Property>();
-    // End of variables declaration
 
     // all properties
     private DefaultListModel<Property> propertyListModel = new DefaultListModel<Property>();
 
+    /**
+     * ViewCompanyDatabaseGUI constructor, used by Frontend
+     * @param view Frontend JFrame
+     */
     public ViewCompanyDatabaseGUI(Frontend view) {
         // assign view reference
         this.view = view;
         chooseInformation();
     }
 
-    // update Renter list model
+    /**
+     * Update ViewCompanyDatabaseGUIs renter list model
+     * @param updatedRenterListModel ArrayList<User> updated renter list
+     */
     public void updateRentersView(ArrayList<User> updatedRenterListModel) {
         this.renterListModel.clear();
         for (User r : updatedRenterListModel) {
@@ -67,7 +69,10 @@ public class ViewCompanyDatabaseGUI extends JPanel {
         }
     }
 
-    // update Landlord list model
+    /**
+     * Update ViewCompanyDatabaseGUIs landlord list model
+     * @param updatedLandlordListModel ArrayList<User> updated landlord list
+     */
     public void updateLandlordsView(ArrayList<User> updatedLandlordListModel) {
         this.landlordListModel.clear();
         for (User l : updatedLandlordListModel) {
@@ -75,7 +80,10 @@ public class ViewCompanyDatabaseGUI extends JPanel {
         }
     }
 
-    // update Property list model
+    /**
+     * Update ViewCompanyDatabaseGUIs property list model
+     * @param updatedPropertyListModel ArrayList<Property> updated property list
+     */
     public void updatePropertiesView(ArrayList<Property> updatedPropertyListModel) {
         this.propertyListModel.clear();
         for (Property p : updatedPropertyListModel) {
@@ -83,7 +91,11 @@ public class ViewCompanyDatabaseGUI extends JPanel {
         }
     }
 
+    /**
+     * Instantiate choose information layout
+     */
     public void chooseInformation() {
+        // remove all components from panel
         removeAll();
 
         setBackground(java.awt.Color.darkGray);
@@ -182,12 +194,17 @@ public class ViewCompanyDatabaseGUI extends JPanel {
         add(propertyButton);
         propertyButton.setBounds(150, 370, 140, 50);
 
+        // revalidate, repaint, then pack frame
         revalidate();
         repaint();
         view.pack();
     }
 
+    /**
+     * Instantiate renter information layout
+     */
     public void renterInformation() {
+        // remove all components from panel
         removeAll();
 
         setBackground(java.awt.Color.darkGray);
@@ -234,12 +251,17 @@ public class ViewCompanyDatabaseGUI extends JPanel {
         add(jScrollPane1);
         jScrollPane1.setBounds(40, 160, 450, 270);
 
+        // revalidate, repaint, then pack frame
         revalidate();
         repaint();
         view.pack();
     }
 
+    /**
+     * Instantiate landlord information layout
+     */
     public void landlordInformation() {
+        // remove all components from panel
         removeAll();
 
         setBackground(java.awt.Color.darkGray);
@@ -286,12 +308,17 @@ public class ViewCompanyDatabaseGUI extends JPanel {
         add(jScrollPane1);
         jScrollPane1.setBounds(40, 160, 450, 270);
 
+        // revalidate, repaint, then pack frame
         revalidate();
         repaint();
         view.pack();
     }
 
+    /**
+     * Instantiate property information layout
+     */
     public void propertyInformation() {
+        // remove all components from panel
         removeAll();
 
         setBackground(java.awt.Color.darkGray);
@@ -338,6 +365,7 @@ public class ViewCompanyDatabaseGUI extends JPanel {
         add(jScrollPane1);
         jScrollPane1.setBounds(40, 160, 450, 270);
 
+        // revalidate, repaint, then pack frame
         revalidate();
         repaint();
         view.pack();
@@ -345,6 +373,10 @@ public class ViewCompanyDatabaseGUI extends JPanel {
 
     // getter methods
 
+    /**
+     * chooseInformationLabel getter method
+     * @return 
+     */
     public javax.swing.JLabel getChooseInformationLabel() {
         return chooseInformationLabel;
     }
