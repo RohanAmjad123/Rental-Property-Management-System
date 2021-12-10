@@ -20,9 +20,9 @@ public class DateModel {
 	}
 
 	public DateModel() {
-		day = "";
-		month = "";
-		year = "";
+		day = "01";
+		month = "01";
+		year = "2000";
 	}
 
 	public void setYear(String year) {
