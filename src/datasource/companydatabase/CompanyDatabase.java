@@ -467,13 +467,13 @@ public class CompanyDatabase {
      * @return
      * @throws SQLException
      */
-    public ArrayList<User> getSpecificUsers(String user_type) throws SQLException {
+    public ArrayList<User> getSpecificUsers(String userType) throws SQLException {
         ArrayList<User> users = new ArrayList<User>();
         String sql = "SELECT * FROM users WHERE user_type=?";
 
         try {
             PreparedStatement stmt = dbConnect.prepareStatement(sql);
-            stmt.setString(1, user_type);
+            stmt.setString(1, userType);
 
             ResultSet rs = stmt.executeQuery();
 
@@ -699,6 +699,7 @@ public class CompanyDatabase {
             stmt.setInt(4, criteria.getMaxRent());
             stmt.setString(5, criteria.getCityQuadrant());
             stmt.setString(6, criteria.getFurnished());
+            stmt.setString(7, criteria.getRenterID());
 
             int affectedRows = stmt.executeUpdate();
             if (affectedRows == 0) {

@@ -1,5 +1,14 @@
 package control.controllers;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import business.businesslogic.*;
+import business.usermodels.*;
+import presentation.guicomponents.*;
+import datasource.companydatabase.*;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
 /**
  * Class ViewCompanyDBSController
  * @since December 4th, 2021
@@ -16,8 +25,7 @@ package control.controllers;
  *implements the ActionListener class
  *used to link model to view through the actions and components of the viewing of the company DBS
  */
-public class ViewCompanyDBSController implements Controller, ActionListener 
-{
+public class ViewCompanyDBSController implements Controller, ActionListener {
 	//private data members to hold the model and view objects
 	private Frontend view;
     private CompanyDatabase model;
@@ -62,32 +70,63 @@ public class ViewCompanyDBSController implements Controller, ActionListener
     {    	
     	//if the 'Renters' button is pressed
     	if(e.getSource() == view.getViewCompanyDatabase().getRenterButton()) 
-    	{
-    		//switches the panel to the info panel for renters
-    		view.getViewCompanyDatabase().renterInformation();    		
-    	}
+    	{   
+            ArrayList<User> u = new ArrayList<User>();
+
+            try {
+                u = model.getSpecificUsers("renter");
+
+                view.getViewCompanyDatabase().updateRentersView(u);
+                //switches the panel to the info panel for renters
+    		    view.getViewCompanyDatabase().renterInformation();    		
+            }
+            catch (SQLException exception) {
+                exception.printStackTrace();
+            }
+     	}
     	
     	//if the 'Landlords' button is pressed
         else if (e.getSource() == view.getViewCompanyDatabase().getLandlordButton()) 
         {
-        	//switches the panel to the info panel for landlords
-    		view.getViewCompanyDatabase().landlordInformation();
+            ArrayList<User> u = new ArrayList<User>();
+
+            try {
+                u = model.getSpecificUsers("landlord");
+
+                view.getViewCompanyDatabase().updateLandlordsView(u);
+                //switches the panel to the info panel for landlords
+    		    view.getViewCompanyDatabase().landlordInformation();    		
+            }
+            catch (SQLException exception) {
+                exception.printStackTrace();
+            }
         }
     	
     	///if the 'Properties' button is pressed
         else if (e.getSource() == view.getViewCompanyDatabase().getPropertyButton()) 
         {
-        	//switches the panel to the info panel for properties
-    		view.getViewCompanyDatabase().propertyInformation();
+            ArrayList<Property> p = new ArrayList<Property>();
+
+            try {
+                p = model.getAllProperties();
+
+                view.getViewCompanyDatabase().updatePropertiesView(p);
+                //switches the panel to the info panel for properties
+    		    view.getViewCompanyDatabase().propertyInformation();		
+            }
+            catch (SQLException exception) {
+                exception.printStackTrace();
+            }
         	      	
         }
     	
     	//if 'x' (exit to dashboard) button is pressed on any page
         else if(e.getSource() == view.getViewCompanyDatabase().getDashboardButton()) 
-        {        	
+        {       
+            view.getViewCompanyDatabase().chooseInformation(); 	
         	//required because we are switching GUIs
         	//puts up the dashboard panel
-        	//view.dashboard();
+        	view.dashboard();
         	//fills it with the corresponding buttons and components for manager functionality
         	view.getDashboard().loggedInManager();
         }       
