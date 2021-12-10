@@ -17,32 +17,67 @@ import java.sql.SQLException;
  * @author Ibrahim Asad
  * @version 1.0
  */
+
+
+/**
+ *Controller Class for Register Property
+ *implements the Controller class
+ *implements the ActionListener class
+ *used to link model to view through the actions and components of the process of Registering a Property
+ */
 public class RegisterPropertyController implements Controller, ActionListener {
     Frontend view;
     CompanyDatabase model;
-
+    
+    /**
+     * Register Property Controller class constructor
+     * executes as soon as an instance of this class is created
+     * Action Listeners are binded to the different buttons in the different panes
+     * They will perform different functions on-click, specifically being able to: 
+     * register property, try again, finish, and exit to dashboard
+     * landlord only has access to this functionality
+     * @param view is the Frontend instance that all gui components are pulled from
+     * @param model is the Company Database instance with the data and the required information for the backend used to connect to SQL database
+     */
     public RegisterPropertyController(Frontend view, CompanyDatabase model) {
         this.view = view;
         this.model = model;
 
+        //relevant buttons in gui binded with action listeners
         view.getRegisterProperty().getRegisterPropertyButton().addActionListener(this);
         view.getRegisterProperty().getDashboardButton().addActionListener(this);
         view.getRegisterProperty().getTryAgainButton().addActionListener(this);
         view.getRegisterProperty().getFinishButton().addActionListener(this);
     }
 
+    
+    /**
+     * Action Performed method with no return type
+     * executes in response to something triggereing the ActionListener
+     * in this case, it can be any of the buttons binded with action listeners
+     * this method decides what action to take based off of which button was clicked e.g to register property, or exit to dash board
+     * @param e is the instance of the ActionEvent object which is the action event that triggers the ActionListener requiring handling
+     */
     public void actionPerformed(ActionEvent e) {
+    	
+    	// if 'x' (exit to dashboard) button is clicked
         if (e.getSource() == view.getRegisterProperty().getDashboardButton()) {
             view.dashboard();
             view.getDashboard().loggedInLandlord();
         }
+        
+        //if finish button is pressed
         else if (e.getSource() == view.getRegisterProperty().getFinishButton()) {
             view.dashboard();
             view.getDashboard().loggedInLandlord();
         }
+        
+        //if try again button is pressed
         else if (e.getSource() == view.getRegisterProperty().getTryAgainButton()) {
             view.getRegisterProperty().registrationForm();
         }
+        
+        //if register property button is pressed
         else if (e.getSource() == view.getRegisterProperty().getRegisterPropertyButton()) {
             String title = "";
             String description = "";
@@ -86,6 +121,7 @@ public class RegisterPropertyController implements Controller, ActionListener {
                 stateProvince = view.getRegisterProperty().getProvinceStateText().getText();
                 country = view.getRegisterProperty().getCountryText().getText();
 
+                //assign obtained values to local variables
                 rent = Integer.parseInt(rentString);
                 bedrooms = Integer.parseInt(bedroomsString);
                 bathrooms = Integer.parseInt(bathroomsString);
@@ -120,6 +156,7 @@ public class RegisterPropertyController implements Controller, ActionListener {
             }
 
             try {
+            	//new property initialized with stored specifications
                 Property p = new Property(title, description, propertyType, rent, bedrooms, bathrooms, squareFeet, furnished, landlordID, state, feeExpiry, feeAmount, listingDate, address);
                 
                 model.registerProperty(p);
