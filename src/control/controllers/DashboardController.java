@@ -82,6 +82,7 @@ public class DashboardController implements Controller, ActionListener {
             }
             catch (NumberFormatException exception) {
                 exception.printStackTrace();
+                maxRent = Integer.MAX_VALUE;
             }
 
             SearchCriteria s = new SearchCriteria(propertyType, bedrooms, bathrooms, maxRent, cityQuadrant, furnished);
