@@ -291,7 +291,11 @@ public class CompanyDatabase {
         } catch (SQLException e) {
             e.printStackTrace();
             throw new SQLException("Could not get properties!");
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+            throw new SQLException("Illegal arguments for Address!");
         }
+
         return properties;
     }
 
@@ -329,7 +333,11 @@ public class CompanyDatabase {
         } catch (SQLException e) {
             e.printStackTrace();
             throw new SQLException("Could not get properties!");
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+            throw new SQLException("Illegal arguments for Address!");
         }
+
         return properties;
     }
 
@@ -370,7 +378,11 @@ public class CompanyDatabase {
         } catch (SQLException e) {
             e.printStackTrace();
             throw new SQLException("Could not get properties!");
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+            throw new SQLException("Illegal arguments for Address!");
         }
+
         return properties;
     }
 
@@ -415,7 +427,11 @@ public class CompanyDatabase {
         } catch (SQLException e) {
             e.printStackTrace();
             throw new SQLException("Could not get properties!");
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+            throw new SQLException("Illegal arguments for Address!");
         }
+
         return properties;
     }
 
@@ -519,6 +535,9 @@ public class CompanyDatabase {
         } catch (SQLException e) {
             e.printStackTrace();
             throw new SQLException("Could not get property!");
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+            throw new SQLException("Illegal arguments for Address!");
         }
         return p;
     }
@@ -796,6 +815,9 @@ public class CompanyDatabase {
         catch (SQLException e) {
             e.printStackTrace();
             throw new SQLException("Could not get summary data!");
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+            throw new SQLException("Illegal arguments for Address!");
         }
         
         try {
