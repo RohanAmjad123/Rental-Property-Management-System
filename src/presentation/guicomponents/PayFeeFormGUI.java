@@ -4,7 +4,7 @@ import javax.swing.*;
 import business.businesslogic.Fee;
 
 /**
- * Class PayFeeFormGUI
+ * Class PayFeeFormGUI: a panel which display a form for fee payment
  * 
  * @since December 4th, 2021
  * @author Azlan Amjad
@@ -35,14 +35,10 @@ public class PayFeeFormGUI extends JPanel {
     private javax.swing.JLabel rentSlowerLabel = new javax.swing.JLabel();
     private javax.swing.JLabel securityCodeLabel = new javax.swing.JLabel();
     private javax.swing.JTextField securityCodeText = new javax.swing.JTextField();
-    // End of variables declaration
 
-    // Variables declaration - do not modify
     private javax.swing.JButton finishButton = new javax.swing.JButton();
     private javax.swing.JLabel paymentSuccessfulLabel = new javax.swing.JLabel();
-    // End of variables declaration
 
-    // Variables declaration - do not modify
     private javax.swing.JLabel paymentUnsuccessfulLabel = new javax.swing.JLabel();
     private javax.swing.JButton tryAgainButton = new javax.swing.JButton();
     // End of variables declaration
@@ -50,18 +46,31 @@ public class PayFeeFormGUI extends JPanel {
     // current fee object
     private Fee currentFee = new Fee();
 
+    /**
+     * PayFeeFormGUI constructor, used by Frontend
+     * 
+     * @param view Frontend JFrame
+     */
     public PayFeeFormGUI(Frontend view) {
         // assign view reference
         this.view = view;
         payFeeForm();
     }
 
-    // update current fee
+    /**
+     * Update PayFeeFormGUIs fee object
+     * 
+     * @param updatedFee Fee updated fee object
+     */
     public void updateFee(Fee updatedFee) {
         this.currentFee = updatedFee;
     }
 
+    /**
+     * Instantiate pay fee form layout
+     */
     public void payFeeForm() {
+        // remove all components from panel
         removeAll();
 
         setBackground(java.awt.Color.darkGray);
@@ -245,12 +254,17 @@ public class PayFeeFormGUI extends JPanel {
         add(feePeriodLabel);
         feePeriodLabel.setBounds(250, 180, 200, 40);
 
+        // revalidate, repaint, then pack frame
         revalidate();
         repaint();
         view.pack();
     }
 
+    /**
+     * Instantiate success page layout
+     */
     public void successPage() {
+        // remove all components from panel
         removeAll();
 
         setBackground(java.awt.Color.darkGray);
@@ -288,12 +302,17 @@ public class PayFeeFormGUI extends JPanel {
         add(copyrightLabel);
         copyrightLabel.setBounds(20, 460, 170, 20);
 
+        // revalidate, repaint, then pack frame
         revalidate();
         repaint();
         view.pack();
     }
 
+    /**
+     * Instantiate error page layout
+     */
     public void errorPage() {
+        // remove all components from panel
         removeAll();
 
         rentSlowerLabel = new javax.swing.JLabel();
@@ -336,6 +355,7 @@ public class PayFeeFormGUI extends JPanel {
         add(copyrightLabel);
         copyrightLabel.setBounds(20, 460, 170, 20);
 
+        // revalidate, repaint, then pack frame
         revalidate();
         repaint();
         view.pack();
@@ -343,106 +363,236 @@ public class PayFeeFormGUI extends JPanel {
 
     // getter method
 
+    /**
+     * copyrightLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getCopyrightLabel() {
         return copyrightLabel;
     }
 
+    /**
+     * creditCardNumberLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getCreditCardNumberLabel() {
         return creditCardNumberLabel;
     }
 
+    /**
+     * creditCardNumberText getter method
+     * 
+     * @return JTextField
+     */
     public javax.swing.JTextField getCreditCardNumberText() {
         return creditCardNumberText;
     }
 
+    /**
+     * dashboardButton getter method
+     * 
+     * @return JButton
+     */
     public javax.swing.JButton getDashboardButton() {
         return dashboardButton;
     }
 
+    /**
+     * expirationMonthLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getExpirationMonthLabel() {
         return expirationMonthLabel;
     }
 
+    /**
+     * expirationMonthText getter method
+     * 
+     * @return JTextField
+     */
     public javax.swing.JTextField getExpirationMonthText() {
         return expirationMonthText;
     }
 
+    /**
+     * expirationYearLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getExpirationYearLabel() {
         return expirationYearLabel;
     }
 
+    /**
+     * expirationYearText getter method
+     * 
+     * @return JTextField
+     */
     public javax.swing.JTextField getExpirationYearText() {
         return expirationYearText;
     }
 
+    /**
+     * feeAmountLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getFeeAmountLabel() {
         return feeAmountLabel;
     }
 
+    /**
+     * feeAmountValueLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getFeeAmountValueLabel() {
         return feeAmountValueLabel;
     }
 
+    /**
+     * feePeriodLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getFeePeriodLabel() {
         return feePeriodLabel;
     }
 
+    /**
+     * feePeriodValueLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getFeePeriodValueLabel() {
         return feePeriodValueLabel;
     }
 
+    /**
+     * firstNameLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getFirstNameLabel() {
         return firstNameLabel;
     }
 
+    /**
+     * firstNameText getter method
+     * 
+     * @return JTextField
+     */
     public javax.swing.JTextField getFirstNameText() {
         return firstNameText;
     }
 
+    /**
+     * lastNameLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getLastNameLabel() {
         return lastNameLabel;
     }
 
+    /**
+     * lastNameText getter method
+     * 
+     * @return JTextField
+     */
     public javax.swing.JTextField getLastNameText() {
         return lastNameText;
     }
 
+    /**
+     * payFeeButton getter method
+     * 
+     * @return JButton
+     */
     public javax.swing.JButton getPayFeeButton() {
         return payFeeButton;
     }
 
+    /**
+     * payPropertyActivatoinFeeLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getPayPropertyActivationFeeLabel() {
         return payPropertyActivationFeeLabel;
     }
 
+    /**
+     * rentSlowerLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getRentSlowerLabel() {
         return rentSlowerLabel;
     }
 
+    /**
+     * securityCodeLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getSecurityCodeLabel() {
         return securityCodeLabel;
     }
 
+    /**
+     * securityCodeText getter method
+     * 
+     * @return JTextField
+     */
     public javax.swing.JTextField getSecurityCodeText() {
         return securityCodeText;
     }
 
+    /**
+     * finishButton getter method
+     * 
+     * @return JButton
+     */
     public javax.swing.JButton getFinishButton() {
         return finishButton;
     }
 
+    /**
+     * paymentSuccessfulLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getPaymentSuccessfulLabel() {
         return paymentSuccessfulLabel;
     }
 
+    /**
+     * paymentUnsuccessfulLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getPaymentUnsuccessfulLabel() {
         return paymentUnsuccessfulLabel;
     }
 
+    /**
+     * tryAgainButton getter method
+     * 
+     * @return JButton
+     */
     public javax.swing.JButton getTryAgainButton() {
         return tryAgainButton;
     }
 
+    /**
+     * currentFee getter method
+     * 
+     * @return Fee
+     */
     public Fee getCurrentFee() {
         return currentFee;
     }

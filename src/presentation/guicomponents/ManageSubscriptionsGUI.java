@@ -7,7 +7,8 @@ import javax.swing.event.ListSelectionListener;
 import business.businesslogic.SearchCriteria;
 
 /**
- * Class ManageSubscriptionsGUI
+ * Class ManageSubscriptionsGUI: a panel to display a renters subscription with
+ * an option to edit
  * 
  * @since December 4th, 2021
  * @author Azlan Amjad
@@ -29,26 +30,41 @@ public class ManageSubscriptionsGUI extends JPanel {
     // user subscription
     private DefaultListModel<SearchCriteria> subscriptionListModel = new DefaultListModel<SearchCriteria>();
 
+    /**
+     * ManageSubscriptionsGUI constructor, used by Frontend
+     * 
+     * @param view Frontend JFrame
+     */
     public ManageSubscriptionsGUI(Frontend view) {
         // assign view reference
         this.view = view;
         manageSubscription();
     }
 
-    // update SearchCriteria list model
+    /**
+     * Update ManageSubscriptionsGUIs search criteria list model
+     * 
+     * @param subscription SearchCriteria updated subscription
+     */
     public void updateSubscriptionView(SearchCriteria subscription) {
         // update current list model
         this.subscriptionListModel.clear();
         this.subscriptionListModel.addElement(subscription);
     }
 
-    // delete SearchCriteria from list model
+    /**
+     * Empty ManageSubscriptionsGUIs search criteria list model
+     */
     public void deleteSubscription() {
         // empty the current list model
         this.subscriptionListModel.clear();
     }
 
+    /**
+     * Instantiate manage subscriptions layout
+     */
     public void manageSubscription() {
+        // remove all components from panel
         removeAll();
 
         setBackground(java.awt.Color.darkGray);
@@ -108,6 +124,9 @@ public class ManageSubscriptionsGUI extends JPanel {
         view.pack();
     }
 
+    /**
+     * Instantiate edit option for subscriptions
+     */
     public void displayEdit() {
         editButton.setBackground(new java.awt.Color(255, 255, 255));
         editButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -123,40 +142,81 @@ public class ManageSubscriptionsGUI extends JPanel {
         add(editButton);
         editButton.setBounds(260, 300, 120, 40);
 
+        // revalidate and repaint
         revalidate();
         repaint();
     }
 
     // getter methods
 
+    /**
+     * copyrightLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getCopyrightLabel() {
         return copyrightLabel;
     }
 
+    /**
+     * dashboardButton getter method
+     * 
+     * @return JButton
+     */
     public javax.swing.JButton getDashboardButton() {
         return dashboardButton;
     }
 
+    /**
+     * editButton getter method
+     * 
+     * @return JButton
+     */
     public javax.swing.JButton getEditButton() {
         return editButton;
     }
 
+    /**
+     * jScrollPane1 getter method
+     * 
+     * @return JScrollPane
+     */
     public javax.swing.JScrollPane getjScrollPane1() {
         return jScrollPane1;
     }
 
+    /**
+     * manageRenterSubscriptionLabel
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getManageRenterSubscriptionLabel() {
         return manageRenterSubscriptionLabel;
     }
 
+    /**
+     * rentSlowerLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getRentSlowerLabel() {
         return rentSlowerLabel;
     }
 
+    /**
+     * subscriptionList getter method
+     * 
+     * @return JList<SearchCriteria>
+     */
     public javax.swing.JList<SearchCriteria> getSubscriptionList() {
         return subscriptionList;
     }
 
+    /**
+     * subscriptionListModel getter method
+     * 
+     * @return DefaultListModel<SearchCriteria>
+     */
     public DefaultListModel<SearchCriteria> getSubscriptionListModel() {
         return subscriptionListModel;
     }

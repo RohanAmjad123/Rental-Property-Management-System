@@ -3,7 +3,8 @@ package presentation.guicomponents;
 import javax.swing.*;
 
 /**
- * Class ChangeFeesGUI
+ * Class ChangeFeesGUI: a panel to display a form allowing a manager to change
+ * fees
  * 
  * @since December 4th, 2021
  * @author Azlan Amjad
@@ -12,7 +13,7 @@ import javax.swing.*;
 public class ChangeFeesGUI extends JPanel {
     private Frontend view;
 
-    // Variables declaration - do not modify
+    // Variables declaration
     private javax.swing.JLabel changeFeesLabel = new javax.swing.JLabel();
     private javax.swing.JLabel copyrightLabel = new javax.swing.JLabel();
     private javax.swing.JButton dashboardButton = new javax.swing.JButton();
@@ -24,13 +25,23 @@ public class ChangeFeesGUI extends JPanel {
     private javax.swing.JButton updateButton = new javax.swing.JButton();
     // End of variables declaration
 
+    /**
+     * ChangeFeesGUI Constructor, used by Frontend
+     * 
+     * @param view Frontend JFrame
+     */
     public ChangeFeesGUI(Frontend view) {
         // assign view reference
         this.view = view;
+        // instantiate form layout
         changeFeesForm();
     }
 
+    /**
+     * Instantiate the change fees form layout
+     */
     public void changeFeesForm() {
+        // remove all components from panel
         removeAll();
 
         setBackground(java.awt.Color.darkGray);
@@ -106,6 +117,7 @@ public class ChangeFeesGUI extends JPanel {
         add(feeAmountComboBox);
         feeAmountComboBox.setBounds(240, 190, 80, 20);
 
+        // revalidate, repaint, then pack frame
         revalidate();
         repaint();
         view.pack();
@@ -113,38 +125,83 @@ public class ChangeFeesGUI extends JPanel {
 
     // getter methods
 
+    /**
+     * changeFeesLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getChangeFeesLabel() {
         return changeFeesLabel;
     }
 
+    /**
+     * copyrightLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getCopyrightLabel() {
         return copyrightLabel;
     }
 
+    /**
+     * dashboardButton getter method
+     * 
+     * @return JButton
+     */
     public javax.swing.JButton getDashboardButton() {
         return dashboardButton;
     }
 
+    /**
+     * feeAmountComboBox getter method
+     * 
+     * @return JComboBox<String>
+     */
     public javax.swing.JComboBox<String> getFeeAmountComboBox() {
         return feeAmountComboBox;
     }
 
+    /**
+     * feeAmountLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getFeeAmountLabel() {
         return feeAmountLabel;
     }
 
+    /**
+     * feePeriodComboBox getter method
+     * 
+     * @return JComboBox<String>
+     */
     public javax.swing.JComboBox<String> getFeePeriodComboBox() {
         return feePeriodComboBox;
     }
 
+    /**
+     * feePeriodLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getFeePeriodLabel() {
         return feePeriodLabel;
     }
 
+    /**
+     * rentSlowerLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getRentSlowerLabel() {
         return rentSlowerLabel;
     }
 
+    /**
+     * updateButton getter method
+     * 
+     * @return JButton
+     */
     public javax.swing.JButton getUpdateButton() {
         return updateButton;
     }
