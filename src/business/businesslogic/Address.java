@@ -215,7 +215,7 @@ public class Address {
      * @return
      */
 	public String getAddressFormatted() {
-		return this.streetName + " " + this.cityQuadrant + ", " + this.city + " " + this.stateProvince + ", "
+		return this.streetName + " " + this.cityQuadrant + ", " + this.city + " " + this.stateProvince + " "
 				+ this.postalCode;
 	}
 
