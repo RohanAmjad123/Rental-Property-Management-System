@@ -42,6 +42,12 @@ public class ManageSubscriptionsGUI extends JPanel {
         this.subscriptionListModel.addElement(subscription);
     }
 
+    // delete SearchCriteria from list model
+    public void deleteSubscription() {
+        // empty the current list model
+        this.subscriptionListModel.clear();
+    }
+
     public void manageSubscription() {
         removeAll();
 
