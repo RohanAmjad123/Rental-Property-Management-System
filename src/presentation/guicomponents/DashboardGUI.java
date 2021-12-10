@@ -2,6 +2,9 @@ package presentation.guicomponents;
 
 import java.util.ArrayList;
 import javax.swing.*;
+
+import business.businesslogic.Address;
+import business.businesslogic.DateModel;
 import business.businesslogic.Property;
 
 /**
@@ -74,11 +77,20 @@ public class DashboardGUI extends JPanel {
     public DashboardGUI(Frontend view) {
         // assign view reference
         this.view = view;
+
         ArrayList<Property> list = new ArrayList<Property>();
-        list.add(new Property());
-        list.add(new Property());
+        Property newProperty = new Property("Azlans house", "This is Azlans house, please rent!", "Detached", 2000, 5,
+                20, 2000000, "No", "483535", "Active", new DateModel(), 60, new DateModel(),
+                new Address("yeet street yah", "T4G 4G3", "NE", "Calgary", "Alberta", "Canada"));
+        list.add(newProperty);
+
+        Property newProperty1 = new Property("Azlans house", "This is Azlans house, please rent!", "Detached", 2000, 5,
+                20, 2000000, "No", "483535", "Active", new DateModel(), 60, new DateModel(),
+                new Address("yeet street yah", "T4G 4G3", "NE", "Calgary", "Alberta", "Canada"));
+        list.add(newProperty1);
+
         updatePropertiesView(list);
-        startPage();
+        signedOut();
     }
 
     // update Property list model

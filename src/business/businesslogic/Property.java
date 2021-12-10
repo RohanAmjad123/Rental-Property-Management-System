@@ -1,5 +1,14 @@
 package business.businesslogic;
 
+/**
+ * Class Property
+ * 
+ * @since December 4th, 2021
+ * @author Rohan Amjad
+ * @author Ibrahim Asad
+ * @author Azlan Amjad
+ * @version 1.0
+ */
 public class Property {
 
 	private String landlordID;
@@ -21,8 +30,10 @@ public class Property {
 
 	private DateModel rentalDate;
 
-	public Property(String title, String description, String propertyType, int rent, int bedrooms, int bathrooms, int squareFeet,
-					String furnished, String landlordID, String state, DateModel feeExpiry, int feeAmount, DateModel listingDate, Address address) {
+	public Property(String title, String description, String propertyType, int rent, int bedrooms, int bathrooms,
+			int squareFeet,
+			String furnished, String landlordID, String state, DateModel feeExpiry, int feeAmount,
+			DateModel listingDate, Address address) {
 		this.title = title;
 		this.description = description;
 		this.propertyType = propertyType;
@@ -40,9 +51,11 @@ public class Property {
 		this.rentalDate = new DateModel("0000", "00", "00");
 	}
 
-	public Property(String title, String description, String propertyType, int rent, int bedrooms, int bathrooms, int squareFeet,
-					String furnished, String landlordID, String state, DateModel feeExpiry, int feeAmount, DateModel listingDate, Address address,
-					DateModel rentalDate) {
+	public Property(String title, String description, String propertyType, int rent, int bedrooms, int bathrooms,
+			int squareFeet,
+			String furnished, String landlordID, String state, DateModel feeExpiry, int feeAmount,
+			DateModel listingDate, Address address,
+			DateModel rentalDate) {
 		this.title = title;
 		this.description = description;
 		this.propertyType = propertyType;
@@ -75,6 +88,15 @@ public class Property {
 		this.feeAmount = 0;
 		this.address = new Address();
 		this.listingDate = new DateModel();
+	}
+
+	@Override
+	public String toString() {
+		String s = "- ";
+		s += "Title: " + this.getTitle() + ", ";
+		s += "	Rent: " + this.getRent() + ", ";
+		s += "	Address: " + this.getAddress().getStreetName() + ", " + this.getAddress().getPostalCode() + ", " + this.getAddress().getCity() + ", " + this.getAddress().getStateProvince() + ", " + this.getAddress().getCountry();
+		return s;
 	}
 
 	public String getTitle() {

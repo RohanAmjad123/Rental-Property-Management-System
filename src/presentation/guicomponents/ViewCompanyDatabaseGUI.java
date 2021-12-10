@@ -58,7 +58,7 @@ public class ViewCompanyDatabaseGUI extends JPanel {
         this.view = view;
 
         ArrayList<User> renters = new ArrayList<User>();
-        renters.add(new User());
+        renters.add(new User("Azlanamjad_123@hotmail.com", "Azlan123", "Azlan", "Amjad", "renter"));
         renters.add(new User());
         updateRentersView(renters);
 
