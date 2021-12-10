@@ -93,9 +93,9 @@ public class Property {
 	@Override
 	public String toString() {
 		String s = "- ";
-		s += "Title: " + this.getTitle() + ", ";
-		s += "	Rent: " + this.getRent() + ", ";
-		s += "	Address: " + this.getAddress().getStreetName() + ", " + this.getAddress().getPostalCode() + ", " + this.getAddress().getCity() + ", " + this.getAddress().getStateProvince() + ", " + this.getAddress().getCountry();
+		s += this.getTitle() + ", ";
+		s += "	Rent: $" + this.getRent() + ", ";
+		s += this.getAddress().getAddressFormatted();
 		return s;
 	}
 

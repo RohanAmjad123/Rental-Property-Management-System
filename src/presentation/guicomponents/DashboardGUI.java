@@ -90,7 +90,7 @@ public class DashboardGUI extends JPanel {
         list.add(newProperty1);
 
         updatePropertiesView(list);
-        signedOut();
+        startPage();
     }
 
     // update Property list model
