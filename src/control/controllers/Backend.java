@@ -31,9 +31,9 @@ public class Backend {
         DashboardController dashboardController = new DashboardController(view, model);
         //PropertyController propertyController = new PropertyController(view, model);
         RegisterPropertyController registerPropertyController = new RegisterPropertyController(view, model);
-        //SubscriptionController subscriptionController = new SubscriptionController(view, model);        
+        SubscriptionController subscriptionController = new SubscriptionController(view, model);        
         ChangeFeesController changeFeesController = new ChangeFeesController(view, model);
-        //ViewCompanyDBSController viewCompanyDBSController = new ViewCompanyDBSController(view, model);
+        ViewCompanyDBSController viewCompanyDBSController = new ViewCompanyDBSController(view, model);
         PeriodicalSummaryReportController periodicalSummaryReportController = new PeriodicalSummaryReportController(view, model);
         
         controllers = new ArrayList<Controller>();
@@ -43,9 +43,9 @@ public class Backend {
         controllers.add(dashboardController);
         //controllers.add(propertyController);
         controllers.add(registerPropertyController);
-        //controllers.add(subscriptionController);
+        controllers.add(subscriptionController);
         controllers.add(changeFeesController);
-        //controllers.add(viewCompanyDBSController);
+        controllers.add(viewCompanyDBSController);
         controllers.add(periodicalSummaryReportController);
     }
 

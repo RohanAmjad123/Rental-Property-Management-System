@@ -5,6 +5,7 @@ import business.usermodels.*;
 import java.sql.*;
 import java.util.*;
 import java.io.*;
+import java.time.LocalDate;
 
 /**
  * Class CompanyDatabase
@@ -263,6 +264,26 @@ public class CompanyDatabase {
      * @throws SQLException
      */
     public ArrayList<Property> getProperties(String landlordID) throws SQLException {
+        LocalDate d = LocalDate.now();
+        String day = String.valueOf(d.getDayOfMonth());
+        String month = String.valueOf(d.getMonthValue());
+        String year = String.valueOf(d.getYear());
+        DateModel currentDate = new DateModel(year, month, day);
+        String currDate = currentDate.getDateFormatted();
+
+        String check = "UPDATE properties SET state='suspended' WHERE state='active' AND fee_expiry<?";
+
+        try {
+            PreparedStatement checkStmt = dbConnect.prepareStatement(check);
+            checkStmt.setString(1, currDate);
+
+            checkStmt.executeUpdate();
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+            throw new SQLException("failed check on property state!");
+        }
+        
         ArrayList<Property> properties = new ArrayList<Property>();
         String sql = "SELECT * FROM properties WHERE landlord_id=?";
 
@@ -306,6 +327,26 @@ public class CompanyDatabase {
      * @throws SQLException
      */
     public ArrayList<Property> getAllProperties() throws SQLException {
+        LocalDate d = LocalDate.now();
+        String day = String.valueOf(d.getDayOfMonth());
+        String month = String.valueOf(d.getMonthValue());
+        String year = String.valueOf(d.getYear());
+        DateModel currentDate = new DateModel(year, month, day);
+        String currDate = currentDate.getDateFormatted();
+
+        String check = "UPDATE properties SET state='suspended' WHERE state='active' AND fee_expiry<?";
+
+        try {
+            PreparedStatement checkStmt = dbConnect.prepareStatement(check);
+            checkStmt.setString(1, currDate);
+
+            checkStmt.executeUpdate();
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+            throw new SQLException("failed check on property state!");
+        }
+        
         ArrayList<Property> properties = new ArrayList<Property>();
         String sql = "SELECT * FROM properties";
 
@@ -349,6 +390,26 @@ public class CompanyDatabase {
      * @throws SQLException
      */
     public ArrayList<Property> getStateProperties(String state) throws SQLException {
+        LocalDate d = LocalDate.now();
+        String day = String.valueOf(d.getDayOfMonth());
+        String month = String.valueOf(d.getMonthValue());
+        String year = String.valueOf(d.getYear());
+        DateModel currentDate = new DateModel(year, month, day);
+        String currDate = currentDate.getDateFormatted();
+
+        String check = "UPDATE properties SET state='suspended' WHERE state='active' AND fee_expiry<?";
+
+        try {
+            PreparedStatement checkStmt = dbConnect.prepareStatement(check);
+            checkStmt.setString(1, currDate);
+
+            checkStmt.executeUpdate();
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+            throw new SQLException("failed check on property state!");
+        }
+
         ArrayList<Property> properties = new ArrayList<Property>();
         String sql = "SELECT * FROM properties WHERE state=?";
 
@@ -394,6 +455,26 @@ public class CompanyDatabase {
      * @throws SQLException
      */
     public ArrayList<Property> getSearchProperties(SearchCriteria criteria) throws SQLException {
+        LocalDate d = LocalDate.now();
+        String day = String.valueOf(d.getDayOfMonth());
+        String month = String.valueOf(d.getMonthValue());
+        String year = String.valueOf(d.getYear());
+        DateModel currentDate = new DateModel(year, month, day);
+        String currDate = currentDate.getDateFormatted();
+
+        String check = "UPDATE properties SET state='suspended' WHERE state='active' AND fee_expiry<?";
+
+        try {
+            PreparedStatement checkStmt = dbConnect.prepareStatement(check);
+            checkStmt.setString(1, currDate);
+
+            checkStmt.executeUpdate();
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+            throw new SQLException("failed check on property state!");
+        }
+        
         ArrayList<Property> properties = new ArrayList<Property>();
         String sql = "SELECT * FROM properties WHERE property_type=? AND bedrooms >=? AND bathrooms>=? AND furnished=? AND rent<=? AND city_quadrant=?";
 
@@ -467,13 +548,13 @@ public class CompanyDatabase {
      * @return
      * @throws SQLException
      */
-    public ArrayList<User> getSpecificUsers(String user_type) throws SQLException {
+    public ArrayList<User> getSpecificUsers(String userType) throws SQLException {
         ArrayList<User> users = new ArrayList<User>();
         String sql = "SELECT * FROM users WHERE user_type=?";
 
         try {
             PreparedStatement stmt = dbConnect.prepareStatement(sql);
-            stmt.setString(1, user_type);
+            stmt.setString(1, userType);
 
             ResultSet rs = stmt.executeQuery();
 
@@ -684,6 +765,39 @@ public class CompanyDatabase {
 
     /**
      * 
+     * @param p
+     * @return
+     * @throws SQLException
+     */
+    public ArrayList<String> getRentersWIthSubscriptionsMatching(Property p) throws SQLException {
+        ArrayList<String> renterID = new ArrayList<String>();
+
+        String sql = "SELECT renterID FROM subscriptions WHERE property_type=? AND bedrooms <=? AND bathrooms <= AND maxRent>=? AND city_quadrant=? AND furnished=?";
+
+        try {
+            PreparedStatement stmt = dbConnect.prepareStatement(sql);
+            stmt.setString(1, p.getPropertyType());
+            stmt.setInt(2, p.getBedrooms());
+            stmt.setInt(3, p.getBathrooms());
+            stmt.setInt(4, p.getRent());
+            stmt.setString(5, p.getAddress().getCityQuadrant());
+            stmt.setString(6, p.getFurnished());
+
+            ResultSet rs = stmt.executeQuery();
+
+            while(rs.next()) {
+                renterID.add(rs.getString("renter_id"));
+            }
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+            throw new SQLException("Failed to get renter IDs that have matching subscriptions!");
+        }
+        
+        return renterID;
+    }
+    /**
+     * 
      * @param criteria
      * @return
      * @throws SQLException
@@ -699,6 +813,7 @@ public class CompanyDatabase {
             stmt.setInt(4, criteria.getMaxRent());
             stmt.setString(5, criteria.getCityQuadrant());
             stmt.setString(6, criteria.getFurnished());
+            stmt.setString(7, criteria.getRenterID());
 
             int affectedRows = stmt.executeUpdate();
             if (affectedRows == 0) {

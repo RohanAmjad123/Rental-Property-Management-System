@@ -8,7 +8,8 @@ import javax.swing.event.ListSelectionListener;
 import business.businesslogic.Property;
 
 /**
- * Class ManageManagerPropertiesGUI
+ * Class ManageManagerPropertiesGUI: a panel to display all properties to a
+ * manager, with options to manipulate them
  * 
  * @since December 4th, 2021
  * @author Azlan Amjad
@@ -17,7 +18,7 @@ import business.businesslogic.Property;
 public class ManageManagerPropertiesGUI extends JPanel {
     private Frontend view;
 
-    // Variables declaration - do not modify
+    // Variables declaration
     private javax.swing.JLabel changePropertyStateLabel = new javax.swing.JLabel();
     private javax.swing.JButton changeStateButton = new javax.swing.JButton();
     private javax.swing.JComboBox<String> changeStateComboBox = new javax.swing.JComboBox<String>();
@@ -29,18 +30,27 @@ public class ManageManagerPropertiesGUI extends JPanel {
     private javax.swing.JLabel manageAllPropertiesLabel = new javax.swing.JLabel();
     private javax.swing.JList<Property> propertyList = new javax.swing.JList<Property>();
     private javax.swing.JLabel rentSlowerLabel = new javax.swing.JLabel();
-    // End of variables declaration
 
     // all properties
     private DefaultListModel<Property> propertyListModel = new DefaultListModel<Property>();
 
+    /**
+     * ManageManagerPropertiesGUI constructor, used by Frontend
+     * 
+     * @param view Frontend JFrame
+     */
     public ManageManagerPropertiesGUI(Frontend view) {
         // assign view reference
         this.view = view;
         manageProperties();
     }
 
-    // update Property list model
+    /**
+     * Update ManageManagerPropertiesGUIs property list model
+     * 
+     * @param updatedPropertyListModel ArrayList<Property> updated list of
+     *                                 properties
+     */
     public void updatePropertiesView(ArrayList<Property> updatedPropertyListModel) {
         this.propertyListModel.clear();
         for (Property p : updatedPropertyListModel) {
@@ -48,7 +58,11 @@ public class ManageManagerPropertiesGUI extends JPanel {
         }
     }
 
+    /**
+     * Instantiate manage properties layout
+     */
     public void manageProperties() {
+        // remove all components from panel
         removeAll();
 
         setBackground(java.awt.Color.darkGray);
@@ -103,11 +117,15 @@ public class ManageManagerPropertiesGUI extends JPanel {
         add(dashboardButton);
         dashboardButton.setBounds(680, 20, 50, 40);
 
+        // revalidate, repaint, then pack frame
         revalidate();
         repaint();
         view.pack();
     }
 
+    /**
+     * Instantiate choices for property manipulation
+     */
     public void displayChoices() {
         changePropertyStateLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         changePropertyStateLabel.setForeground(new java.awt.Color(255, 255, 255));
@@ -163,56 +181,117 @@ public class ManageManagerPropertiesGUI extends JPanel {
         add(deleteButton);
         deleteButton.setBounds(570, 290, 120, 40);
 
+        // revalidate and repaint
         revalidate();
         repaint();
     }
 
     // getter methods
 
+    /**
+     * changePropertyStateLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getChangePropertyStateLabel() {
         return changePropertyStateLabel;
     }
 
+    /**
+     * changeStateButton getter method
+     * 
+     * @return JButton
+     */
     public javax.swing.JButton getChangeStateButton() {
         return changeStateButton;
     }
 
+    /**
+     * changeStateComboBox getter method
+     * 
+     * @return JComboBox<String>
+     */
     public javax.swing.JComboBox<String> getChangeStateComboBox() {
         return changeStateComboBox;
     }
 
+    /**
+     * copyrightLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getCopyrightLabel() {
         return copyrightLabel;
     }
 
+    /**
+     * dashboardButton getter method
+     * 
+     * @return JButton
+     */
     public javax.swing.JButton getDashboardButton() {
         return dashboardButton;
     }
 
+    /**
+     * deleteButton getter method
+     * 
+     * @return JButton
+     */
     public javax.swing.JButton getDeleteButton() {
         return deleteButton;
     }
 
+    /**
+     * deletePropertyListingLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getDeletePropertyListingLabel() {
         return deletePropertyListingLabel;
     }
 
+    /**
+     * jScrollPane1 getter method
+     * 
+     * @return JScrollPane
+     */
     public javax.swing.JScrollPane getjScrollPane1() {
         return jScrollPane1;
     }
 
+    /**
+     * manageAllPropertiesLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getManageAllPropertiesLabel() {
         return manageAllPropertiesLabel;
     }
 
+    /**
+     * propertyList getter method
+     * 
+     * @return JList<Property>
+     */
     public javax.swing.JList<Property> getPropertyList() {
         return propertyList;
     }
 
+    /**
+     * rentSlowerLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getRentSlowerLabel() {
         return rentSlowerLabel;
     }
 
+    /**
+     * propertyListModel getter method
+     * 
+     * @return DefaultListModel<Property>
+     */
     public DefaultListModel<Property> getPropertyListModel() {
         return propertyListModel;
     }

@@ -4,7 +4,8 @@ import javax.swing.*;
 import business.businesslogic.Property;
 
 /**
- * Class PropertyViewGUI
+ * Class PropertyViewGUI: a panel to display the details of a property and allow
+ * a user email the property landlord
  * 
  * @since December 4th, 2021
  * @author Azlan Amjad
@@ -13,7 +14,7 @@ import business.businesslogic.Property;
 public class PropertyViewGUI extends JPanel {
     private Frontend view;
 
-    // Variables declaration - do not modify
+    // Variables declaration
     private javax.swing.JLabel addressLabel = new javax.swing.JLabel();
     private javax.swing.JButton backButton = new javax.swing.JButton();
     private javax.swing.JLabel bathrooms = new javax.swing.JLabel();
@@ -47,23 +48,35 @@ public class PropertyViewGUI extends JPanel {
     private javax.swing.JLabel squareFeetLabel = new javax.swing.JLabel();
     private javax.swing.JLabel streetName = new javax.swing.JLabel();
     private javax.swing.JLabel titleLabel = new javax.swing.JLabel();
-    // End of variables declaration
 
     // property model
     private Property propertyToBeViewed = new Property();
 
+    /**
+     * PropertyViewGUI constructor, used by Frontend
+     * 
+     * @param view Frontend JFrame
+     */
     public PropertyViewGUI(Frontend view) {
         // assign view reference
         this.view = view;
         propertyView();
     }
 
-    // update Property model
+    /**
+     * Update PropertyViewGUIs property model
+     * 
+     * @param updatedProperty Property updated property
+     */
     public void updatePropertyView(Property updatedProperty) {
         this.propertyToBeViewed = updatedProperty;
     }
 
+    /**
+     * Instantiate property view layout
+     */
     public void propertyView() {
+        // remove all components from panel
         removeAll();
 
         setBackground(java.awt.Color.darkGray);
@@ -277,6 +290,7 @@ public class PropertyViewGUI extends JPanel {
         add(sendEmailButton);
         sendEmailButton.setBounds(620, 560, 150, 40);
 
+        // revalidate, repaint, then pack frame
         revalidate();
         repaint();
         view.pack();
@@ -284,138 +298,308 @@ public class PropertyViewGUI extends JPanel {
 
     // getter methods
 
+    /**
+     * addressLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getAddressLabel() {
         return addressLabel;
     }
 
+    /**
+     * backButton getter method
+     * 
+     * @return JButton
+     */
     public javax.swing.JButton getBackButton() {
         return backButton;
     }
 
+    /**
+     * bathroom getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getBathrooms() {
         return bathrooms;
     }
 
+    /**
+     * bathroomsLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getBathroomsLabel() {
         return bathroomsLabel;
     }
 
+    /**
+     * bedrooms getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getBedrooms() {
         return bedrooms;
     }
 
+    /**
+     * bedroomsLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getBedroomsLabel() {
         return bedroomsLabel;
     }
 
+    /**
+     * city getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getCity() {
         return city;
     }
 
+    /**
+     * cityQuadrant getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getCityQuadrant() {
         return cityQuadrant;
     }
 
+    /**
+     * copyrightLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getCopyrightLabel() {
         return copyrightLabel;
     }
 
+    /**
+     * country getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getCountry() {
         return country;
     }
 
+    /**
+     * descriptionLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getDescriptionLabel() {
         return descriptionLabel;
     }
 
+    /**
+     * descriptionTextArea getter method
+     * 
+     * @return JTextArea
+     */
     public javax.swing.JTextArea getDescriptionTextArea() {
         return descriptionTextArea;
     }
 
+    /**
+     * emailLandlordLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getEmailLandlordLabel() {
         return emailLandlordLabel;
     }
 
+    /**
+     * emailLandlordTextArea getter method
+     * 
+     * @return JTextArea
+     */
     public javax.swing.JTextArea getEmailLandlordTextArea() {
         return emailLandlordTextArea;
     }
 
+    /**
+     * furnished getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getFurnished() {
         return furnished;
     }
 
+    /**
+     * furnishedLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getFurnishedLabel() {
         return furnishedLabel;
     }
 
+    /**
+     * jScrollPane1 getter method
+     * 
+     * @return JScrollPane
+     */
     public javax.swing.JScrollPane getjScrollPane1() {
         return jScrollPane1;
     }
 
+    /**
+     * jScrollPane2 getter method
+     * 
+     * @return JScrollPane
+     */
     public javax.swing.JScrollPane getjScrollPane2() {
         return jScrollPane2;
     }
 
+    /**
+     * jSeparator1 getter method
+     * 
+     * @return JSeparator
+     */
     public javax.swing.JSeparator getjSeparator1() {
         return jSeparator1;
     }
 
+    /**
+     * jSeparator2 getter method
+     * 
+     * @return JSeparator
+     */
     public javax.swing.JSeparator getjSeparator2() {
         return jSeparator2;
     }
 
+    /**
+     * mottoLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getMottoLabel() {
         return mottoLabel;
     }
 
+    /**
+     * postalCode getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getPostalCode() {
         return postalCode;
     }
 
+    /**
+     * propertyType getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getPropertyType() {
         return propertyType;
     }
 
+    /**
+     * propertyTypeLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getPropertyTypeLabel() {
         return propertyTypeLabel;
     }
 
+    /**
+     * provinceState getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getProvinceState() {
         return provinceState;
     }
 
+    /**
+     * rent getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getRent() {
         return rent;
     }
 
+    /**
+     * rentLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getRentLabel() {
         return rentLabel;
     }
 
+    /**
+     * rentSlowerLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getRentSlowerLabel() {
         return rentSlowerLabel;
     }
 
+    /**
+     * sendEmailButton getter method
+     * 
+     * @return JButton
+     */
     public javax.swing.JButton getSendEmailButton() {
         return sendEmailButton;
     }
 
+    /**
+     * squareFeet getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getSquareFeet() {
         return squareFeet;
     }
 
+    /**
+     * squareFeetLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getSquareFeetLabel() {
         return squareFeetLabel;
     }
 
+    /**
+     * streetName getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getStreetName() {
         return streetName;
     }
 
+    /**
+     * titleLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getTitleLabel() {
         return titleLabel;
     }
 
+    /**
+     * propertyToBeViewed getter method
+     * 
+     * @return Property
+     */
     public Property getPropertyToBeViewed() {
         return propertyToBeViewed;
     }

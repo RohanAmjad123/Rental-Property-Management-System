@@ -3,7 +3,8 @@ package presentation.guicomponents;
 import javax.swing.*;
 
 /**
- * Class RegisterPropertyGUI
+ * Class RegisterPropertyGUI: a panel which displays a property registration
+ * form, success and error page
  * 
  * @since December 4th, 2021
  * @author Azlan Amjad
@@ -12,7 +13,7 @@ import javax.swing.*;
 public class RegisterPropertyGUI extends JPanel {
     private Frontend view;
 
-    // Variables declaration - do not modify
+    // Variables declaration
     private javax.swing.JLabel bathroomLabel = new javax.swing.JLabel();
     private javax.swing.JSpinner bathroomSpinner = new javax.swing.JSpinner();
     private javax.swing.JLabel bedroomLabel = new javax.swing.JLabel();
@@ -47,25 +48,29 @@ public class RegisterPropertyGUI extends JPanel {
     private javax.swing.JTextField streetNameText = new javax.swing.JTextField();
     private javax.swing.JLabel titleLabel = new javax.swing.JLabel();
     private javax.swing.JTextField titleText = new javax.swing.JTextField();
-    // End of variables declaration
 
-    // Variables declaration - do not modify
     private javax.swing.JButton finishButton = new javax.swing.JButton();
     private javax.swing.JLabel propertyRegistrationSuccessfulLabel = new javax.swing.JLabel();
-    // End of variables declaration
 
-    // Variables declaration - do not modify
     private javax.swing.JLabel propertyRegistrationUnsuccessfulLabel = new javax.swing.JLabel();
     private javax.swing.JButton tryAgainButton = new javax.swing.JButton();
-    // End of variables declaration
 
+    /**
+     * RegisterPropertyGUI constructor, used by Frontend
+     * 
+     * @param view Frontend JFrame
+     */
     public RegisterPropertyGUI(Frontend view) {
         // assign view reference
         this.view = view;
         registrationForm();
     }
 
+    /**
+     * Instantiate registration form layout
+     */
     public void registrationForm() {
+        // remove all components from panel
         removeAll();
 
         setBackground(java.awt.Color.darkGray);
@@ -341,12 +346,17 @@ public class RegisterPropertyGUI extends JPanel {
         add(furnishedComboBox);
         furnishedComboBox.setBounds(50, 450, 80, 20);
 
+        // revalidate, repaint, then pack frame
         revalidate();
         repaint();
         view.pack();
     }
 
+    /**
+     * Instantiate success page layout
+     */
     public void successPage() {
+        // remove all components from panel
         removeAll();
 
         setBackground(java.awt.Color.darkGray);
@@ -384,12 +394,17 @@ public class RegisterPropertyGUI extends JPanel {
         add(copyrightLabel);
         copyrightLabel.setBounds(20, 460, 170, 20);
 
+        // revalidate, repaint, then pack frame
         revalidate();
         repaint();
         view.pack();
     }
 
+    /**
+     * Instantiate error page layout
+     */
     public void errorPage() {
+        // remove all components from panel
         removeAll();
 
         setBackground(java.awt.Color.darkGray);
@@ -427,6 +442,7 @@ public class RegisterPropertyGUI extends JPanel {
         add(copyrightLabel);
         copyrightLabel.setBounds(20, 460, 170, 20);
 
+        // revalidate, repaint, then pack frame
         revalidate();
         repaint();
         view.pack();
@@ -434,154 +450,344 @@ public class RegisterPropertyGUI extends JPanel {
 
     // getter methods
 
+    /**
+     * bathroomLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getBathroomLabel() {
         return bathroomLabel;
     }
 
+    /**
+     * bathroomSpinner getter method
+     * 
+     * @return JSpinner
+     */
     public javax.swing.JSpinner getBathroomSpinner() {
         return bathroomSpinner;
     }
 
+    /**
+     * bedroomLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getBedroomLabel() {
         return bedroomLabel;
     }
 
+    /**
+     * bedroomSpinner getter method
+     * 
+     * @return JSpinner
+     */
     public javax.swing.JSpinner getBedroomSpinner() {
         return bedroomSpinner;
     }
 
+    /**
+     * cityLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getCityLabel() {
         return cityLabel;
     }
 
+    /**
+     * cityQuadrantComboBox getter method
+     * 
+     * @return JComboBox<String>
+     */
     public javax.swing.JComboBox<String> getCityQuadrantComboBox() {
         return cityQuadrantComboBox;
     }
 
+    /**
+     * cityQuadrantLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getCityQuadrantLabel() {
         return cityQuadrantLabel;
     }
 
+    /**
+     * cityText getter method
+     * 
+     * @return JTextField
+     */
     public javax.swing.JTextField getCityText() {
         return cityText;
     }
 
+    /**
+     * coprightLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getCopyrightLabel() {
         return copyrightLabel;
     }
 
+    /**
+     * countryLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getCountryLabel() {
         return countryLabel;
     }
 
+    /**
+     * countryText getter method
+     * 
+     * @return JTextField
+     */
     public javax.swing.JTextField getCountryText() {
         return countryText;
     }
 
+    /**
+     * dashboardButton getter method
+     * 
+     * @return JButton
+     */
     public javax.swing.JButton getDashboardButton() {
         return dashboardButton;
     }
 
+    /**
+     * descriptionLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getDescriptionLabel() {
         return descriptionLabel;
     }
 
+    /**
+     * descriptionText getter method
+     * 
+     * @return JTextArea
+     */
     public javax.swing.JTextArea getDescriptionText() {
         return descriptionText;
     }
 
+    /**
+     * furnishedComboBox getter method
+     * 
+     * @return JComboBox<String>
+     */
     public javax.swing.JComboBox<String> getFurnishedComboBox() {
         return furnishedComboBox;
     }
 
+    /**
+     * furnishedLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getFurnishedLabel() {
         return furnishedLabel;
     }
 
+    /**
+     * jScrollPane1 getter method
+     * 
+     * @return JScrollPane
+     */
     public javax.swing.JScrollPane getjScrollPane1() {
         return jScrollPane1;
     }
 
+    /**
+     * postalCodeLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getPostalCodeLabel() {
         return postalCodeLabel;
     }
 
+    /**
+     * postalCodeText getter method
+     * 
+     * @return JTextField
+     */
     public javax.swing.JTextField getPostalCodeText() {
         return postalCodeText;
     }
 
+    /**
+     * propertyTypeComboBox getter method
+     * 
+     * @return JComboBox<String>
+     */
     public javax.swing.JComboBox<String> getPropertyTypeComboBox() {
         return propertyTypeComboBox;
     }
 
+    /**
+     * propertyTypeLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getPropertyTypeLabel() {
         return propertyTypeLabel;
     }
 
+    /**
+     * provinceStateLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getProvinceStateLabel() {
         return provinceStateLabel;
     }
 
+    /**
+     * provinceStateText getter method
+     * 
+     * @return JTextField
+     */
     public javax.swing.JTextField getProvinceStateText() {
         return provinceStateText;
     }
 
+    /**
+     * registerLandlordPropertyLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getRegisterLandlordPropertyLabel() {
         return registerLandlordPropertyLabel;
     }
 
+    /**
+     * registerPropertyButton getter method
+     * 
+     * @return JButton
+     */
     public javax.swing.JButton getRegisterPropertyButton() {
         return registerPropertyButton;
     }
 
+    /**
+     * rentLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getRentLabel() {
         return rentLabel;
     }
 
+    /**
+     * rentSlowerLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getRentSlowerLabel() {
         return rentSlowerLabel;
     }
 
+    /**
+     * rentText getter method
+     * 
+     * @return JTextField
+     */
     public javax.swing.JTextField getRentText() {
         return rentText;
     }
 
+    /**
+     * squareFeetLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getSquareFeetLabel() {
         return squareFeetLabel;
     }
 
+    /**
+     * squareFeetText getter method
+     * 
+     * @return JTextField
+     */
     public javax.swing.JTextField getSquareFeetText() {
         return squareFeetText;
     }
 
+    /**
+     * streetNameLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getStreetNameLabel() {
         return streetNameLabel;
     }
 
+    /**
+     * streetNameText getter method
+     * 
+     * @return JTextField
+     */
     public javax.swing.JTextField getStreetNameText() {
         return streetNameText;
     }
 
+    /**
+     * titleLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getTitleLabel() {
         return titleLabel;
     }
 
+    /**
+     * titleText getter method
+     * 
+     * @return JTextField
+     */
     public javax.swing.JTextField getTitleText() {
         return titleText;
     }
 
+    /**
+     * finishButton getter method
+     * 
+     * @return JButton
+     */
     public javax.swing.JButton getFinishButton() {
         return finishButton;
     }
 
+    /**
+     * propertyRegistrationSuccessfulLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getPropertyRegistrationSuccessfulLabel() {
         return propertyRegistrationSuccessfulLabel;
     }
 
+    /**
+     * propertyRegistrationUnsuccessfulLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getPropertyRegistrationUnsuccessfulLabel() {
         return propertyRegistrationUnsuccessfulLabel;
     }
 
+    /**
+     * tryAgainButton getter method
+     * 
+     * @return JButton
+     */
     public javax.swing.JButton getTryAgainButton() {
         return tryAgainButton;
     }

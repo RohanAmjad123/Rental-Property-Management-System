@@ -3,7 +3,8 @@ package presentation.guicomponents;
 import javax.swing.*;
 
 /**
- * Class AddSearchCriteriaFormGUI
+ * Class EditSearchCriteriaFormGUI: form to edit renter's subscribed search
+ * criteria
  * 
  * @since December 4th, 2021
  * @author Azlan Amjad
@@ -12,7 +13,7 @@ import javax.swing.*;
 public class EditSearchCriteriaFormGUI extends JPanel {
     private Frontend view;
 
-    // Variables declaration - do not modify
+    // Variables declaration
     private javax.swing.JLabel bathroomLabel = new javax.swing.JLabel();
     private javax.swing.JSpinner bathroomSpinner = new javax.swing.JSpinner();
     private javax.swing.JLabel bedroomLabel = new javax.swing.JLabel();
@@ -31,15 +32,23 @@ public class EditSearchCriteriaFormGUI extends JPanel {
     private javax.swing.JLabel rentSlowerLabel = new javax.swing.JLabel();
     private javax.swing.JButton unsubscribeButton = new javax.swing.JButton();
     private javax.swing.JButton updateButton = new javax.swing.JButton();
-    // End of variables declaration
 
+    /**
+     * EditSearchCriteriaFormGUI constructor, used by Frontend
+     * 
+     * @param view Frontend JFrame
+     */
     public EditSearchCriteriaFormGUI(Frontend view) {
         // assign view reference
         this.view = view;
         editSearchCriteriaForm();
     }
 
+    /**
+     * Instantiate edit search criteria form
+     */
     public void editSearchCriteriaForm() {
+        // remove all components from panel
         removeAll();
 
         setBackground(java.awt.Color.darkGray);
@@ -187,6 +196,7 @@ public class EditSearchCriteriaFormGUI extends JPanel {
         add(cityQuadrantComboBox);
         cityQuadrantComboBox.setBounds(330, 260, 80, 20);
 
+        // revalidate, repaint, then pack frame
         revalidate();
         repaint();
         view.pack();
@@ -194,74 +204,164 @@ public class EditSearchCriteriaFormGUI extends JPanel {
 
     // getter methods
 
+    /**
+     * bathroomLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getBathroomLabel() {
         return bathroomLabel;
     }
 
+    /**
+     * bathroomSpinner getter method
+     * 
+     * @return JSpinner
+     */
     public javax.swing.JSpinner getBathroomSpinner() {
         return bathroomSpinner;
     }
 
+    /**
+     * bedroomLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getBedroomLabel() {
         return bedroomLabel;
     }
 
+    /**
+     * bedroomSpinner getter method
+     * 
+     * @return JSpinner
+     */
     public javax.swing.JSpinner getBedroomSpinner() {
         return bedroomSpinner;
     }
 
+    /**
+     * cityQuadrantComboBox getter method
+     * 
+     * @return JComboBox<String>
+     */
     public javax.swing.JComboBox<String> getCityQuadrantComboBox() {
         return cityQuadrantComboBox;
     }
 
+    /**
+     * cityQuadrantLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getCityQuadrantLabel() {
         return cityQuadrantLabel;
     }
 
+    /**
+     * copyrightLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getCopyrightLabel() {
         return copyrightLabel;
     }
 
+    /**
+     * dashboardButton getter method
+     * 
+     * @return JButton
+     */
     public javax.swing.JButton getDashboardButton() {
         return dashboardButton;
     }
 
+    /**
+     * editRenterSubscriptionLabel
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getEditRenterSubscriptionLabel() {
         return editRenterSubscriptionLabel;
     }
 
+    /**
+     * furnishedComboBox getter method
+     * 
+     * @return JComboBox<String>
+     */
     public javax.swing.JComboBox<String> getFurnishedComboBox() {
         return furnishedComboBox;
     }
 
+    /**
+     * furnishedLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getFurnishedLabel() {
         return furnishedLabel;
     }
 
+    /**
+     * maxRentLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getMaxRentLabel() {
         return maxRentLabel;
     }
 
+    /**
+     * maxRentText getter method
+     * 
+     * @return JTextField
+     */
     public javax.swing.JTextField getMaxRentText() {
         return maxRentText;
     }
 
+    /**
+     * propertyTypeComboBox getter method
+     * 
+     * @return JComboBox<String>
+     */
     public javax.swing.JComboBox<String> getPropertyTypeComboBox() {
         return propertyTypeComboBox;
     }
 
+    /**
+     * propertyTypeLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getPropertyTypeLabel() {
         return propertyTypeLabel;
     }
 
+    /**
+     * rentSlowerLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getRentSlowerLabel() {
         return rentSlowerLabel;
     }
 
+    /**
+     * unsubscribeButton getter method
+     * 
+     * @return JButton
+     */
     public javax.swing.JButton getUnsubscribeButton() {
         return unsubscribeButton;
     }
 
+    /**
+     * updateButton getter method
+     * 
+     * @return JButton
+     */
     public javax.swing.JButton getUpdateButton() {
         return updateButton;
     }

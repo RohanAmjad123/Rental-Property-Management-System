@@ -3,7 +3,9 @@ package presentation.guicomponents;
 import javax.swing.*;
 
 /**
- * Class SignupGUI
+ * Class SignupGUI: a panel to display a signup view, includes user choice
+ * layout,
+ * signup layout, success and error page
  * 
  * @since December 4th, 2021
  * @author Azlan Amjad
@@ -12,7 +14,7 @@ import javax.swing.*;
 public class SignupGUI extends JPanel {
     private Frontend view;
 
-    // Variables declaration - do not modify
+    // Variables declaration
     private javax.swing.JLabel copyrightLabel = new javax.swing.JLabel();
     private javax.swing.JButton dashboardButton = new javax.swing.JButton();
     private javax.swing.JButton landlordButton = new javax.swing.JButton();
@@ -23,9 +25,7 @@ public class SignupGUI extends JPanel {
     private javax.swing.JButton renterButton = new javax.swing.JButton();
     private javax.swing.JLabel renterLabel = new javax.swing.JLabel();
     private javax.swing.JLabel userChoiceLabel = new javax.swing.JLabel();
-    // End of variables declaration
 
-    // Variables declaration - do not modify
     private javax.swing.JLabel emailLabel = new javax.swing.JLabel();
     private javax.swing.JTextField emailText = new javax.swing.JTextField();
     private javax.swing.JLabel firstNameLabel = new javax.swing.JLabel();
@@ -36,35 +36,35 @@ public class SignupGUI extends JPanel {
     private javax.swing.JPasswordField passwordText = new javax.swing.JPasswordField();
     private javax.swing.JLabel renterSignupLabel = new javax.swing.JLabel();
     private javax.swing.JButton signupButton = new javax.swing.JButton();
-    // End of variables declaration
 
-    // Variables declaration - do not modify
     private javax.swing.JLabel managerKeyLabel = new javax.swing.JLabel();
     private javax.swing.JPasswordField managerKeyText = new javax.swing.JPasswordField();
     private javax.swing.JLabel managerSignupLabel = new javax.swing.JLabel();
-    // End of variables declaration
 
-    // Variables declaration - do not modify
-    private javax.swing.JLabel landordSignupLabel = new javax.swing.JLabel();
-    // End of variables declaration
+    private javax.swing.JLabel landlordSignupLabel = new javax.swing.JLabel();
 
-    // Variables declaration - do not modify
     private javax.swing.JButton finishButton = new javax.swing.JButton();
     private javax.swing.JLabel signupSuccessfulLabel = new javax.swing.JLabel();
-    // End of variables declaration
 
-    // Variables declaration - do not modify
     private javax.swing.JLabel signupUnsuccessfulLabel = new javax.swing.JLabel();
     private javax.swing.JButton tryAgainButton = new javax.swing.JButton();
-    // End of variables declaration
 
+    /**
+     * SignupGUI constructor, used by Frontend
+     * 
+     * @param view Frontend JFrame
+     */
     public SignupGUI(Frontend view) {
         // assign view reference
         this.view = view;
         userChoice();
     }
 
+    /**
+     * Instantiate user choice layout
+     */
     public void userChoice() {
+        // remove all components from panel
         removeAll();
 
         setBackground(java.awt.Color.darkGray);
@@ -163,12 +163,17 @@ public class SignupGUI extends JPanel {
         add(managerButton);
         managerButton.setBounds(150, 370, 140, 50);
 
+        // revalidate, repaint, and then pack frame
         revalidate();
         repaint();
         view.pack();
     }
 
+    /**
+     * Instantiate renter signup layout
+     */
     public void renterSignup() {
+        // remove all components from panel
         removeAll();
 
         setBackground(java.awt.Color.darkGray);
@@ -285,12 +290,17 @@ public class SignupGUI extends JPanel {
         add(dashboardButton);
         dashboardButton.setBounds(370, 20, 50, 40);
 
+        // revalidate, repaint, then pack frame
         revalidate();
         repaint();
         view.pack();
     }
 
+    /**
+     * Instantiate landlord signup layout
+     */
     public void landlordSignup() {
+        // remove all components from panel
         removeAll();
 
         setBackground(java.awt.Color.darkGray);
@@ -309,11 +319,11 @@ public class SignupGUI extends JPanel {
         add(passwordLabel);
         passwordLabel.setBounds(60, 330, 80, 20);
 
-        landordSignupLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        landordSignupLabel.setForeground(new java.awt.Color(255, 255, 255));
-        landordSignupLabel.setText("Landlord Signup");
-        add(landordSignupLabel);
-        landordSignupLabel.setBounds(130, 100, 180, 30);
+        landlordSignupLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        landlordSignupLabel.setForeground(new java.awt.Color(255, 255, 255));
+        landlordSignupLabel.setText("Landlord Signup");
+        add(landlordSignupLabel);
+        landlordSignupLabel.setBounds(130, 100, 180, 30);
 
         firstNameLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         firstNameLabel.setForeground(new java.awt.Color(255, 255, 255));
@@ -407,12 +417,17 @@ public class SignupGUI extends JPanel {
         add(dashboardButton);
         dashboardButton.setBounds(370, 20, 50, 40);
 
+        // revalidate, repaint, then pack frame
         revalidate();
         repaint();
         view.pack();
     }
 
+    /**
+     * Instantiate manager signup layout
+     */
     public void managerSignup() {
+        // remove all components from panel
         removeAll();
 
         setBackground(java.awt.Color.darkGray);
@@ -540,12 +555,17 @@ public class SignupGUI extends JPanel {
         add(passwordText);
         passwordText.setBounds(50, 350, 270, 20);
 
+        // revalidate, repaint, then pack frame
         revalidate();
         repaint();
         view.pack();
     }
 
+    /**
+     * Instantiate success page layout
+     */
     public void successPage() {
+        // remove all components from layout
         removeAll();
 
         setBackground(java.awt.Color.darkGray);
@@ -583,12 +603,17 @@ public class SignupGUI extends JPanel {
         add(copyrightLabel);
         copyrightLabel.setBounds(20, 460, 170, 20);
 
+        // revalidate, repaint, then pack frame
         revalidate();
         repaint();
         view.pack();
     }
 
+    /**
+     * Instantiate error page layout
+     */
     public void errorPage() {
+        // remove all components from panel
         removeAll();
 
         setBackground(java.awt.Color.darkGray);
@@ -626,6 +651,7 @@ public class SignupGUI extends JPanel {
         add(copyrightLabel);
         copyrightLabel.setBounds(20, 460, 170, 20);
 
+        // revalidate, repaint, then pack frame
         revalidate();
         repaint();
         view.pack();
@@ -633,114 +659,254 @@ public class SignupGUI extends JPanel {
 
     // getter methods
 
+    /**
+     * copyrightLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getCopyrightLabel() {
         return copyrightLabel;
     }
 
+    /**
+     * dashboardButton getter method
+     * 
+     * @return JButton
+     */
     public javax.swing.JButton getDashboardButton() {
         return dashboardButton;
     }
 
+    /**
+     * landlordButton getter method
+     * 
+     * @return JButton
+     */
     public javax.swing.JButton getLandlordButton() {
         return landlordButton;
     }
 
+    /**
+     * landlordLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getLandlordLabel() {
         return landlordLabel;
     }
 
+    /**
+     * managerButton getter method
+     * 
+     * @return JButton
+     */
     public javax.swing.JButton getManagerButton() {
         return managerButton;
     }
 
+    /**
+     * managerLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getManagerLabel() {
         return managerLabel;
     }
 
+    /**
+     * rentSlowerLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getRentSlowerLabel() {
         return rentSlowerLabel;
     }
 
+    /**
+     * renterButton getter method
+     * 
+     * @return JButton
+     */
     public javax.swing.JButton getRenterButton() {
         return renterButton;
     }
 
+    /**
+     * renterLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getRenterLabel() {
         return renterLabel;
     }
 
+    /**
+     * userChoiceLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getUserChoiceLabel() {
         return userChoiceLabel;
     }
 
+    /**
+     * emailLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getEmailLabel() {
         return emailLabel;
     }
 
+    /**
+     * emailText getter method
+     * 
+     * @return JTextField
+     */
     public javax.swing.JTextField getEmailText() {
         return emailText;
     }
 
+    /**
+     * firstNameLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getFirstNameLabel() {
         return firstNameLabel;
     }
 
+    /**
+     * firstNameText getter method
+     * 
+     * @return JTextField
+     */
     public javax.swing.JTextField getFirstNameText() {
         return firstNameText;
     }
 
+    /**
+     * lastNameLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getLastNameLabel() {
         return lastNameLabel;
     }
 
+    /**
+     * lastNameText getter method
+     * 
+     * @return JTextField
+     */
     public javax.swing.JTextField getLastNameText() {
         return lastNameText;
     }
 
+    /**
+     * passwordLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getPasswordLabel() {
         return passwordLabel;
     }
 
+    /**
+     * passwordText getter method
+     * 
+     * @return JPasswordField
+     */
     public javax.swing.JPasswordField getPasswordText() {
         return passwordText;
     }
 
+    /**
+     * renterSignupLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getRenterSignupLabel() {
         return renterSignupLabel;
     }
 
+    /**
+     * signupButton getter method
+     * 
+     * @return JButton
+     */
     public javax.swing.JButton getSignupButton() {
         return signupButton;
     }
 
+    /**
+     * managerKeyLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getManagerKeyLabel() {
         return managerKeyLabel;
     }
 
+    /**
+     * managerKeyText getter method
+     * 
+     * @return JPasswordField
+     */
     public javax.swing.JPasswordField getManagerKeyText() {
         return managerKeyText;
     }
 
+    /**
+     * managerSignupLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getManagerSignupLabel() {
         return managerSignupLabel;
     }
 
-    public javax.swing.JLabel getLandordSignupLabel() {
-        return landordSignupLabel;
+    /**
+     * landlordSignupLabel getter method
+     * 
+     * @return JLabel
+     */
+    public javax.swing.JLabel getLandlordSignupLabel() {
+        return landlordSignupLabel;
     }
 
+    /**
+     * finishButton getter method
+     * 
+     * @return JButton
+     */
     public javax.swing.JButton getFinishButton() {
         return finishButton;
     }
 
+    /**
+     * signupSuccessfulLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getSignupSuccessfulLabel() {
         return signupSuccessfulLabel;
     }
 
+    /**
+     * signupUnsuccessfulLabel getter method
+     * 
+     * @return JLabel
+     */
     public javax.swing.JLabel getSignupUnsuccessfulLabel() {
         return signupUnsuccessfulLabel;
     }
 
+    /**
+     * tryAgainButton getter method
+     * 
+     * @return JButton
+     */
     public javax.swing.JButton getTryAgainButton() {
         return tryAgainButton;
     }
