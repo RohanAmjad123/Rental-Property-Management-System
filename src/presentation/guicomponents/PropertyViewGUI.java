@@ -14,7 +14,7 @@ import business.businesslogic.Property;
 public class PropertyViewGUI extends JPanel {
     private Frontend view;
 
-    // Variables declaration - do not modify
+    // Variables declaration
     private javax.swing.JLabel addressLabel = new javax.swing.JLabel();
     private javax.swing.JButton backButton = new javax.swing.JButton();
     private javax.swing.JLabel bathrooms = new javax.swing.JLabel();
@@ -48,7 +48,6 @@ public class PropertyViewGUI extends JPanel {
     private javax.swing.JLabel squareFeetLabel = new javax.swing.JLabel();
     private javax.swing.JLabel streetName = new javax.swing.JLabel();
     private javax.swing.JLabel titleLabel = new javax.swing.JLabel();
-    // End of variables declaration
 
     // property model
     private Property propertyToBeViewed = new Property();
