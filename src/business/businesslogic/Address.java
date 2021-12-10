@@ -30,6 +30,7 @@ public class Address {
      * @param ct parameter is a Type String and represents city
      * @param sp parameter is a Type String and represents stateProvince 
      * @param cou parameter is a Type String and represents country 
+     * @throws IllegalArgumentException
      */
   
 	public Address(String sn, String pc, String cq, String ct, String sp, String cou) throws IllegalArgumentException {
