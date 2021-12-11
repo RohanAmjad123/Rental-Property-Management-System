@@ -14,7 +14,6 @@ import java.sql.SQLException;
 
 import javax.mail.*;
 import javax.mail.internet.*;
-import javax.activation.*;
 
 /**
  * Class RegisterPropertyController

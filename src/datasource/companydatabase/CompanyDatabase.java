@@ -462,7 +462,7 @@ public class CompanyDatabase {
         DateModel currentDate = new DateModel(year, month, day);
         String currDate = currentDate.getDateFormatted();
 
-        String check = "UPDATE properties SET state='suspended' WHERE state='active' AND fee_expiry<? AND state='Active'";
+        String check = "UPDATE properties SET state='suspended' WHERE state='Active' AND fee_expiry<?";
 
         try {
             PreparedStatement checkStmt = dbConnect.prepareStatement(check);
@@ -476,7 +476,7 @@ public class CompanyDatabase {
         }
         
         ArrayList<Property> properties = new ArrayList<Property>();
-        String sql = "SELECT * FROM properties WHERE property_type=? AND bedrooms >=? AND bathrooms>=? AND furnished=? AND rent<=? AND city_quadrant=?";
+        String sql = "SELECT * FROM properties WHERE property_type=? AND bedrooms >=? AND bathrooms>=? AND furnished=? AND rent<=? AND city_quadrant=? AND state='Active'";
 
         try {
             PreparedStatement stmt = dbConnect.prepareStatement(sql);
