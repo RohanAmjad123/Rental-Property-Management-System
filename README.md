@@ -7,3 +7,7 @@ Firstly, make sure you have MySQL DBMS installed on your machine
 Secondly, create a MySQL user with **Username: test** and **Password: testpass123**. Grant all privileges to this user (trust me :pleading_face:). Then create a MySQL database using the provided .sql file.
 
 This repository contains the RentSlower.jar file, download and open this file, the application should be up and running! :partying_face:
+
+## Requirements
+- OpenJDK 11
+- MySQL (Username: test, Password: testpass123)
