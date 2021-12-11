@@ -24,10 +24,11 @@ public class CompanyDatabase {
     private Connection dbConnect;
 
     /**
-     * 
-     * @param dburl
-     * @param username
-     * @param password
+     * CompanyDatabase constuctor, Initializes the private variable values of DBURL, USERNAME, and PASSWORD
+	 * with the values dburl, username, and password that is passed through the constructor.
+     * @param dburl parameter is a Type String
+     * @param username parameter is a Type String
+     * @param password parameter is a Type String
      */
     public CompanyDatabase(String dburl, String username, String password) {
         this.DBURL = dburl;
@@ -42,7 +43,9 @@ public class CompanyDatabase {
     }
 
     /**
-     * 
+     * initializeConnection method uses the private variables of DBURL, USERNAME, and PASSWORD, and connects to
+     * the SQL database and if not successful throws an SQL Exception
+     * @throws SQLException
      */
     public void initializeConnection() throws SQLException {
         try {
@@ -54,8 +57,9 @@ public class CompanyDatabase {
     }
 
     /**
-     * 
-     * @param u
+     * If u is a valid signup it will be added to the user table within the SQL and 
+     * returns it as true otherwise it throws an SQLException
+     * @param u parameter is a Type User
      * @return
      * @throws SQLException
      */
@@ -83,10 +87,11 @@ public class CompanyDatabase {
     }
 
     /**
-     * 
-     * @param email
-     * @param password
-     * @param userType
+     * Check to see if the user is within the database and then returns the User,
+     * if user is not present then throws an SQLException
+     * @param email parameter is of type String
+     * @param password parameter is of type String
+     * @param userType parameter is of type String
      * @return
      * @throws SQLException
      */
@@ -122,8 +127,9 @@ public class CompanyDatabase {
     }
 
     /**
-     * 
-     * @param p
+     * If p is a valid property it will be added to the property table within the SQL
+     * and returns a boolean value of true otherwise it throws an SQLException
+     * @param p parameter is of type Property
      * @return
      * @throws SQLException
      */
@@ -166,8 +172,10 @@ public class CompanyDatabase {
     }
 
     /**
-     * 
-     * @param p
+     * Connects to the SQL database and if not successful throws an SQLException,
+     * however if successful, it will update the propery and if successful it will return as true 
+     * otherwise it will throw an SQLException message
+     * @param p parameter is of type Property
      * @return
      * @throws SQLException
      */
@@ -232,8 +240,10 @@ public class CompanyDatabase {
     }
 
     /**
-     * 
-     * @param postalCode
+     * Connects to the SQL database and if not successful throws an SQLException,
+     * however if successful, and postalCode was given correctly it will delete and returns as ture
+     * otherwise it throw an SQLException
+     * @param postalCode parameter is a type String
      * @return
      * @throws SQLException
      */
@@ -258,8 +268,10 @@ public class CompanyDatabase {
     }
 
     /**
-     * 
-     * @param landlordID
+     * Connects to the SQL database and if not successful throws an SQLException,
+     * however if successful, and if LandlordID is a user it will return all of the 
+     * properties that they are the landlord of in a ArrayList of Properties
+     * @param landlordID parameter is of type String
      * @return
      * @throws SQLException
      */
@@ -322,7 +334,9 @@ public class CompanyDatabase {
     }
 
     /**
-     * 
+     * Connects to the SQL database and if not successful throws an SQLException,
+     * however if successful it will return all the Properties in the database and 
+     * in a ArrayList of Property
      * @return
      * @throws SQLException
      */
@@ -384,8 +398,10 @@ public class CompanyDatabase {
     }
 
     /**
-     * 
-     * @param state
+     * Connects to the SQL database and if not successful throws an SQLException,
+     * however if successful, will return a ArrayList of all the properties that have the 
+     * same state.
+     * @param state parameter is of type String
      * @return
      * @throws SQLException
      */
@@ -449,8 +465,10 @@ public class CompanyDatabase {
     }
 
     /**
-     * 
-     * @param criteria
+     * Connects to the SQL database and if not successful throws an SQLException,
+     * however if successful, it searches the properties that match the values within criteria
+     * and returns them as an ArrayList of Property
+     * @param criteria parameter is of type SearchCriteria
      * @return
      * @throws SQLException
      */
@@ -518,7 +536,9 @@ public class CompanyDatabase {
     }
 
     /**
-     * 
+     * Connects to the SQL database and if not successful throws an SQLException,
+     * however if successful, it reutrns all the users in the database in a ArrayList
+     * of User 
      * @return
      * @throws SQLException
      */
@@ -543,8 +563,10 @@ public class CompanyDatabase {
     }
 
     /**
-     * 
-     * @param user_type
+     * Connects to the SQL database and if not successful throws an SQLException,
+     * however if successful, returns an ArrayList of User with the same user type in the
+     * database 
+     * @param user_type parameter is of type String
      * @return
      * @throws SQLException
      */
@@ -570,8 +592,11 @@ public class CompanyDatabase {
     }
 
     /**
-     * 
-     * @param postalCode
+     * Connects to the SQL database and if not successful throws an SQLException,
+     * however if successful, and postalCode was given correctly it will return 
+     * the property with that given postalCode and returns as ture
+     * otherwise it throw an SQLException
+     * @param postalCode parameter is of type String
      * @return
      * @throws SQLException
      */
@@ -625,8 +650,11 @@ public class CompanyDatabase {
     }
 
     /**
-     * 
-     * @param fee
+     * Connects to the SQL database and if not successful throws an SQLException,
+     * however if successful, and the values within fee is correct it will
+     * update the fee in the database and return as true, otherwise if values are wrong it
+     * will throw an SQLException
+     * @param fee parameter is type Fee
      * @return
      * @throws SQLException
      */
@@ -653,7 +681,8 @@ public class CompanyDatabase {
     }
 
     /**
-     * 
+     * Connects to the SQL database and if not successful throws an SQLException,
+     * however if successful, it will return the fee of a property as a type Fee
      * @return
      * @throws SQLException
      */
@@ -678,8 +707,11 @@ public class CompanyDatabase {
     }
 
     /**
-     * 
-     * @param criteria
+     * Connects to the SQL database and if not successful throws an SQLException,
+     * however if successful, if all the values within the criteria are valid inputs 
+     * it will return as true and user will be subscribed to it otherwise throws
+     * an SQLException
+     * @param criteria parameter is a Type SearchCriteria
      * @return
      * @throws SQLException
      */
@@ -708,8 +740,10 @@ public class CompanyDatabase {
     }
 
     /**
-     * 
-     * @param renterID
+     * Connects to the SQL database and if not successful throws an SQLException,
+     * however if successful, and renterID is correct it will unsubscirbe from the database
+     * and return as true but if value is wrong then it will throw an SQLException
+     * @param renterID parameter is of type String
      * @return
      * @throws SQLException
      */
@@ -732,8 +766,11 @@ public class CompanyDatabase {
     }
 
     /**
-     * 
-     * @param renterID
+     * Connects to the SQL database and if not successful throws an SQLException,
+     * however if successful, and renterID is correct it will take the information in the database of 
+     * the users subscriptions and return it as a SearchCriteria, but if value is wrong then it will 
+     * throw an SQLException
+     * @param renterID parameter is of type String
      * @return
      * @throws SQLException
      */
@@ -764,8 +801,10 @@ public class CompanyDatabase {
     }
 
     /**
-     * 
-     * @param p
+     * Connects to the SQL database and if not successful throws an SQLException,
+     * however if successful, it returns an ArrayList of Strings of the Renters that have subscriptions 
+     * matching p
+     * @param p parameter is of type Property
      * @return
      * @throws SQLException
      */
@@ -796,9 +835,12 @@ public class CompanyDatabase {
         
         return renterID;
     }
+  
     /**
-     * 
-     * @param criteria
+     * Connects to the SQL database and if not successful throws an SQLException,
+     * however if successful, it updates the subscription set based on the criteria and
+     * returns a boolean value of true
+     * @param criteria parameter is of type SearchCriteria
      * @return
      * @throws SQLException
      */
@@ -827,7 +869,8 @@ public class CompanyDatabase {
     }
 
     /**
-     * 
+     * Connects to the SQL database and if not successful throws an SQLException,
+     * however if successful it returns an ArrayList of Strings of the Managers
      * @return
      * @throws SQLException
      */
@@ -856,10 +899,13 @@ public class CompanyDatabase {
     }
 
     /**
-     * 
-     * @param start
-     * @param end
+     * Connects to the SQL database and if not successful throws an SQLException,
+     * however if successful it takes the Dates from the DateModel start and DateModel end
+     * and returns a boolean if a Periodical Summary exists within both dates in the SQL database
+     * @param start parameter is of type DateModel
+     * @param end parameter is of type DateModel
      * @return
+     * @throws SQLException
      */
     public boolean getPeriodicalSummary(DateModel start, DateModel end) throws SQLException {
         String startDate = start.getDateFormatted();
@@ -950,4 +996,5 @@ public class CompanyDatabase {
         }
         return true;
     }
+
 }
