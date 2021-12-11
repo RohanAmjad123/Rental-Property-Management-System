@@ -14,7 +14,6 @@ import java.sql.SQLException;
 
 import javax.mail.*;
 import javax.mail.internet.*;
-import javax.activation.*;
 
 /**
  * Class PropertyController
@@ -40,6 +39,10 @@ public class PropertyController implements Controller, ActionListener {
         view.getManageManagerProperties().getDashboardButton().addActionListener(this);
         view.getManageLandlordProperties().getDashboardButton().addActionListener(this);
         view.getManageManagerProperties().getChangeStateButton().addActionListener(this);
+        view.getManageLandlordProperties().getChangeStateButton().addActionListener(this);
+        view.getPayFeeForm().getDashboardButton().addActionListener(this);
+        view.getPayFeeForm().getFinishButton().addActionListener(this);
+        view.getPayFeeForm().getPayFeeButton().addActionListener(this);
     }
 
     public void actionPerformed(ActionEvent e) {
@@ -86,7 +89,7 @@ public class PropertyController implements Controller, ActionListener {
             }
 
             // MAIL SERVICE IMPLEMENTATION
-
+            
             // sending mail from local host
             String host = "localhost";
 
@@ -165,18 +168,34 @@ public class PropertyController implements Controller, ActionListener {
             }
         }
         else if (e.getSource() == view.getManageManagerProperties().getDashboardButton()) {
-            view.dashboard();
-            view.getDashboard().loggedInManager();
+            try {
+                ArrayList<Property> p = model.getStateProperties("Active");
+                
+                view.getDashboard().updatePropertiesView(p);
+                view.dashboard();
+                view.getDashboard().loggedInManager();
+            }
+            catch (SQLException exception) {
+                exception.printStackTrace();
+            }
         }
         else if (e.getSource() == view.getManageLandlordProperties().getDashboardButton()) {
-            view.dashboard();
-            view.getDashboard().loggedInLandlord();
+            try {
+                ArrayList<Property> p = model.getStateProperties("Active");
+                
+                view.getDashboard().updatePropertiesView(p);
+                view.dashboard();
+                view.getDashboard().loggedInLandlord();
+            }
+            catch (SQLException exception) {
+                exception.printStackTrace();
+            }
         }
         else if (e.getSource() == view.getManageManagerProperties().getChangeStateButton()) {
             Property p = view.getManageManagerProperties().getPropertyList().getSelectedValue();
             String state = view.getManageManagerProperties().getChangeStateComboBox().getSelectedItem().toString();
 
-            if (p.getState().equals("inactive") && state.equals("Active")) {
+            if ((p.getState().equals("Inactive") || p.getState().equals("Cancelled") || p.getState().equals("Suspended")) && state.equals("Active")) {
                 try {
                     Fee f = model.getFee();
 
@@ -203,6 +222,161 @@ public class PropertyController implements Controller, ActionListener {
                 catch (SQLException exception) {
                     exception.printStackTrace();
                 }
+            }
+            else if (p.getState().equals("Active") && (state.equals("Cancelled") || state.equals("Suspended") || state.equals("Inactive"))) {
+                try {
+                    DateModel feeExpiry = new DateModel("2000", "01", "01");
+                    
+                    p.setFeeExpiry(feeExpiry);
+                    p.setFeeAmount(0);
+                    p.setState(state);
+
+                    model.updateProperty(p);
+
+                    ArrayList<Property> updatedProperties = new ArrayList<Property>();
+
+                    updatedProperties = model.getAllProperties();
+
+                    view.getManageManagerProperties().updatePropertiesView(updatedProperties);
+                    view.getManageManagerProperties().manageProperties();
+                }
+                catch (SQLException exception) {
+                    exception.printStackTrace();
+                }
+            }
+            else if (p.getState().equals("Active") && state.equals("Rented")) {
+                LocalDate d = LocalDate.now();
+                String day = String.valueOf(d.getDayOfMonth());
+                String month = String.valueOf(d.getMonthValue());
+                String year = String.valueOf(d.getYear());
+                DateModel rentalDate = new DateModel(year, month, day);
+                
+                p.setRentalDate(rentalDate);
+                p.setState(state);
+
+                try {
+                    model.updateProperty(p);
+
+                    ArrayList<Property> updatedProperties = new ArrayList<Property>();
+
+                    updatedProperties = model.getAllProperties();
+
+                    view.getManageManagerProperties().updatePropertiesView(updatedProperties);
+                    view.getManageManagerProperties().manageProperties();
+                }
+                catch (SQLException exception) {
+                    exception.printStackTrace();
+                }
+            }
+            else if (p.getState().equals("Rented") && state.equals("Active")) {
+                p.setRentalDate(new DateModel("2000", "01", "01"));
+                p.setState(state);
+
+                try {
+                    model.updateProperty(p);
+
+                    ArrayList<Property> updatedProperties = new ArrayList<Property>();
+
+                    updatedProperties = model.getAllProperties();
+
+                    view.getManageManagerProperties().updatePropertiesView(updatedProperties);
+                    view.getManageManagerProperties().manageProperties();
+                }
+                catch (SQLException exception) {
+                    exception.printStackTrace();
+                }
+            }
+        }
+        else if (e.getSource() == view.getManageLandlordProperties().getChangeStateButton()) {
+            Property p = view.getManageLandlordProperties().getPropertyList().getSelectedValue();
+            String state = view.getManageLandlordProperties().getChangeStateComboBox().getSelectedItem().toString();
+
+            if ((p.getState().equals("Active") || p.getState().equals("Rented")) && state.equals("Inactive")) {
+                p.setState(state);
+                p.setFeeExpiry(new DateModel("2000", "01", "01"));
+                p.setFeeAmount(0);
+                p.setRentalDate(new DateModel("2000", "01", "01"));
+
+                try {
+                    model.updateProperty(p);
+
+                    ArrayList<Property> updatedProperties = model.getProperties(SingletonLogin.getInstance().getCurrentUser().getEmail());
+
+                    view.getManageLandlordProperties().updatePropertiesView(updatedProperties);
+                    view.getManageLandlordProperties().manageProperties();
+                }
+                catch (SQLException exception) {
+                    exception.printStackTrace();
+                }
+            }
+            else if ((p.getState().equals("Inactive") || p.getState().equals("Suspended") || p.getState().equals("Rented")) && state.equals("Active")) {
+                try {
+                    Fee f = model.getFee();
+
+                    view.getPayFeeForm().updateFee(f);
+                    view.payFeeForm();
+                    view.getPayFeeForm().payFeeForm();
+
+                    LocalDate d = LocalDate.now();
+                    d = d.plusDays(f.getFeePeriod());
+                    String day = String.valueOf(d.getDayOfMonth());
+                    String month = String.valueOf(d.getMonthValue());
+                    String year = String.valueOf(d.getYear());
+                    DateModel feeExpiry = new DateModel(year, month, day);
+                        
+                    p.setFeeExpiry(feeExpiry);
+                    p.setFeeAmount(f.getFeeAmount());
+                    p.setState(state);
+
+                    model.updateProperty(p);
+                }
+                catch (SQLException exception) {
+                    exception.printStackTrace();
+                }
+
+            }
+            else if (p.getState().equals("Active") && state.equals("Rented")) {
+                LocalDate d = LocalDate.now();
+                String day = String.valueOf(d.getDayOfMonth());
+                String month = String.valueOf(d.getMonthValue());
+                String year = String.valueOf(d.getYear());
+                DateModel rentalDate = new DateModel(year, month, day);
+                
+                p.setState(state);
+                p.setRentalDate(rentalDate);
+
+                try {
+                    model.updateProperty(p);
+
+                    ArrayList<Property> updatedProperties = model.getProperties(SingletonLogin.getInstance().getCurrentUser().getEmail());
+
+                    view.getManageLandlordProperties().updatePropertiesView(updatedProperties);
+                    view.getManageLandlordProperties().manageProperties();
+                }
+                catch (SQLException exception) {
+                    exception.printStackTrace();
+                }
+            }
+        }
+        else if (e.getSource() == view.getPayFeeForm().getDashboardButton()) {
+            view.manageLandlordProperties();
+            view.getManageLandlordProperties();
+        }
+        else if (e.getSource() == view.getPayFeeForm().getPayFeeButton()) {
+            view.getPayFeeForm().successPage();
+        }
+        else if (e.getSource() == view.getPayFeeForm().getFinishButton()) {
+            try {
+                ArrayList<Property> updatedProperties = new ArrayList<Property>();
+
+                updatedProperties = model.getProperties(SingletonLogin.getInstance().getCurrentUser().getEmail());
+
+                view.getManageLandlordProperties().updatePropertiesView(updatedProperties);
+                view.manageLandlordProperties();
+                view.getManageLandlordProperties().manageProperties();
+            }
+            catch (SQLException exception) {
+                exception.printStackTrace();
             }
 
         }

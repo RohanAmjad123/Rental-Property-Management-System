@@ -100,7 +100,7 @@ public class RegisterPropertyController implements Controller, ActionListener {
             int squareFeet = 0;
             String furnished = "";
             String landlordID = "";
-            String state = "inactive";
+            String state = "Inactive";
             DateModel feeExpiry = new DateModel();
             int feeAmount = 0;
             LocalDate d = LocalDate.now();

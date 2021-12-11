@@ -397,7 +397,7 @@ public class CompanyDatabase {
         DateModel currentDate = new DateModel(year, month, day);
         String currDate = currentDate.getDateFormatted();
 
-        String check = "UPDATE properties SET state='suspended' WHERE state='active' AND fee_expiry<=?";
+        String check = "UPDATE properties SET state='Suspended' WHERE state='active' AND fee_expiry<=?";
 
         try {
             PreparedStatement checkStmt = dbConnect.prepareStatement(check);
@@ -462,7 +462,7 @@ public class CompanyDatabase {
         DateModel currentDate = new DateModel(year, month, day);
         String currDate = currentDate.getDateFormatted();
 
-        String check = "UPDATE properties SET state='suspended' WHERE state='active' AND fee_expiry<?";
+        String check = "UPDATE properties SET state='suspended' WHERE state='active' AND fee_expiry<? AND state='Active'";
 
         try {
             PreparedStatement checkStmt = dbConnect.prepareStatement(check);
@@ -772,7 +772,7 @@ public class CompanyDatabase {
     public ArrayList<String> getRentersWIthSubscriptionsMatching(Property p) throws SQLException {
         ArrayList<String> renterID = new ArrayList<String>();
 
-        String sql = "SELECT renterID FROM subscriptions WHERE property_type=? AND bedrooms <=? AND bathrooms <= AND maxRent>=? AND city_quadrant=? AND furnished=?";
+        String sql = "SELECT renter_id FROM subscriptions WHERE property_type=? AND bedrooms <=? AND bathrooms <=? AND max_rent>=? AND city_quadrant=? AND furnished=?";
 
         try {
             PreparedStatement stmt = dbConnect.prepareStatement(sql);
